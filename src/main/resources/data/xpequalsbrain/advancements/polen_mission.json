@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "xpequalsbrain:polen"
+    },
+    "title": {
+      "translate": "advancements.polen_mission.title"
+    },
+    "description": {
+      "translate": "advancements.polen_mission.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "polen_mission": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "xpequalsbrain:mini_mini_beyin"
+}

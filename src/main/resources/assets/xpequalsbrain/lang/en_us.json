@@ -1,4 +1,10 @@
 {
+  "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+  "item.xpequalsbrain.small_xp": "Xp Topu",
   "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
-  "advancements.mini_mini_beyin.title": "Mini Mini Beyin"
+  "advancements.ari_kafa.title": "Arı Kafa",
+  "item.xpequalsbrain.polen": "Polen",
+  "advancements.polen_mission.title": "Arıya Polen Gerek",
+  "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
+  "advancements.polen_mission.descr": "Polen toplayıp arıya ver."
 }

@@ -99,6 +99,102 @@
           }
         ]
       }
+    },
+    {
+      "name": "SmallXpRightclicked",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "small_xp_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SmallXp",
+      "type": "item",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "small_xp"
+    },
+    {
+      "name": "AriKafa",
+      "type": "achievement",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ari_kafa"
+    },
+    {
+      "name": "Polen",
+      "type": "item",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "polen"
+    },
+    {
+      "name": "PolenMission",
+      "type": "achievement",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "polen_mission"
+    },
+    {
+      "name": "GeneratePolen",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "generate_polen",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -118,8 +214,14 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+      "item.xpequalsbrain.small_xp": "Xp Topu",
       "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
-      "advancements.mini_mini_beyin.title": "Mini Mini Beyin"
+      "advancements.ari_kafa.title": "Arı Kafa",
+      "item.xpequalsbrain.polen": "Polen",
+      "advancements.polen_mission.title": "Arıya Polen Gerek",
+      "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
+      "advancements.polen_mission.descr": "Polen toplayıp arıya ver."
     }
   },
   "foldersRoot": {
