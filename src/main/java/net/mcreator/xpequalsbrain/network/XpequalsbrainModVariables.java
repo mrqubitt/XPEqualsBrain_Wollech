@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 public class XpequalsbrainModVariables {
 	public static double PlayerLevel = 0;
 	public static double TalkedToVillager = 0;
+	public static boolean BeeMissionStarted = false;
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {

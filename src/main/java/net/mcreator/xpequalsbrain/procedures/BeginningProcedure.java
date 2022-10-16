@@ -38,6 +38,7 @@ public class BeginningProcedure {
 			_player.giveExperienceLevels(-(999));
 		if (entity instanceof Player _player)
 			_player.giveExperiencePoints(-(999));
+		XpequalsbrainModVariables.BeeMissionStarted = false;
 		XpequalsbrainModVariables.PlayerLevel = 0;
 		XpequalsbrainModVariables.TalkedToVillager = 0;
 		if (world instanceof ServerLevel _level)
@@ -83,7 +84,7 @@ public class BeginningProcedure {
 					if (_mcserv != null)
 						_mcserv.getPlayerList()
 								.broadcastMessage(new TextComponent(
-										"\u00A76[!]\u00A7e Beynin \u015Fu anda yok gibi bir \u015Fey ve bu durum normal becerilerini etkiliyor."),
+										"\u00A7a[!]\u00A7e Beynin \u015Fu anda yok gibi bir \u015Fey ve bu durum normal becerilerini etkiliyor."),
 										ChatType.SYSTEM, Util.NIL_UUID);
 				}
 				if (world instanceof Level _level) {
@@ -132,7 +133,7 @@ public class BeginningProcedure {
 				if (!world.isClientSide()) {
 					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 					if (_mcserv != null)
-						_mcserv.getPlayerList().broadcastMessage(new TextComponent("\u00A76[!]\u00A7e Deneyim kazanarak beynini b\u00FCy\u00FCt!"),
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent("\u00A7a[!]\u00A7e Deneyim kazanarak beynini b\u00FCy\u00FCt!"),
 								ChatType.SYSTEM, Util.NIL_UUID);
 				}
 				if (world instanceof Level _level) {

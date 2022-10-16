@@ -13,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.xpequalsbrain.network.XpequalsbrainModVariables;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
 
 public class SmallXpRightclickedProcedure {
@@ -21,6 +22,7 @@ public class SmallXpRightclickedProcedure {
 			return;
 		if (entity instanceof Player _player)
 			_player.giveExperienceLevels(1);
+		XpequalsbrainModVariables.TalkedToVillager = 0;
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.END_ROD, x, y, z, 25, 1, 2, 1, 1);
 		if (world instanceof Level _level) {

@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.item.ItemEntity;
 
+import net.mcreator.xpequalsbrain.network.XpequalsbrainModVariables;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
 
 import javax.annotation.Nullable;
@@ -31,7 +32,7 @@ public class GeneratePolenProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, BlockState blockstate) {
-		if (Blocks.DANDELION == blockstate.getBlock()) {
+		if (XpequalsbrainModVariables.BeeMissionStarted && Blocks.DANDELION == blockstate.getBlock()) {
 			if (world instanceof Level _level && !_level.isClientSide()) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(XpequalsbrainModItems.POLEN.get()));
 				entityToSpawn.setPickUpDelay(10);
