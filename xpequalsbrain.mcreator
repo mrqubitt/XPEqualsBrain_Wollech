@@ -1,0 +1,42 @@
+{
+  "mod_elements": [
+    {
+      "name": "Testing",
+      "type": "achievement",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "testing"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "advancements.testing.descr": "Welcome to world!",
+      "advancements.testing.title": "Testing"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "xpequalsbrain",
+    "modName": "XpEqualsBrain_Wollech",
+    "version": "1.0.0",
+    "author": "kaani, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "modElementsPackage": "net.mcreator.xpequalsbrain",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200234517
+}
