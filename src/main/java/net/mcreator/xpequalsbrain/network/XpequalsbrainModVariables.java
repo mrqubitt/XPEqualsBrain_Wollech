@@ -9,6 +9,8 @@ public class XpequalsbrainModVariables {
 	public static double PlayerLevel = 0;
 	public static double TalkedToVillager = 0;
 	public static boolean BeeMissionStarted = false;
+	public static boolean BeeTalked = false;
+	public static double BeeMissonCounter = 0;
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {

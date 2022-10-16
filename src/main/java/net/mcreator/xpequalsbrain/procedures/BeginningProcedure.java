@@ -39,8 +39,13 @@ public class BeginningProcedure {
 		if (entity instanceof Player _player)
 			_player.giveExperiencePoints(-(999));
 		XpequalsbrainModVariables.BeeMissionStarted = false;
+		XpequalsbrainModVariables.BeeTalked = false;
+		XpequalsbrainModVariables.BeeMissonCounter = 0;
 		XpequalsbrainModVariables.PlayerLevel = 0;
 		XpequalsbrainModVariables.TalkedToVillager = 0;
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=xpequalsbrain:friendlybee]");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "advancement revoke @a everything");

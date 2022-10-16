@@ -60,6 +60,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -227,6 +243,92 @@
           }
         ]
       }
+    },
+    {
+      "name": "Friendlybee",
+      "type": "livingentity",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "friendlybee",
+      "path": "~/Bee"
+    },
+    {
+      "name": "FriendlybeeRightClickedOnEntity",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "friendlybee_right_clicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AdvancedToLevelOne",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advanced_to_level_one",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "AdvancedToLevelTwo",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advanced_to_level_two",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/LevelAdvancement"
     }
   ],
   "variable_elements": [
@@ -247,6 +349,18 @@
       "type": "logic",
       "scope": "global",
       "value": "false"
+    },
+    {
+      "name": "BeeTalked",
+      "type": "logic",
+      "scope": "global",
+      "value": "false"
+    },
+    {
+      "name": "BeeMissonCounter",
+      "type": "number",
+      "scope": "global",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -254,17 +368,28 @@
     "en_us": {
       "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
       "item.xpequalsbrain.small_xp": "Xp Topu",
+      "entity.xpequalsbrain.friendlybee": "Friendlybee",
       "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
       "advancements.ari_kafa.title": "Arı Kafa",
       "item.xpequalsbrain.polen": "Polen",
       "advancements.polen_mission.title": "Arıya Polen Gerek",
       "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
-      "advancements.polen_mission.descr": "Polen toplayıp arıya ver."
+      "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
+      "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg"
     }
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Bee",
+        "children": []
+      },
+      {
+        "name": "LevelAdvancement",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "xpequalsbrain",

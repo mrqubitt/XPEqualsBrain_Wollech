@@ -1,10 +1,12 @@
 {
   "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
   "item.xpequalsbrain.small_xp": "Xp Topu",
+  "entity.xpequalsbrain.friendlybee": "Friendlybee",
   "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
   "advancements.ari_kafa.title": "Arı Kafa",
   "item.xpequalsbrain.polen": "Polen",
   "advancements.polen_mission.title": "Arıya Polen Gerek",
   "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
-  "advancements.polen_mission.descr": "Polen toplayıp arıya ver."
+  "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
+  "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg"
 }
