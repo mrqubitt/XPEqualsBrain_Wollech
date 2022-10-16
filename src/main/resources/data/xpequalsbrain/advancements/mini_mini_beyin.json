@@ -2,21 +2,21 @@
   "display": {
     "background": "minecraft:textures/block/stone.png",
     "icon": {
-      "item": "minecraft:blackstone_stairs"
+      "item": "minecraft:leather_helmet"
     },
     "title": {
-      "translate": "advancements.testing.title"
+      "translate": "advancements.mini_mini_beyin.title"
     },
     "description": {
-      "translate": "advancements.testing.descr"
+      "translate": "advancements.mini_mini_beyin.descr"
     },
-    "frame": "task",
+    "frame": "goal",
     "show_toast": true,
     "announce_to_chat": false,
     "hidden": true
   },
   "criteria": {
-    "testing": {
+    "mini_mini_beyin": {
       "trigger": "minecraft:impossible"
     }
   }
