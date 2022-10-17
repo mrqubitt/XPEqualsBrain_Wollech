@@ -14,6 +14,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.resources.ResourceLocation;
@@ -21,14 +22,18 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.ChatType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.Util;
 
 import net.mcreator.xpequalsbrain.network.XpequalsbrainModVariables;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
 
+import java.util.Iterator;
+
 public class FriendlybeeRightClickedOnEntityProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity sourceentity, ItemStack itemstack) {
-		if (sourceentity == null)
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity, ItemStack itemstack) {
+		if (entity == null || sourceentity == null)
 			return;
 		if (!XpequalsbrainModVariables.BeeMissionStarted) {
 			if (!XpequalsbrainModVariables.BeeTalked) {
@@ -203,6 +208,15 @@ public class FriendlybeeRightClickedOnEntityProcedure {
 					ItemStack _stktoremove = new ItemStack(XpequalsbrainModItems.POLEN.get());
 					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 15,
 							_player.inventoryMenu.getCraftSlots());
+				}
+				if (entity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("xpequalsbrain:polen_mission_completed"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						Iterator _iterator = _ap.getRemainingCriteria().iterator();
+						while (_iterator.hasNext())
+							_player.getAdvancements().award(_adv, (String) _iterator.next());
+					}
 				}
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 15, 1, 1, 1, 1);

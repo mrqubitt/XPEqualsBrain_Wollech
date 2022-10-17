@@ -1,5 +1,6 @@
 {
   "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
+  "advancements.polen_mission_completed.title": "Polenler teslim edildi!",
   "item.xpequalsbrain.small_xp": "Xp Topu",
   "entity.xpequalsbrain.friendlybee": "Friendlybee",
   "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
@@ -12,5 +13,6 @@
   "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
   "advancements.polen_mission.title": "Arıya Polen Gerek",
   "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
-  "advancements.polen_mission.descr": "Polen toplayıp arıya ver."
+  "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
+  "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!"
 }

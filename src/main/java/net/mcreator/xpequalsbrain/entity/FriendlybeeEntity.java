@@ -97,7 +97,7 @@ public class FriendlybeeEntity extends PathfinderMob {
 		Entity entity = this;
 		Level world = this.level;
 
-		FriendlybeeRightClickedOnEntityProcedure.execute(world, x, y, z, sourceentity, itemstack);
+		FriendlybeeRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity, itemstack);
 		return retval;
 	}
 

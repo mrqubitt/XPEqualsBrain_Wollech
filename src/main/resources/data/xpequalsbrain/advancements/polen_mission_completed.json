@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "xpequalsbrain:polen"
+    },
+    "title": {
+      "translate": "advancements.polen_mission_completed.title"
+    },
+    "description": {
+      "translate": "advancements.polen_mission_completed.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "polen_mission_completed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "xpequalsbrain:polen_mission"
+}
