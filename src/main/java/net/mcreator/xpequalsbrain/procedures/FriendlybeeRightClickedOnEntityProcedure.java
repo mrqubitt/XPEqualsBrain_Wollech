@@ -36,171 +36,107 @@ public class FriendlybeeRightClickedOnEntityProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (!XpequalsbrainModVariables.BeeMissionStarted) {
-			if (!XpequalsbrainModVariables.BeeTalked) {
-				if (!world.isClientSide()) {
-					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-					if (_mcserv != null)
-						_mcserv.getPlayerList().broadcastMessage(new TextComponent("\u00A76Yorgun Ar\u0131: \u00A7fBzzzZZzz BZZZZz "),
-								ChatType.SYSTEM, Util.NIL_UUID);
-				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos(x, y, z),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")), SoundSource.AMBIENT,
-								(float) 0.5, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")),
-								SoundSource.AMBIENT, (float) 0.5, 1, false);
-					}
-				}
-				XpequalsbrainModVariables.BeeTalked = true;
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						if (!world.isClientSide()) {
-							MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-							if (_mcserv != null)
-								_mcserv.getPlayerList().broadcastMessage(
-										new TextComponent("\u00A7a[!] \u00A7eAr\u0131y\u0131 takip et! Senden bir iste\u011Fi var."), ChatType.SYSTEM,
-										Util.NIL_UUID);
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z),
-										ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
-										SoundSource.AMBIENT, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z,
-										ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
-										SoundSource.AMBIENT, 1, 1, false);
-							}
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 20);
-			} else if (XpequalsbrainModVariables.BeeTalked) {
-				if (!world.isClientSide()) {
-					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-					if (_mcserv != null)
-						_mcserv.getPlayerList().broadcastMessage(
-								new TextComponent("\u00A76Yorgun Ar\u0131: \u00A7fBal sezzzonuna \u00E7ok azzz kald\u0131! Bizzze yard\u0131m et!"),
-								ChatType.SYSTEM, Util.NIL_UUID);
-				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos(x, y, z),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")), SoundSource.AMBIENT,
-								(float) 0.5, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")),
-								SoundSource.AMBIENT, (float) 0.5, 1, false);
-					}
-				}
-				XpequalsbrainModVariables.BeeMissionStarted = true;
-				XpequalsbrainModVariables.BeeTalked = false;
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						if (!world.isClientSide()) {
-							MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-							if (_mcserv != null)
-								_mcserv.getPlayerList().broadcastMessage(
-										new TextComponent("\u00A76Yorgun Ar\u0131: \u00A7f15 polene ihtiyac\u0131m\u0131zzz var!"), ChatType.SYSTEM,
-										Util.NIL_UUID);
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z),
-										ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")),
-										SoundSource.AMBIENT, (float) 0.5, (float) 0.7);
-							} else {
-								_level.playLocalSound(x, y, z,
-										ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")),
-										SoundSource.AMBIENT, (float) 0.5, (float) 0.7, false);
-							}
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 30);
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						if (!world.isClientSide()) {
-							MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-							if (_mcserv != null)
-								_mcserv.getPlayerList().broadcastMessage(
-										new TextComponent("\u00A7a[!]\u00A7e \u00C7i\u00E7eklere sa\u011F t\u0131klayarak polen toplayabilirsin."),
-										ChatType.SYSTEM, Util.NIL_UUID);
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z),
-										ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
-										SoundSource.AMBIENT, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z,
-										ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
-										SoundSource.AMBIENT, 1, 1, false);
-							}
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 55);
+			if (!world.isClientSide()) {
+				MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+				if (_mcserv != null)
+					_mcserv.getPlayerList().broadcastMessage(
+							new TextComponent("\u00A76Yorgun Ar\u0131: \u00A7fBal sezzzonuna \u00E7ok azzz kald\u0131! Bizzze yard\u0131m et!"),
+							ChatType.SYSTEM, Util.NIL_UUID);
 			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos(x, y, z),
+							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")), SoundSource.AMBIENT, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")),
+							SoundSource.AMBIENT, 1, 1, false);
+				}
+			}
+			XpequalsbrainModVariables.BeeMissionStarted = true;
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (!world.isClientSide()) {
+						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (_mcserv != null)
+							_mcserv.getPlayerList().broadcastMessage(
+									new TextComponent("\u00A76Yorgun Ar\u0131: \u00A7f15 polene ihtiyac\u0131m\u0131zzz var!"), ChatType.SYSTEM,
+									Util.NIL_UUID);
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")), SoundSource.AMBIENT, 1,
+									(float) 0.7);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")),
+									SoundSource.AMBIENT, 1, (float) 0.7, false);
+						}
+					}
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 30);
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (!world.isClientSide()) {
+						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (_mcserv != null)
+							_mcserv.getPlayerList()
+									.broadcastMessage(new TextComponent(
+											"\u00A7a[!]\u00A7e Sar\u0131 \u00E7i\u00E7eklere sa\u011F t\u0131klayarak polen toplayabilirsin."),
+											ChatType.SYSTEM, Util.NIL_UUID);
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT,
+									1, 1);
+						} else {
+							_level.playLocalSound(x, y, z,
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT,
+									1, 1, false);
+						}
+					}
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 55);
 		} else if (XpequalsbrainModVariables.BeeMissionStarted) {
 			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == XpequalsbrainModItems.POLEN
 					.get() && (itemstack).getCount() >= 15) {
@@ -238,7 +174,6 @@ public class FriendlybeeRightClickedOnEntityProcedure {
 					}
 				}
 				XpequalsbrainModVariables.BeeMissionStarted = false;
-				XpequalsbrainModVariables.BeeTalked = true;
 				XpequalsbrainModVariables.BeeMissonCounter = 1;
 				new Object() {
 					private int ticks = 0;
@@ -324,6 +259,25 @@ public class FriendlybeeRightClickedOnEntityProcedure {
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
 				}.start(world, 45);
+			} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+					.getItem() == XpequalsbrainModItems.POLEN.get()) {
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(
+								new TextComponent("\u00A76Yorgun Ar\u0131: \u00A7fBu yetmezzz! 15 tane lazzz\u0131m."), ChatType.SYSTEM,
+								Util.NIL_UUID);
+				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z),
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")), SoundSource.AMBIENT,
+								(float) 0.5, (float) 0.6);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.bee.loop_aggressive")),
+								SoundSource.AMBIENT, (float) 0.5, (float) 0.6, false);
+					}
+				}
 			}
 		}
 	}
