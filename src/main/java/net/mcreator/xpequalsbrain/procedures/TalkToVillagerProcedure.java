@@ -325,7 +325,7 @@ public class TalkToVillagerProcedure {
 						_level.sendParticles(ParticleTypes.ANGRY_VILLAGER, x, y, z, 25, 1, 1, 1, 1);
 					sourceentity.hurt(DamageSource.GENERIC, 4);
 				}
-			} else if (25 == XpequalsbrainModVariables.PlayerLevel) {
+			} else if (25 == (sourceentity instanceof Player _plr ? _plr.experienceLevel : 0)) {
 				if (0 == XpequalsbrainModVariables.TalkedToVillager) {
 					if (!world.isClientSide()) {
 						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
