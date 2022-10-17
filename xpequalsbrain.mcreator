@@ -299,6 +299,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -326,8 +330,108 @@
       "locked_code": false,
       "registry_name": "advanced_to_level_two",
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "AdvancedToLevelThree",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advanced_to_level_three",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "TitleActivator",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "title_activator",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CowBrain",
+      "type": "achievement",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cow_brain",
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "VillagerBrain",
+      "type": "achievement",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "villager_brain",
       "path": "~/LevelAdvancement"
     }
   ],
@@ -361,21 +465,37 @@
       "type": "number",
       "scope": "global",
       "value": "0"
+    },
+    {
+      "name": "IsLevelZero",
+      "type": "logic",
+      "scope": "global",
+      "value": "false"
+    },
+    {
+      "name": "IQ_NAME",
+      "type": "string",
+      "scope": "map",
+      "value": "\"\""
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+      "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
       "item.xpequalsbrain.small_xp": "Xp Topu",
       "entity.xpequalsbrain.friendlybee": "Friendlybee",
       "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
       "advancements.ari_kafa.title": "Arı Kafa",
       "item.xpequalsbrain.polen": "Polen",
+      "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
+      "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg",
+      "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+      "advancements.cow_brain.title": "MÖÖÖÖÖ",
+      "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
       "advancements.polen_mission.title": "Arıya Polen Gerek",
       "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
-      "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
-      "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg"
+      "advancements.polen_mission.descr": "Polen toplayıp arıya ver."
     }
   },
   "foldersRoot": {

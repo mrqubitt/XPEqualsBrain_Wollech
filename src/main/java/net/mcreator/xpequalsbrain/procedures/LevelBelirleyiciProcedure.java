@@ -32,17 +32,18 @@ public class LevelBelirleyiciProcedure {
 		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) == 0) {
 			XpequalsbrainModVariables.TalkedToVillager = 0;
 			XpequalsbrainModVariables.PlayerLevel = entity instanceof Player _plr ? _plr.experienceLevel : 0;
-		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) == 1) {
+		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) + 1 == 1) {
 			XpequalsbrainModVariables.TalkedToVillager = 0;
 			XpequalsbrainModVariables.PlayerLevel = entity instanceof Player _plr ? _plr.experienceLevel : 0;
-			AdvancedToLevelOneProcedure.execute(world, x, y, z);
-		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) == 3) {
+			AdvancedToLevelOneProcedure.execute(world, x, y, z, entity);
+		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) + 1 == 3) {
 			XpequalsbrainModVariables.TalkedToVillager = 0;
 			XpequalsbrainModVariables.PlayerLevel = entity instanceof Player _plr ? _plr.experienceLevel : 0;
-			AdvancedToLevelTwoProcedure.execute();
-		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) == 25) {
+			AdvancedToLevelTwoProcedure.execute(world, x, y, z, entity);
+		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) + 1 == 25) {
 			XpequalsbrainModVariables.TalkedToVillager = 0;
 			XpequalsbrainModVariables.PlayerLevel = entity instanceof Player _plr ? _plr.experienceLevel : 0;
+			AdvancedToLevelThreeProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

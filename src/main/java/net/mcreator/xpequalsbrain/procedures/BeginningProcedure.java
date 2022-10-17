@@ -40,6 +40,7 @@ public class BeginningProcedure {
 			_player.giveExperiencePoints(-(999));
 		XpequalsbrainModVariables.BeeMissionStarted = false;
 		XpequalsbrainModVariables.BeeTalked = false;
+		XpequalsbrainModVariables.IsLevelZero = true;
 		XpequalsbrainModVariables.BeeMissonCounter = 0;
 		XpequalsbrainModVariables.PlayerLevel = 0;
 		XpequalsbrainModVariables.TalkedToVillager = 0;

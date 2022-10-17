@@ -1,12 +1,16 @@
 {
-  "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+  "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
   "item.xpequalsbrain.small_xp": "Xp Topu",
   "entity.xpequalsbrain.friendlybee": "Friendlybee",
   "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
   "advancements.ari_kafa.title": "Arı Kafa",
   "item.xpequalsbrain.polen": "Polen",
+  "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
+  "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg",
+  "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+  "advancements.cow_brain.title": "MÖÖÖÖÖ",
+  "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
   "advancements.polen_mission.title": "Arıya Polen Gerek",
   "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
-  "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
-  "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg"
+  "advancements.polen_mission.descr": "Polen toplayıp arıya ver."
 }

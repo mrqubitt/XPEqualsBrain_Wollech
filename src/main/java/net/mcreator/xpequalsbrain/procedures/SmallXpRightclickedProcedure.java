@@ -23,8 +23,12 @@ public class SmallXpRightclickedProcedure {
 		if (entity instanceof Player _player)
 			_player.giveExperienceLevels(1);
 		XpequalsbrainModVariables.TalkedToVillager = 0;
+		if (XpequalsbrainModVariables.IsLevelZero) {
+			AdvancedToLevelOneProcedure.execute(world, x, y, z, entity);
+			XpequalsbrainModVariables.IsLevelZero = false;
+		}
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles(ParticleTypes.END_ROD, x, y, z, 50, 1, 2, 1, 0.4);
+			_level.sendParticles(ParticleTypes.END_ROD, x, y, z, 100, 1, 2, 1, 0.4);
 		if (world instanceof Level _level) {
 			if (!_level.isClientSide()) {
 				_level.playSound(null, new BlockPos(x, y, z),
