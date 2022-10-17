@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "auto_smelt_pickaxe",
     "customModelName": "Normal",
-    "name": "Auto Smelt Pickaxe",
+    "name": "☺§6Kazmafırın-3000",
     "specialInfo": [
       "Eski sıkıcı fırınınızdan sıkıldınız mı?",
       "Kazmafırın 3000 ile bu dertlerden kurtulun!",
@@ -22,7 +22,7 @@
     "damageVsEntity": 2.0,
     "usageCount": 1561,
     "blocksAffected": [],
-    "hasGlow": false,
+    "hasGlow": true,
     "repairItems": [
       {
         "value": "Items.IRON_INGOT"

@@ -1,6 +1,9 @@
 
 package net.mcreator.xpequalsbrain.item;
 
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.TooltipFlag;
@@ -60,5 +63,11 @@ public class AutoSmeltPickaxeItem extends PickaxeItem {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
 			KazmaFirin3000prosedureProcedure.execute(world, entity);
+	}
+
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public boolean isFoil(ItemStack itemstack) {
+		return true;
 	}
 }
