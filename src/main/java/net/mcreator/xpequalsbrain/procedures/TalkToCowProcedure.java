@@ -169,6 +169,11 @@ public class TalkToCowProcedure {
 				&& (sourceentity instanceof Player _plr ? _plr.experienceLevel : 0) < 25 && XpequalsbrainModVariables.CowMissonStarted
 				&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.WHEAT
 				&& 5 <= ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).getCount()) {
+			if (entity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(Items.WHEAT);
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 5,
+						_player.inventoryMenu.getCraftSlots());
+			}
 			if (!world.isClientSide()) {
 				MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 				if (_mcserv != null)

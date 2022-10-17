@@ -29,7 +29,7 @@ public class AutoSmeltPickaxeItem extends PickaxeItem {
 			}
 
 			public float getSpeed() {
-				return 4f;
+				return 12f;
 			}
 
 			public float getAttackDamageBonus() {
@@ -37,7 +37,7 @@ public class AutoSmeltPickaxeItem extends PickaxeItem {
 			}
 
 			public int getLevel() {
-				return 3;
+				return 10;
 			}
 
 			public int getEnchantmentValue() {
