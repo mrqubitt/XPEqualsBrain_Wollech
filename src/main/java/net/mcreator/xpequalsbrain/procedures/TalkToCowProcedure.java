@@ -12,6 +12,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -166,7 +167,7 @@ public class TalkToCowProcedure {
 		}
 		if (entity instanceof Cow && (sourceentity instanceof Player _plr ? _plr.experienceLevel : 0) > 2
 				&& (sourceentity instanceof Player _plr ? _plr.experienceLevel : 0) < 25 && XpequalsbrainModVariables.CowMissonStarted
-				&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.WHEAT.asItem()
+				&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.WHEAT
 				&& 5 <= ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).getCount()) {
 			if (!world.isClientSide()) {
 				MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();

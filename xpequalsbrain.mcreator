@@ -565,6 +565,138 @@
       "locked_code": false,
       "registry_name": "cow_misson_completed",
       "path": "~/Cow"
+    },
+    {
+      "name": "TutamacliDurtmeCubugu",
+      "type": "item",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tutamacli_durtme_cubugu"
+    },
+    {
+      "name": "TutamacliCrafting",
+      "type": "recipe",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tutamacli_crafting"
+    },
+    {
+      "name": "Corap",
+      "type": "armor",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "corap",
+      "metadata": {
+        "eh": false,
+        "el": false,
+        "eb": true,
+        "ec": false
+      }
+    },
+    {
+      "name": "CorapCrafting",
+      "type": "recipe",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "corap_crafting"
+    },
+    {
+      "name": "OneIqInventoryDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "one_iq_inventory_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InventoryConverter",
+      "type": "overlay",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inventory_converter"
+    },
+    {
+      "name": "TwoIQGUI",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "two_iqgui",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DurtenKazma",
+      "type": "tool",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "durten_kazma"
+    },
+    {
+      "name": "DurtenKazmaCraft",
+      "type": "recipe",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "durten_kazma_craft"
+    },
+    {
+      "name": "AutoSmeltPickaxe",
+      "type": "tool",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "auto_smelt_pickaxe"
+    },
+    {
+      "name": "CustomTrades",
+      "type": "villagertrade",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "custom_trades"
+    },
+    {
+      "name": "KazmaFirin3000prosedure",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kazma_firin_3000prosedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -620,6 +752,14 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.xpequalsbrain.durtme_cubugu": "Durtme Cubugu",
+      "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+      "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
+      "item.xpequalsbrain.corap_helmet": "Corap Helmet",
+      "advancements.polen_mission.title": "Arıya Polen Gerek",
+      "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
+      "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!",
+      "advancements.cow_misson_started.descr": "İneklere 5 adet tahıl getir.",
       "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
       "advancements.polen_mission_completed.title": "Polenler teslim edildi!",
       "item.xpequalsbrain.small_xp": "Xp Topu",
@@ -627,20 +767,19 @@
       "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
       "advancements.ari_kafa.title": "Arı Kafa",
       "item.xpequalsbrain.polen": "Polen",
-      "item.xpequalsbrain.durtme_cubugu": "Durtme Cubugu",
       "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
       "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg",
-      "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
-      "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
+      "item.xpequalsbrain.corap_chestplate": "Corap Body",
+      "item.xpequalsbrain.auto_smelt_pickaxe": "Auto Smelt Pickaxe",
       "advancements.cow_brain.title": "MÖÖÖÖÖ",
+      "item.xpequalsbrain.corap_leggings": "Corap Leggings",
       "advancements.cow_misson_completed.title": "Tok inekler!",
       "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
-      "advancements.polen_mission.title": "Arıya Polen Gerek",
       "advancements.cow_misson_completed.descr": "İnek deneyimlerinin tadını çıkar.",
+      "item.xpequalsbrain.corap_boots": "Corap Boots",
       "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
-      "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
-      "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!",
-      "advancements.cow_misson_started.descr": "İneklere 5 adet tahıl getir."
+      "item.xpequalsbrain.tutamacli_durtme_cubugu": "Tutamaçlı Dürtme Çubuğu",
+      "item.xpequalsbrain.durten_kazma": "Dürten Kazma"
     }
   },
   "foldersRoot": {

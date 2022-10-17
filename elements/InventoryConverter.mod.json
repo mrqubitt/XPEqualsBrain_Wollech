@@ -1,0 +1,44 @@
+{
+  "_fv": 33,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "oneslotconverter.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "OneIqInventoryDisplayOverlayIngame"
+          },
+          "name": "oneslotconverter.png",
+          "x": 125,
+          "y": 37
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "inventory.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TwoIQGUI"
+          },
+          "name": "inventory.png",
+          "x": 125,
+          "y": 37
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Inventory",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 15,
+      "oy": 1,
+      "snapOnGrid": true
+    }
+  }
+}

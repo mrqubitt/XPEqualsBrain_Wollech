@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "xpequalsbrain:items/auto_smelt_pickaxe"
+  }
+}

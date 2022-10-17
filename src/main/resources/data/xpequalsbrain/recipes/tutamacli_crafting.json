@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1"
+  ],
+  "key": {
+    "0": {
+      "item": "xpequalsbrain:durtme_cubugu"
+    },
+    "1": {
+      "item": "xpequalsbrain:durtme_cubugu"
+    }
+  },
+  "result": {
+    "item": "xpequalsbrain:tutamacli_durtme_cubugu",
+    "count": 1
+  }
+}

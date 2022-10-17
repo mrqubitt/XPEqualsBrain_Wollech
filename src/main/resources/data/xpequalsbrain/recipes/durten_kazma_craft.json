@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "xpequalsbrain:durtme_cubugu"
+    }
+  ],
+  "result": {
+    "item": "xpequalsbrain:durten_kazma",
+    "count": 1
+  }
+}
