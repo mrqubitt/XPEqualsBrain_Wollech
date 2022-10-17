@@ -14,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTab;
 
 import net.mcreator.xpequalsbrain.item.SmallXpItem;
 import net.mcreator.xpequalsbrain.item.PolenItem;
+import net.mcreator.xpequalsbrain.item.DurtmeCubuguItem;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
 
 public class XpequalsbrainModItems {
@@ -23,4 +24,5 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> FRIENDLYBEE = REGISTRY.register("friendlybee_spawn_egg",
 			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.FRIENDLYBEE, -13312, -16777216,
 					new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> DURTME_CUBUGU = REGISTRY.register("durtme_cubugu", () -> new DurtmeCubuguItem());
 }

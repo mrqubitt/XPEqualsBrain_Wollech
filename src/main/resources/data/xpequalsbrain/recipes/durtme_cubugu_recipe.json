@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "minecraft:planks"
+    }
+  ],
+  "result": {
+    "item": "xpequalsbrain:durtme_cubugu",
+    "count": 1
+  }
+}

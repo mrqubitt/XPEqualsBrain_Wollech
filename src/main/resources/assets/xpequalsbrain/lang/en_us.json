@@ -6,13 +6,18 @@
   "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
   "advancements.ari_kafa.title": "Arı Kafa",
   "item.xpequalsbrain.polen": "Polen",
+  "item.xpequalsbrain.durtme_cubugu": "Durtme Cubugu",
   "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
   "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg",
   "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+  "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
   "advancements.cow_brain.title": "MÖÖÖÖÖ",
+  "advancements.cow_misson_completed.title": "Tok inekler!",
   "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
   "advancements.polen_mission.title": "Arıya Polen Gerek",
+  "advancements.cow_misson_completed.descr": "İnek deneyimlerinin tadını çıkar.",
   "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
   "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
-  "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!"
+  "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!",
+  "advancements.cow_misson_started.descr": "İneklere 5 adet tahıl getir."
 }

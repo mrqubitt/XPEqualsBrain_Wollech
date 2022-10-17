@@ -41,6 +41,7 @@ public class BeginningProcedure {
 		XpequalsbrainModVariables.BeeMissionStarted = false;
 		XpequalsbrainModVariables.BeeTalked = false;
 		XpequalsbrainModVariables.IsLevelZero = true;
+		XpequalsbrainModVariables.CowMissonStarted = false;
 		XpequalsbrainModVariables.BeeMissonCounter = 0;
 		XpequalsbrainModVariables.PlayerLevel = 0;
 		XpequalsbrainModVariables.TalkedToVillager = 0;

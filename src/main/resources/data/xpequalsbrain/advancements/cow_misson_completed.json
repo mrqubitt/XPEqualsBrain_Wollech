@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:hay_block"
+    },
+    "title": {
+      "translate": "advancements.cow_misson_completed.title"
+    },
+    "description": {
+      "translate": "advancements.cow_misson_completed.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "cow_misson_completed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "xpequalsbrain:mini_mini_beyin"
+}

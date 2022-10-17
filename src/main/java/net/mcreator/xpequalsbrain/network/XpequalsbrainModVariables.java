@@ -28,6 +28,7 @@ public class XpequalsbrainModVariables {
 	public static boolean BeeTalked = false;
 	public static double BeeMissonCounter = 0;
 	public static boolean IsLevelZero = false;
+	public static boolean CowMissonStarted = false;
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
