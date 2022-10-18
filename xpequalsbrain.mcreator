@@ -1063,6 +1063,38 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "lab_location"
+    },
+    {
+      "name": "BuildActualLab",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "build_actual_lab",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lab",
+      "type": "structure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lab"
+    },
+    {
+      "name": "LabCompleted",
+      "type": "achievement",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lab_completed"
     }
   ],
   "variable_elements": [
@@ -1193,8 +1225,10 @@
       "advancements.ari_kafa.title": "Arı Kafa",
       "item.xpequalsbrain.polen": "Polen",
       "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
+      "advancements.lab_completed.title": "Laboratuvar Faresi",
       "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg",
       "item.xpequalsbrain.corap_chestplate": "Corap Body",
+      "advancements.lab_completed.descr": "Seninle tanışmak güzeldi...",
       "item.xpequalsbrain.auto_smelt_pickaxe": "☺§6Kazmafırın-3000",
       "item.xpequalsbrain.einstein_spawn_egg": "Einstein Spawn Egg",
       "advancements.cow_brain.title": "MÖÖÖÖÖ",

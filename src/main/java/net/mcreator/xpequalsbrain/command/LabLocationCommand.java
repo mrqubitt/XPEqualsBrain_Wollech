@@ -17,7 +17,7 @@ import net.mcreator.xpequalsbrain.procedures.SetLabLocationProcedure;
 public class LabLocationCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("lablocation")
+		event.getDispatcher().register(Commands.literal("laboratuvar_konumu")
 
 				.executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();

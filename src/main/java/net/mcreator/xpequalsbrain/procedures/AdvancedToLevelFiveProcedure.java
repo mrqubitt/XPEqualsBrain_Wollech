@@ -95,6 +95,7 @@ public class AdvancedToLevelFiveProcedure {
 								SoundSource.AMBIENT, 2, 1, false);
 					}
 				}
+				SpawnEinsteinProcedure.execute(world);
 				MinecraftForge.EVENT_BUS.unregister(this);
 			}
 		}.start(world, 20);

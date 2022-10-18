@@ -27,6 +27,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
+import net.mcreator.xpequalsbrain.init.XpequalsbrainModFeatures;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModEntities;
 
 import java.util.function.Supplier;
@@ -48,6 +49,8 @@ public class XpequalsbrainMod {
 
 		XpequalsbrainModItems.REGISTRY.register(bus);
 		XpequalsbrainModEntities.REGISTRY.register(bus);
+
+		XpequalsbrainModFeatures.REGISTRY.register(bus);
 
 	}
 

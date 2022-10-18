@@ -231,6 +231,123 @@ public class SpeakWithEinsteinProcedure {
 							SoundSource.AMBIENT, 1, (float) 0.7, false);
 				}
 			}
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.shulker.teleport")), SoundSource.NEUTRAL, 1,
+									1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.shulker.teleport")),
+									SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					{
+						Entity _ent = entity;
+						_ent.teleportTo(XpequalsbrainModVariables.MapVariables.get(world).LabLocX,
+								XpequalsbrainModVariables.MapVariables.get(world).LabLocY, XpequalsbrainModVariables.MapVariables.get(world).LabLocZ);
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(XpequalsbrainModVariables.MapVariables.get(world).LabLocX,
+									XpequalsbrainModVariables.MapVariables.get(world).LabLocY,
+									XpequalsbrainModVariables.MapVariables.get(world).LabLocZ, _ent.getYRot(), _ent.getXRot());
+					}
+					BuildActualLabProcedure.execute(world);
+					if (entity instanceof ServerPlayer _player) {
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("xpequalsbrain:lab_completed"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							Iterator _iterator = _ap.getRemainingCriteria().iterator();
+							while (_iterator.hasNext())
+								_player.getAdvancements().award(_adv, (String) _iterator.next());
+						}
+					}
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 30);
+			XpequalsbrainModVariables.MapVariables.get(world).EinsteinSpeakCounter = 2;
+			XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
+			XpequalsbrainModVariables.MapVariables.get(world).EinsteinLabMissionStarted = false;
+			XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
+		} else if (entity instanceof EinsteinEntity && XpequalsbrainModVariables.MapVariables.get(world).EinsteinSpeakCounter == 2) {
+			if (!world.isClientSide()) {
+				MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+				if (_mcserv != null)
+					_mcserv.getPlayerList().broadcastMessage(
+							new TextComponent("\u00A76Albert Einstein: \u00A7fAh evet evet bu i\u015F g\u00F6r\u00FCr."), ChatType.SYSTEM,
+							Util.NIL_UUID);
+			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos(x, y, z),
+							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.villager.celebrate")), SoundSource.AMBIENT, 1,
+							(float) 1.5);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.villager.celebrate")),
+							SoundSource.AMBIENT, 1, (float) 1.5, false);
+				}
+			}
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (!world.isClientSide()) {
+						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (_mcserv != null)
+							_mcserv.getPlayerList().broadcastMessage(
+									new TextComponent("\u00A76Albert Einstein: \u00A7fEski dostum da \u015Fimdi burada olur."), ChatType.SYSTEM,
+									Util.NIL_UUID);
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.parrot.imitate.zombie_villager")),
+									SoundSource.AMBIENT, 1, (float) 0.2);
+						} else {
+							_level.playLocalSound(x, y, z,
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.parrot.imitate.zombie_villager")),
+									SoundSource.AMBIENT, 1, (float) 0.2, false);
+						}
+					}
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 30);
 		}
 	}
 }

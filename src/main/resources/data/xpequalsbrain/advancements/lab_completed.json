@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:bricks"
+    },
+    "title": {
+      "translate": "advancements.lab_completed.title"
+    },
+    "description": {
+      "translate": "advancements.lab_completed.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "lab_completed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "xpequalsbrain:build_a_lab"
+}
