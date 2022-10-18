@@ -34,4 +34,6 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> CORAP_BOOTS = REGISTRY.register("corap_boots", () -> new CorapItem.Boots());
 	public static final RegistryObject<Item> DURTEN_KAZMA = REGISTRY.register("durten_kazma", () -> new DurtenKazmaItem());
 	public static final RegistryObject<Item> AUTO_SMELT_PICKAXE = REGISTRY.register("auto_smelt_pickaxe", () -> new AutoSmeltPickaxeItem());
+	public static final RegistryObject<Item> EINSTEIN = REGISTRY.register("einstein_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.EINSTEIN, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }

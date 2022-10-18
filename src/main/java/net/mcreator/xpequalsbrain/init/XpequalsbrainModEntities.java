@@ -17,6 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.xpequalsbrain.entity.FriendlybeeEntity;
+import net.mcreator.xpequalsbrain.entity.EinsteinEntity;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -27,6 +28,11 @@ public class XpequalsbrainModEntities {
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FriendlybeeEntity::new)
 
 					.sized(0.6f, 0.8f));
+	public static final RegistryObject<EntityType<EinsteinEntity>> EINSTEIN = register("einstein",
+			EntityType.Builder.<EinsteinEntity>of(EinsteinEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(3).setCustomClientFactory(EinsteinEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -36,11 +42,13 @@ public class XpequalsbrainModEntities {
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			FriendlybeeEntity.init();
+			EinsteinEntity.init();
 		});
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(FRIENDLYBEE.get(), FriendlybeeEntity.createAttributes().build());
+		event.put(EINSTEIN.get(), EinsteinEntity.createAttributes().build());
 	}
 }

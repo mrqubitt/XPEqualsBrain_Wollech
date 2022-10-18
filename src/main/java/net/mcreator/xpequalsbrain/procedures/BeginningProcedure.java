@@ -42,13 +42,20 @@ public class BeginningProcedure {
 		XpequalsbrainModVariables.BeeTalked = false;
 		XpequalsbrainModVariables.IsLevelZero = true;
 		XpequalsbrainModVariables.CowMissonStarted = false;
+		XpequalsbrainModVariables.MapVariables.get(world).EinsteinLabMissionStarted = false;
+		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
 		XpequalsbrainModVariables.BeeMissonCounter = 0;
 		XpequalsbrainModVariables.PlayerLevel = 0;
 		XpequalsbrainModVariables.TalkedToVillager = 0;
+		XpequalsbrainModVariables.MapVariables.get(world).EinsteinSpeakCounter = 0;
+		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
 		XpequalsbrainModVariables.BlocksBroken = 0;
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=xpequalsbrain:friendlybee]");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:bosszombie visible false");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "advancement revoke @a everything");

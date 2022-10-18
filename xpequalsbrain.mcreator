@@ -692,6 +692,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -826,6 +838,231 @@
           }
         ]
       }
+    },
+    {
+      "name": "ZombieBoss",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_boss",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LevelUpByZombies",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "level_up_by_zombies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AdvancedToLevelFive",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advanced_to_level_five",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "SetEinsteinLocation",
+      "type": "procedure",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_einstein_location",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EinsteinLocation",
+      "type": "command",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "einstein_location"
+    },
+    {
+      "name": "Einstein",
+      "type": "livingentity",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "einstein"
+    },
+    {
+      "name": "SpawnEinstein",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawn_einstein",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SpeakWithEinstein",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "speak_with_einstein",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "KopekIq",
+      "type": "achievement",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kopek_iq"
+    },
+    {
+      "name": "BuildALab",
+      "type": "achievement",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "build_a_lab"
+    },
+    {
+      "name": "SetLabLocation",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_lab_location",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LabLocation",
+      "type": "command",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lab_location"
     }
   ],
   "variable_elements": [
@@ -882,30 +1119,84 @@
       "type": "number",
       "scope": "global",
       "value": "0"
+    },
+    {
+      "name": "EinsteinLocationX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "EinsteinLocationY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "EinsteinLocationZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "EinsteinSpeakCounter",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "EinsteinLabMissionStarted",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "LabLocX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "LabLocY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "LabLocZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "advancements.build_a_lab.descr": "Tuğlaları en bilimsel halleri ile taşı.",
       "item.xpequalsbrain.durtme_cubugu": "Durtme Cubugu",
       "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+      "advancements.kopek_iq.title": "Afferim oğluma!",
       "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
+      "advancements.build_a_lab.title": "Laboratuvar inşaa et!",
       "item.xpequalsbrain.corap_helmet": "Corap Helmet",
       "advancements.polen_mission.title": "Arıya Polen Gerek",
       "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
       "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!",
+      "entity.xpequalsbrain.einstein": "Einstein",
       "advancements.cow_misson_started.descr": "İneklere 5 adet tahıl getir.",
       "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
       "advancements.polen_mission_completed.title": "Polenler teslim edildi!",
       "item.xpequalsbrain.small_xp": "Xp Topu",
       "entity.xpequalsbrain.friendlybee": "Friendlybee",
       "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
+      "advancements.kopek_iq.descr": "Havlayan köpek ısırmaz!",
       "advancements.ari_kafa.title": "Arı Kafa",
       "item.xpequalsbrain.polen": "Polen",
       "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
       "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg",
       "item.xpequalsbrain.corap_chestplate": "Corap Body",
       "item.xpequalsbrain.auto_smelt_pickaxe": "☺§6Kazmafırın-3000",
+      "item.xpequalsbrain.einstein_spawn_egg": "Einstein Spawn Egg",
       "advancements.cow_brain.title": "MÖÖÖÖÖ",
       "item.xpequalsbrain.corap_leggings": "Corap Leggings",
       "advancements.cow_misson_completed.title": "Tok inekler!",

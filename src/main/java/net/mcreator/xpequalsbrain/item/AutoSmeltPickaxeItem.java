@@ -62,7 +62,7 @@ public class AutoSmeltPickaxeItem extends PickaxeItem {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			KazmaFirin3000prosedureProcedure.execute(world, entity);
+			KazmaFirin3000prosedureProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

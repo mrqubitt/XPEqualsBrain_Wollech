@@ -24,15 +24,12 @@ import net.mcreator.xpequalsbrain.network.XpequalsbrainModVariables;
 
 import java.util.Iterator;
 
-public class AdvancedToLevelTwoProcedure {
+public class AdvancedToLevelFiveProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		XpequalsbrainModVariables.MapVariables.get(world).IQ_NAME = "\u0130nek";
-		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
-		TitleActivatorProcedure.execute(world, x, y, z);
 		if (entity instanceof ServerPlayer _player) {
-			Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("xpequalsbrain:cow_brain"));
+			Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("xpequalsbrain:kopek_iq"));
 			AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 			if (!_ap.isDone()) {
 				Iterator _iterator = _ap.getRemainingCriteria().iterator();
@@ -43,20 +40,23 @@ public class AdvancedToLevelTwoProcedure {
 		if (!world.isClientSide()) {
 			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 			if (_mcserv != null)
-				_mcserv.getPlayerList().broadcastMessage(
-						new TextComponent(
-								"\u00A7a[!]\u00A7e Tebrikler! Art\u0131k \u00A76\u00A7lineklerle\u00A7e konu\u015Fabilecek d\u00FCzeydesin."),
-						ChatType.SYSTEM, Util.NIL_UUID);
+				_mcserv.getPlayerList()
+						.broadcastMessage(new TextComponent(
+								"\u00A7a[!]\u00A7e Tebrikler! Art\u0131k bir \u00A76\u00A7lk\u00F6pek\u00A7e kadar ak\u0131ll\u0131s\u0131n!"),
+								ChatType.SYSTEM, Util.NIL_UUID);
 		}
 		if (world instanceof Level _level) {
 			if (!_level.isClientSide()) {
 				_level.playSound(null, new BlockPos(x, y, z),
-						ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT, 1, 1);
+						ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT, 2, 1);
 			} else {
 				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
-						SoundSource.AMBIENT, 1, 1, false);
+						SoundSource.AMBIENT, 2, 1, false);
 			}
 		}
+		XpequalsbrainModVariables.MapVariables.get(world).IQ_NAME = "K\u00F6pek";
+		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
+		TitleActivatorProcedure.execute(world, x, y, z);
 		new Object() {
 			private int ticks = 0;
 			private float waitTicks;
@@ -81,21 +81,22 @@ public class AdvancedToLevelTwoProcedure {
 				if (!world.isClientSide()) {
 					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 					if (_mcserv != null)
-						_mcserv.getPlayerList().broadcastMessage(new TextComponent("\u00A7a[!]\u00A7e Devam etmek i\u00E7in ah\u0131r\u0131 bul."),
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+								"\u00A7a[!]\u00A7e \u00C7abucak ak\u0131llan\u0131yorsun! \u00C7ok dikkat \u00E7ekmemeye \u00E7al\u0131\u015F."),
 								ChatType.SYSTEM, Util.NIL_UUID);
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, new BlockPos(x, y, z),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT, 1,
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT, 2,
 								1);
 					} else {
 						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
-								SoundSource.AMBIENT, 1, 1, false);
+								SoundSource.AMBIENT, 2, 1, false);
 					}
 				}
 				MinecraftForge.EVENT_BUS.unregister(this);
 			}
-		}.start(world, 30);
+		}.start(world, 20);
 	}
 }

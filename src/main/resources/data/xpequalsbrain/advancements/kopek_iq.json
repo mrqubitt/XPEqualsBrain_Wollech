@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:bone"
+    },
+    "title": {
+      "translate": "advancements.kopek_iq.title"
+    },
+    "description": {
+      "translate": "advancements.kopek_iq.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "kopek_iq": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "xpequalsbrain:cow_brain"
+}

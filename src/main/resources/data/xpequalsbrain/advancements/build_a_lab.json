@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:bricks"
+    },
+    "title": {
+      "translate": "advancements.build_a_lab.title"
+    },
+    "description": {
+      "translate": "advancements.build_a_lab.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "build_a_lab": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "xpequalsbrain:kopek_iq"
+}

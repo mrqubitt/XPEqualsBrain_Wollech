@@ -43,9 +43,10 @@ public class AdvancedToLevelOneProcedure {
 		if (!world.isClientSide()) {
 			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 			if (_mcserv != null)
-				_mcserv.getPlayerList().broadcastMessage(
-						new TextComponent("\u00A7a[!] \u00A7eTebrikler! Art\u0131k ar\u0131larla konu\u015Fabilecek d\u00FCzeydesin."),
-						ChatType.SYSTEM, Util.NIL_UUID);
+				_mcserv.getPlayerList()
+						.broadcastMessage(new TextComponent(
+								"\u00A7a[!] \u00A7eTebrikler! Art\u0131k \u00A76\u00A7lar\u0131larla\u00A7e konu\u015Fabilecek d\u00FCzeydesin."),
+								ChatType.SYSTEM, Util.NIL_UUID);
 		}
 		if (world instanceof Level _level) {
 			if (!_level.isClientSide()) {

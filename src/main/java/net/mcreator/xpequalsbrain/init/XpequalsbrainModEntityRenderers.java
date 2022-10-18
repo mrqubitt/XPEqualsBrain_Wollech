@@ -10,11 +10,13 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.xpequalsbrain.client.renderer.FriendlybeeRenderer;
+import net.mcreator.xpequalsbrain.client.renderer.EinsteinRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class XpequalsbrainModEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(XpequalsbrainModEntities.FRIENDLYBEE.get(), FriendlybeeRenderer::new);
+		event.registerEntityRenderer(XpequalsbrainModEntities.EINSTEIN.get(), EinsteinRenderer::new);
 	}
 }

@@ -101,6 +101,14 @@ public class XpequalsbrainModVariables {
 	public static class MapVariables extends SavedData {
 		public static final String DATA_NAME = "xpequalsbrain_mapvars";
 		public String IQ_NAME = "\"\"";
+		public double EinsteinLocationX = 0;
+		public double EinsteinLocationY = 0;
+		public double EinsteinLocationZ = 0;
+		public double EinsteinSpeakCounter = 0;
+		public boolean EinsteinLabMissionStarted = false;
+		public double LabLocX = 0;
+		public double LabLocY = 0;
+		public double LabLocZ = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -110,11 +118,27 @@ public class XpequalsbrainModVariables {
 
 		public void read(CompoundTag nbt) {
 			IQ_NAME = nbt.getString("IQ_NAME");
+			EinsteinLocationX = nbt.getDouble("EinsteinLocationX");
+			EinsteinLocationY = nbt.getDouble("EinsteinLocationY");
+			EinsteinLocationZ = nbt.getDouble("EinsteinLocationZ");
+			EinsteinSpeakCounter = nbt.getDouble("EinsteinSpeakCounter");
+			EinsteinLabMissionStarted = nbt.getBoolean("EinsteinLabMissionStarted");
+			LabLocX = nbt.getDouble("LabLocX");
+			LabLocY = nbt.getDouble("LabLocY");
+			LabLocZ = nbt.getDouble("LabLocZ");
 		}
 
 		@Override
 		public CompoundTag save(CompoundTag nbt) {
 			nbt.putString("IQ_NAME", IQ_NAME);
+			nbt.putDouble("EinsteinLocationX", EinsteinLocationX);
+			nbt.putDouble("EinsteinLocationY", EinsteinLocationY);
+			nbt.putDouble("EinsteinLocationZ", EinsteinLocationZ);
+			nbt.putDouble("EinsteinSpeakCounter", EinsteinSpeakCounter);
+			nbt.putBoolean("EinsteinLabMissionStarted", EinsteinLabMissionStarted);
+			nbt.putDouble("LabLocX", LabLocX);
+			nbt.putDouble("LabLocY", LabLocY);
+			nbt.putDouble("LabLocZ", LabLocZ);
 			return nbt;
 		}
 
