@@ -81,7 +81,7 @@ public class AdvancedToLevelSixProcedure {
 					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 					if (_mcserv != null)
 						_mcserv.getPlayerList().broadcastMessage(new TextComponent(
-								"\u00A7a[!]\u00A74 Oyuncular\u0131n \u00E7ok deneyim d\u00FC\u015F\u00FCrd\u00FC\u011F\u00FC bilinmektedir. \u00A7kKatliam\u00A7r yapmal\u0131s\u0131n."),
+								"\u00A7a[!]\u00A74 Oyuncular\u0131n \u00E7ok deneyim d\u00FC\u015F\u00FCrd\u00FC\u011F\u00FC bilinmektedir. \u00A7kKatliam\u00A7r yapmal\u0131s\u0131n!"),
 								ChatType.SYSTEM, Util.NIL_UUID);
 				}
 				if (world instanceof Level _level) {

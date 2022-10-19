@@ -1182,14 +1182,6 @@
       "path": "~/LevelAdvancement"
     },
     {
-      "name": "DehaIqRightclicked",
-      "type": "procedure",
-      "sortid": 63,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "deha_iq_rightclicked"
-    },
-    {
       "name": "Insan",
       "type": "achievement",
       "sortid": 64,
@@ -1232,15 +1224,6 @@
       "path": "~/LevelAdvancement"
     },
     {
-      "name": "DehaIq",
-      "type": "item",
-      "sortid": 63,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "deha_iq",
-      "path": "~/LevelAdvancement"
-    },
-    {
       "name": "SpawnStephenH",
       "type": "procedure",
       "sortid": 65,
@@ -1269,12 +1252,96 @@
       }
     },
     {
-      "name": "DehaIqRightclicked2",
-      "type": "procedure",
+      "name": "DehalarinIqsu",
+      "type": "item",
       "sortid": 66,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "deha_iq_rightclicked_2"
+      "registry_name": "dehalarin_iqsu"
+    },
+    {
+      "name": "DehalarinIqsuRightclicked",
+      "type": "procedure",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dehalarin_iqsu_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ZombieBossEpic",
+      "type": "livingentity",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_boss_epic"
+    },
+    {
+      "name": "ZombieBossEpicEntityIsHurt",
+      "type": "procedure",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_boss_epic_entity_is_hurt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ZombieBossEpicEntityDies",
+      "type": "procedure",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_boss_epic_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1409,6 +1476,7 @@
       "entity.xpequalsbrain.stephen_hawking": "Stephen Hawking",
       "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
       "advancements.kopek_iq.title": "Afferim oğluma!",
+      "item.xpequalsbrain.zombie_boss_epic_spawn_egg": "Zombie Boss Epic Spawn Egg",
       "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
       "advancements.build_a_lab.title": "Laboratuvar inşaa et!",
       "item.xpequalsbrain.corap_helmet": "Corap Helmet",
@@ -1434,9 +1502,10 @@
       "item.xpequalsbrain.einstein_spawn_egg": "Einstein Spawn Egg",
       "advancements.cow_brain.title": "MÖÖÖÖÖ",
       "item.xpequalsbrain.corap_leggings": "Corap Leggings",
+      "item.xpequalsbrain.dehalarin_iqsu": "Deha IQ",
+      "entity.xpequalsbrain.zombie_boss_epic": "Zombie Boss Epic",
       "advancements.cow_misson_completed.title": "Tok inekler!",
       "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
-      "item.xpequalsbrain.deha_iq": "Deha Iq",
       "advancements.cow_misson_completed.descr": "İnek deneyimlerinin tadını çıkar.",
       "item.xpequalsbrain.corap_boots": "Corap Boots",
       "advancements.mini_mini_beyin.title": "Mini Mini Beyin",

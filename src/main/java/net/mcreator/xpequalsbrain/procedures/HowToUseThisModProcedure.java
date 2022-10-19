@@ -54,6 +54,14 @@ public class HowToUseThisModProcedure {
 		if (!world.isClientSide()) {
 			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 			if (_mcserv != null)
+				_mcserv.getPlayerList()
+						.broadcastMessage(new TextComponent(
+								"-Ma\u011Farada silahlar\u0131n\u0131 ve z\u0131rhlar\u0131n\u0131 haz\u0131rlad\u0131\u011F\u0131ndan emin ol."),
+								ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
 				_mcserv.getPlayerList().broadcastMessage(new TextComponent(
 						"-Einstein i\u00E7in laboratuvar g\u00F6revini yaparken, laboratuvar\u0131n\u0131n tam ortas\u0131na ge\u00E7ip /laboratuvar_konumu yazmay\u0131 unutma. Yapt\u0131\u011F\u0131n yap\u0131 \u00F6nemli de\u011Fil, yerine yenisi gelecek."),
 						ChatType.SYSTEM, Util.NIL_UUID);
@@ -76,7 +84,7 @@ public class HowToUseThisModProcedure {
 			if (_mcserv != null)
 				_mcserv.getPlayerList()
 						.broadcastMessage(new TextComponent(
-								"-Kontrol d\u0131\u015F\u0131 veya hileyle mod atlamamaya dikkat et, saya\u00E7ta sorun olu\u015Fturabiliyor."),
+								"-Kontrol d\u0131\u015F\u0131 veya hileyle seviye atlamamaya dikkat et, saya\u00E7ta sorun olu\u015Fturabiliyor."),
 								ChatType.SYSTEM, Util.NIL_UUID);
 		}
 	}

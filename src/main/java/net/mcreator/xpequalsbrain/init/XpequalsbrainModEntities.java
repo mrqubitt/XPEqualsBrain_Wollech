@@ -16,6 +16,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.xpequalsbrain.entity.ZombieBossEpicEntity;
 import net.mcreator.xpequalsbrain.entity.StephenHawkingEntity;
 import net.mcreator.xpequalsbrain.entity.FriendlybeeEntity;
 import net.mcreator.xpequalsbrain.entity.EinsteinEntity;
@@ -28,7 +29,7 @@ public class XpequalsbrainModEntities {
 			EntityType.Builder.<FriendlybeeEntity>of(FriendlybeeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FriendlybeeEntity::new)
 
-					.sized(0.6f, 0.8f));
+					.sized(0.4f, 0.7f));
 	public static final RegistryObject<EntityType<EinsteinEntity>> EINSTEIN = register("einstein",
 			EntityType.Builder.<EinsteinEntity>of(EinsteinEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(3).setCustomClientFactory(EinsteinEntity::new)
@@ -37,6 +38,11 @@ public class XpequalsbrainModEntities {
 	public static final RegistryObject<EntityType<StephenHawkingEntity>> STEPHEN_HAWKING = register("stephen_hawking",
 			EntityType.Builder.<StephenHawkingEntity>of(StephenHawkingEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(StephenHawkingEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ZombieBossEpicEntity>> ZOMBIE_BOSS_EPIC = register("zombie_boss_epic",
+			EntityType.Builder.<ZombieBossEpicEntity>of(ZombieBossEpicEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ZombieBossEpicEntity::new)
 
 					.sized(0.6f, 1.8f));
 
@@ -50,6 +56,7 @@ public class XpequalsbrainModEntities {
 			FriendlybeeEntity.init();
 			EinsteinEntity.init();
 			StephenHawkingEntity.init();
+			ZombieBossEpicEntity.init();
 		});
 	}
 
@@ -58,5 +65,6 @@ public class XpequalsbrainModEntities {
 		event.put(FRIENDLYBEE.get(), FriendlybeeEntity.createAttributes().build());
 		event.put(EINSTEIN.get(), EinsteinEntity.createAttributes().build());
 		event.put(STEPHEN_HAWKING.get(), StephenHawkingEntity.createAttributes().build());
+		event.put(ZOMBIE_BOSS_EPIC.get(), ZombieBossEpicEntity.createAttributes().build());
 	}
 }

@@ -34,6 +34,7 @@ public class EinsteinEntity extends PathfinderMob {
 		setNoAi(false);
 		setCustomName(new TextComponent("Albert Einstein"));
 		setCustomNameVisible(true);
+		setPersistenceRequired();
 	}
 
 	@Override
@@ -52,6 +53,11 @@ public class EinsteinEntity extends PathfinderMob {
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
 	}
 
 	@Override

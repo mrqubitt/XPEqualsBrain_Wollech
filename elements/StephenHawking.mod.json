@@ -48,8 +48,8 @@
     "mobCreatureType": "ILLAGER",
     "attackStrength": 1,
     "attackKnockback": 0.0,
-    "knockbackResistance": 0.0,
-    "movementSpeed": 1.0,
+    "knockbackResistance": 1.0,
+    "movementSpeed": 0.2,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
@@ -78,7 +78,7 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "CUSTOM:DehaIq"
+      "value": "CUSTOM:DehalarinIqsu"
     },
     "livingSound": {
       "value": ""
@@ -122,8 +122,8 @@
       "value": ""
     },
     "rangedItemType": "Default item",
-    "spawnThisMob": true,
-    "doesDespawnWhenIdle": true,
+    "spawnThisMob": false,
+    "doesDespawnWhenIdle": false,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,

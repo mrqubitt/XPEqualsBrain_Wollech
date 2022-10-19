@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "deha_iq_texture",
     "customModelName": "Normal",
-    "name": "Deha Iq",
+    "name": "Deha IQ",
     "rarity": "EPIC",
     "creativeTab": {
       "value": "MISC"
@@ -25,12 +25,15 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "Sadece dehalara özel!"
+      "Bir dehadan diğerine miras."
     ],
-    "hasGlow": false,
+    "hasGlow": true,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "DehalarinIqsuRightclicked"
+    },
     "isFood": false,
     "nutritionalValue": 4,
     "saturation": 0.3,

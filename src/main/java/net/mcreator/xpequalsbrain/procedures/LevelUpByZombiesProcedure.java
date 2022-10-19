@@ -10,6 +10,8 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,6 +19,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
+
+import net.mcreator.xpequalsbrain.init.XpequalsbrainModEntities;
+import net.mcreator.xpequalsbrain.entity.ZombieBossEpicEntity;
 
 import javax.annotation.Nullable;
 
@@ -54,6 +59,17 @@ public class LevelUpByZombiesProcedure {
 				if (sourceentity instanceof Player _player)
 					_player.giveExperienceLevels(1);
 			} else if ((sourceentity instanceof Player _plr ? _plr.experienceLevel : 0) == 55) {
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new ZombieBossEpicEntity(XpequalsbrainModEntities.ZOMBIE_BOSS_EPIC.get(), _level);
+					entityToSpawn.moveTo(x, (y + 5), z, 0, 0);
+					entityToSpawn.setYBodyRot(0);
+					entityToSpawn.setYHeadRot(0);
+					entityToSpawn.setDeltaMovement(0, 0, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
+					world.addFreshEntity(entityToSpawn);
+				}
 				ZombieBossProcedure.execute(world, x, y, z);
 				if (sourceentity instanceof Player _player)
 					_player.giveExperienceLevels(1);

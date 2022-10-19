@@ -235,5 +235,46 @@ public class BeginningProcedure {
 				MinecraftForge.EVENT_BUS.unregister(this);
 			}
 		}.start(world, 140);
+		new Object() {
+			private int ticks = 0;
+			private float waitTicks;
+			private LevelAccessor world;
+
+			public void start(LevelAccessor world, int waitTicks) {
+				this.waitTicks = waitTicks;
+				MinecraftForge.EVENT_BUS.register(this);
+				this.world = world;
+			}
+
+			@SubscribeEvent
+			public void tick(TickEvent.ServerTickEvent event) {
+				if (event.phase == TickEvent.Phase.END) {
+					this.ticks += 1;
+					if (this.ticks >= this.waitTicks)
+						run();
+				}
+			}
+
+			private void run() {
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(
+								new TextComponent("\u00A7a[!]\u00A7e Canl\u0131lardan gelecek deneyim ilk seviyen i\u00E7in yeterli olmal\u0131."),
+								ChatType.SYSTEM, Util.NIL_UUID);
+				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z),
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT,
+								(float) 0.5, (float) 1.7);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
+								SoundSource.AMBIENT, (float) 0.5, (float) 1.7, false);
+					}
+				}
+				MinecraftForge.EVENT_BUS.unregister(this);
+			}
+		}.start(world, 180);
 	}
 }

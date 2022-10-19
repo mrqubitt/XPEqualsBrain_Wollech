@@ -7,7 +7,7 @@ public class TwoIQGUIProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) == 1) {
+		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) < 3) {
 			return true;
 		}
 		return false;

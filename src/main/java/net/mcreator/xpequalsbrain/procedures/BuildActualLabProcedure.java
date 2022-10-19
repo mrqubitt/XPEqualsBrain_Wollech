@@ -69,10 +69,12 @@ public class BuildActualLabProcedure {
 								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.use")), SoundSource.NEUTRAL, 20, 1, false);
 					}
 				}
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.EXPLOSION, XpequalsbrainModVariables.MapVariables.get(world).LabLocX,
-							XpequalsbrainModVariables.MapVariables.get(world).LabLocY, XpequalsbrainModVariables.MapVariables.get(world).LabLocZ, 50,
-							10, 5, 10, Math.random());
+				for (int index0 = 0; index0 < (int) (5); index0++) {
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles(ParticleTypes.EXPLOSION, XpequalsbrainModVariables.MapVariables.get(world).LabLocX,
+								XpequalsbrainModVariables.MapVariables.get(world).LabLocY, XpequalsbrainModVariables.MapVariables.get(world).LabLocZ,
+								10, 10, 5, 10, Math.random());
+				}
 				MinecraftForge.EVENT_BUS.unregister(this);
 			}
 		}.start(world, 20);
@@ -120,10 +122,12 @@ public class BuildActualLabProcedure {
 								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.use")), SoundSource.NEUTRAL, 20, 1, false);
 					}
 				}
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.EXPLOSION, XpequalsbrainModVariables.MapVariables.get(world).LabLocX,
-							XpequalsbrainModVariables.MapVariables.get(world).LabLocY, XpequalsbrainModVariables.MapVariables.get(world).LabLocZ, 50,
-							10, 5, 10, Math.random());
+				for (int index1 = 0; index1 < (int) (5); index1++) {
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles(ParticleTypes.EXPLOSION, XpequalsbrainModVariables.MapVariables.get(world).LabLocX,
+								XpequalsbrainModVariables.MapVariables.get(world).LabLocY, XpequalsbrainModVariables.MapVariables.get(world).LabLocZ,
+								10, 10, 5, 10, Math.random());
+				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, new BlockPos(XpequalsbrainModVariables.MapVariables.get(world).LabLocX,

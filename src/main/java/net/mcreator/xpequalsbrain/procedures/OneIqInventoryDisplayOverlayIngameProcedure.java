@@ -7,7 +7,7 @@ public class OneIqInventoryDisplayOverlayIngameProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) == 0) {
+		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) <= 1) {
 			return true;
 		}
 		return false;

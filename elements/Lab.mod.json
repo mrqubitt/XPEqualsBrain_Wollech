@@ -3,9 +3,9 @@
   "_type": "structure",
   "definition": {
     "structure": "lab",
-    "randomlyRotateStructure": true,
+    "randomlyRotateStructure": false,
     "surfaceDetectionType": "First motion blocking block",
-    "spawnProbability": 10000,
+    "spawnProbability": 0,
     "minCountPerChunk": 1,
     "maxCountPerChunk": 1,
     "spawnLocation": "Ground",
