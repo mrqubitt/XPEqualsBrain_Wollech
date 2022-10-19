@@ -16,6 +16,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.xpequalsbrain.entity.StephenHawkingEntity;
 import net.mcreator.xpequalsbrain.entity.FriendlybeeEntity;
 import net.mcreator.xpequalsbrain.entity.EinsteinEntity;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
@@ -33,6 +34,11 @@ public class XpequalsbrainModEntities {
 					.setUpdateInterval(3).setCustomClientFactory(EinsteinEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<StephenHawkingEntity>> STEPHEN_HAWKING = register("stephen_hawking",
+			EntityType.Builder.<StephenHawkingEntity>of(StephenHawkingEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(StephenHawkingEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -43,6 +49,7 @@ public class XpequalsbrainModEntities {
 		event.enqueueWork(() -> {
 			FriendlybeeEntity.init();
 			EinsteinEntity.init();
+			StephenHawkingEntity.init();
 		});
 	}
 
@@ -50,5 +57,6 @@ public class XpequalsbrainModEntities {
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(FRIENDLYBEE.get(), FriendlybeeEntity.createAttributes().build());
 		event.put(EINSTEIN.get(), EinsteinEntity.createAttributes().build());
+		event.put(STEPHEN_HAWKING.get(), StephenHawkingEntity.createAttributes().build());
 	}
 }

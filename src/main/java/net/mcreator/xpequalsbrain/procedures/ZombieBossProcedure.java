@@ -29,6 +29,9 @@ public class ZombieBossProcedure {
 						10, 1, false);
 			}
 		}
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=zombie]");
 		new Object() {
 			private int ticks = 0;
 			private float waitTicks;
@@ -54,7 +57,7 @@ public class ZombieBossProcedure {
 					_level.getServer().getCommands().performCommand(
 							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
 									_level.getServer(), null).withSuppressedOutput(),
-							"summon zombie ~ ~10 ~ {Attributes:[{Name:\"generic.max_health\",Base:100}],CustomName:\"\\\"Zombi Abisi\\\"\",Health:200,id:bosszombie}");
+							"summon zombie ~ ~10 ~ {Attributes:[{Name:\"generic.max_health\",Base:100}],CustomName:\"\\\"Zombi Abisi\\\"\",Health:200,id:bosszombie,HandItems:[{Count:1,id:diamond_axe},{HandDropChances:[1.0f]}]}");
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, new BlockPos(x, y, z),

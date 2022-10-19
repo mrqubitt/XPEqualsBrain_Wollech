@@ -348,6 +348,49 @@ public class SpeakWithEinsteinProcedure {
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, 30);
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.shulker.teleport")), SoundSource.AMBIENT, 1,
+									1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.shulker.teleport")),
+									SoundSource.AMBIENT, 1, 1, false);
+						}
+					}
+					{
+						Entity _ent = entity;
+						_ent.teleportTo(XpequalsbrainModVariables.MapVariables.get(world).LabLocX, (y - 20),
+								XpequalsbrainModVariables.MapVariables.get(world).LabLocZ);
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(XpequalsbrainModVariables.MapVariables.get(world).LabLocX, (y - 20),
+									XpequalsbrainModVariables.MapVariables.get(world).LabLocZ, _ent.getYRot(), _ent.getXRot());
+					}
+					SpawnStephenHProcedure.execute(world, x, y, z);
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 70);
 		}
 	}
 }

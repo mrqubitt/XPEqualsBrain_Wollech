@@ -692,18 +692,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -722,42 +710,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "AutoLevelUp",
-      "type": "procedure",
-      "sortid": 38,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "auto_level_up",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
           },
           {
             "name": "x",
@@ -806,38 +758,6 @@
         ]
       },
       "path": "~/LevelAdvancement"
-    },
-    {
-      "name": "GiantAttackProcedure",
-      "type": "procedure",
-      "sortid": 40,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "giant_attack_procedure",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     },
     {
       "name": "ZombieBoss",
@@ -1095,6 +1015,266 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "lab_completed"
+    },
+    {
+      "name": "HowToUseThisMod",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "how_to_use_this_mod",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ZombieLocation",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_location",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ZombieLocationCommand",
+      "type": "command",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_location_command"
+    },
+    {
+      "name": "StephenHawkingEntityIsHurt",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stephen_hawking_entity_is_hurt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StephenHawkingOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stephen_hawking_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StephenHawkingPlayerCollidesWithThisEntity",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stephen_hawking_player_collides_with_this_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StephenHawkingEntityDies",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stephen_hawking_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StephenHawking",
+      "type": "livingentity",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stephen_hawking",
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "DehaIqRightclicked",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deha_iq_rightclicked"
+    },
+    {
+      "name": "Insan",
+      "type": "achievement",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insan",
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "AdvancedToLevelSix",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advanced_to_level_six",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "DehaIq",
+      "type": "item",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deha_iq",
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "SpawnStephenH",
+      "type": "procedure",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawn_stephen_h",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DehaIqRightclicked2",
+      "type": "procedure",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deha_iq_rightclicked_2"
     }
   ],
   "variable_elements": [
@@ -1199,6 +1379,24 @@
       "type": "number",
       "scope": "map",
       "value": "0"
+    },
+    {
+      "name": "ZombieX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "ZombieY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "ZombieZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -1206,6 +1404,9 @@
     "en_us": {
       "advancements.build_a_lab.descr": "Tuğlaları en bilimsel halleri ile taşı.",
       "item.xpequalsbrain.durtme_cubugu": "Durtme Cubugu",
+      "advancements.insan.title": "Hooman!",
+      "advancements.insan.descr": "Kedilerin efendisi...",
+      "entity.xpequalsbrain.stephen_hawking": "Stephen Hawking",
       "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
       "advancements.kopek_iq.title": "Afferim oğluma!",
       "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
@@ -1235,9 +1436,11 @@
       "item.xpequalsbrain.corap_leggings": "Corap Leggings",
       "advancements.cow_misson_completed.title": "Tok inekler!",
       "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
+      "item.xpequalsbrain.deha_iq": "Deha Iq",
       "advancements.cow_misson_completed.descr": "İnek deneyimlerinin tadını çıkar.",
       "item.xpequalsbrain.corap_boots": "Corap Boots",
       "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
+      "item.xpequalsbrain.stephen_hawking_spawn_egg": "Stephen Hawking Spawn Egg",
       "item.xpequalsbrain.tutamacli_durtme_cubugu": "Tutamaçlı Dürtme Çubuğu",
       "item.xpequalsbrain.durten_kazma": "Dürten Kazma"
     }

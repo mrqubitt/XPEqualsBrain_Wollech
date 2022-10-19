@@ -109,6 +109,9 @@ public class XpequalsbrainModVariables {
 		public double LabLocX = 0;
 		public double LabLocY = 0;
 		public double LabLocZ = 0;
+		public double ZombieX = 0;
+		public double ZombieY = 0;
+		public double ZombieZ = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -126,6 +129,9 @@ public class XpequalsbrainModVariables {
 			LabLocX = nbt.getDouble("LabLocX");
 			LabLocY = nbt.getDouble("LabLocY");
 			LabLocZ = nbt.getDouble("LabLocZ");
+			ZombieX = nbt.getDouble("ZombieX");
+			ZombieY = nbt.getDouble("ZombieY");
+			ZombieZ = nbt.getDouble("ZombieZ");
 		}
 
 		@Override
@@ -139,6 +145,9 @@ public class XpequalsbrainModVariables {
 			nbt.putDouble("LabLocX", LabLocX);
 			nbt.putDouble("LabLocY", LabLocY);
 			nbt.putDouble("LabLocZ", LabLocZ);
+			nbt.putDouble("ZombieX", ZombieX);
+			nbt.putDouble("ZombieY", ZombieY);
+			nbt.putDouble("ZombieZ", ZombieZ);
 			return nbt;
 		}
 

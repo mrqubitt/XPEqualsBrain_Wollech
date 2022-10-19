@@ -11,10 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 
-import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
-
 public class KazmaFirin3000prosedureProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(Items.RAW_IRON)) : false) {
@@ -124,16 +122,6 @@ public class KazmaFirin3000prosedureProcedure {
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, 1);
-		}
-		if (entity instanceof Player _playerHasItem
-				? _playerHasItem.getInventory().contains(new ItemStack(XpequalsbrainModItems.SMALL_XP.get()))
-				: false) {
-			if (entity instanceof Player _player) {
-				ItemStack _stktoremove = new ItemStack(XpequalsbrainModItems.SMALL_XP.get());
-				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
-						_player.inventoryMenu.getCraftSlots());
-			}
-			SmallXpRightclickedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

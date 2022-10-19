@@ -59,6 +59,9 @@ public class BeginningProcedure {
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "advancement revoke @a everything");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "gamerule keepInventory true");
 		new Object() {
 			private int ticks = 0;
 			private float waitTicks;
@@ -80,11 +83,6 @@ public class BeginningProcedure {
 			}
 
 			private void run() {
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performCommand(
-							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
-									_level.getServer(), null).withSuppressedOutput(),
-							"summon minecraft:armor_stand ~ ~2 ~ {Invisible:1b,Marker:1b,CustomName:'[{\\\"text\\\":\\\"[!] \\\",\\\"color\\\":\\\"green\\\"},{\\\"text\\\":\\\"Beynine bir \\u015Feyler olmu\\u015F. M\\u0130N\\u0130C\\u0130K, BAK!\\\",\\\"color\\\":\\\"yellow\\\"}]',CustomNameVisible:1b}");
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, new BlockPos(x, y, z),
@@ -194,23 +192,48 @@ public class BeginningProcedure {
 			}
 
 			private void run() {
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands()
-							.performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-									new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-									"kill @e[distance=..5,type=minecraft:armor_stand]");
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(
+								new TextComponent("\u00A76\u00A7l[!]\u00A74 Yeni \u00DCretimler A\u00E7\u0131ld\u0131!"), ChatType.SYSTEM,
+								Util.NIL_UUID);
+				}
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+								"\u00A76\u00A7l+\u00A7r\u00A7b D\u00FCrtme \u00C7ubu\u011Fu \u00A76\u00A7l->\u00A7r\u00A7b Envanterinde bir tahta plaka ile \u00FCretilir."),
+								ChatType.SYSTEM, Util.NIL_UUID);
+				}
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+								"\u00A76\u00A7l+\u00A7r\u00A7b D\u00FCrten Kazma \u00A76\u00A7l->\u00A7r\u00A7b Envanterinde bir d\u00FCrtme \u00E7ubu\u011Fu ile \u00FCretilir."),
+								ChatType.SYSTEM, Util.NIL_UUID);
+				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, new BlockPos(x, y, z),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_cluster.break")), SoundSource.AMBIENT, 2,
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT, 1,
 								1);
 					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_cluster.break")),
-								SoundSource.AMBIENT, 2, 1, false);
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
+								SoundSource.AMBIENT, 1, 1, false);
+					}
+				}
+				if (entity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("xpequalsbrain:mini_mini_beyin"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						Iterator _iterator = _ap.getRemainingCriteria().iterator();
+						while (_iterator.hasNext())
+							_player.getAdvancements().award(_adv, (String) _iterator.next());
 					}
 				}
 				MinecraftForge.EVENT_BUS.unregister(this);
 			}
-		}.start(world, 400);
+		}.start(world, 140);
 	}
 }

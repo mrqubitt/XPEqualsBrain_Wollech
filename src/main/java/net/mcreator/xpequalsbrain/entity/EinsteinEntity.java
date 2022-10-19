@@ -64,6 +64,17 @@ public class EinsteinEntity extends PathfinderMob {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.death"));
 	}
 
+	@Override
+	public boolean hurt(DamageSource source, float amount) {
+		if (source == DamageSource.FALL)
+			return false;
+		if (source == DamageSource.DROWN)
+			return false;
+		if (source == DamageSource.ANVIL)
+			return false;
+		return super.hurt(source, amount);
+	}
+
 	public static void init() {
 	}
 

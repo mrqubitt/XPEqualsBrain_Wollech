@@ -17,6 +17,7 @@ import net.mcreator.xpequalsbrain.item.SmallXpItem;
 import net.mcreator.xpequalsbrain.item.PolenItem;
 import net.mcreator.xpequalsbrain.item.DurtmeCubuguItem;
 import net.mcreator.xpequalsbrain.item.DurtenKazmaItem;
+import net.mcreator.xpequalsbrain.item.DehaIqItem;
 import net.mcreator.xpequalsbrain.item.CorapItem;
 import net.mcreator.xpequalsbrain.item.AutoSmeltPickaxeItem;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
@@ -36,4 +37,7 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> AUTO_SMELT_PICKAXE = REGISTRY.register("auto_smelt_pickaxe", () -> new AutoSmeltPickaxeItem());
 	public static final RegistryObject<Item> EINSTEIN = REGISTRY.register("einstein_spawn_egg",
 			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.EINSTEIN, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> STEPHEN_HAWKING = REGISTRY.register("stephen_hawking_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.STEPHEN_HAWKING, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> DEHA_IQ = REGISTRY.register("deha_iq", () -> new DehaIqItem());
 }

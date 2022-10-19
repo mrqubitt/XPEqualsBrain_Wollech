@@ -2,10 +2,10 @@
   "_fv": 33,
   "_type": "livingentity",
   "definition": {
-    "mobName": "Einstein",
-    "mobLabel": "Albert Einstein",
+    "mobName": "Stephen Hawking",
+    "mobLabel": "§4§lHayalet Stephen Hawking",
     "mobModelName": "Biped",
-    "mobModelTexture": "albert_einstein.png",
+    "mobModelTexture": "stephen_hawking.png",
     "mobModelGlowTexture": "",
     "modelWidth": 0.6,
     "modelHeight": 1.8,
@@ -44,16 +44,16 @@
     "equipmentBoots": {
       "value": ""
     },
-    "mobBehaviourType": "Creature",
-    "mobCreatureType": "UNDEFINED",
-    "attackStrength": 3,
+    "mobBehaviourType": "Mob",
+    "mobCreatureType": "ILLAGER",
+    "attackStrength": 1,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
-    "movementSpeed": 0.3,
+    "movementSpeed": 1.0,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 10,
+    "health": 150,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
@@ -68,40 +68,52 @@
     "immuneToArrows": false,
     "immuneToFallDamage": true,
     "immuneToCactus": false,
-    "immuneToDrowning": true,
+    "immuneToDrowning": false,
     "immuneToLightning": false,
     "immuneToPotions": false,
     "immuneToPlayer": false,
     "immuneToExplosion": false,
     "immuneToTrident": false,
-    "immuneToAnvil": true,
+    "immuneToAnvil": false,
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": ""
+      "value": "CUSTOM:DehaIq"
     },
     "livingSound": {
       "value": ""
     },
     "hurtSound": {
-      "value": "entity.player.hurt"
+      "value": "entity.illusion_illager.hurt"
     },
     "deathSound": {
-      "value": "entity.player.death"
+      "value": "entity.illusion_illager.death"
     },
     "stepSound": {
       "value": ""
     },
-    "spawnParticles": false,
+    "spawnParticles": true,
     "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
+      "value": "SOUL"
     },
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
+    "whenMobDies": {
+      "name": "StephenHawkingEntityDies"
+    },
+    "whenMobIsHurt": {
+      "name": "StephenHawkingEntityIsHurt"
+    },
+    "onPlayerCollidesWith": {
+      "name": "StephenHawkingPlayerCollidesWithThisEntity"
+    },
+    "onInitialSpawn": {
+      "name": "StephenHawkingOnInitialEntitySpawn"
+    },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"wander\"><field name=\"speed\">0</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"attack_on_collide\"><field name=\"speed\">2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": false,
     "tameable": false,
     "breedTriggerItems": [],
@@ -110,7 +122,7 @@
       "value": ""
     },
     "rangedItemType": "Default item",
-    "spawnThisMob": false,
+    "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
