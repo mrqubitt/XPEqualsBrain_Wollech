@@ -18,6 +18,7 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.xpequalsbrain.entity.ZombieBossEpicEntity;
 import net.mcreator.xpequalsbrain.entity.StephenHawkingEntity;
+import net.mcreator.xpequalsbrain.entity.HerobrineEntity;
 import net.mcreator.xpequalsbrain.entity.FriendlybeeEntity;
 import net.mcreator.xpequalsbrain.entity.EinsteinEntity;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
@@ -45,6 +46,11 @@ public class XpequalsbrainModEntities {
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ZombieBossEpicEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<HerobrineEntity>> HEROBRINE = register("herobrine",
+			EntityType.Builder.<HerobrineEntity>of(HerobrineEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HerobrineEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -57,6 +63,7 @@ public class XpequalsbrainModEntities {
 			EinsteinEntity.init();
 			StephenHawkingEntity.init();
 			ZombieBossEpicEntity.init();
+			HerobrineEntity.init();
 		});
 	}
 
@@ -66,5 +73,6 @@ public class XpequalsbrainModEntities {
 		event.put(EINSTEIN.get(), EinsteinEntity.createAttributes().build());
 		event.put(STEPHEN_HAWKING.get(), StephenHawkingEntity.createAttributes().build());
 		event.put(ZOMBIE_BOSS_EPIC.get(), ZombieBossEpicEntity.createAttributes().build());
+		event.put(HEROBRINE.get(), HerobrineEntity.createAttributes().build());
 	}
 }

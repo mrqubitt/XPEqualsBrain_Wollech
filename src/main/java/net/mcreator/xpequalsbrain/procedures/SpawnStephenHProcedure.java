@@ -59,6 +59,30 @@ public class SpawnStephenHProcedure {
 					new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""), _level.getServer(),
 							null).withSuppressedOutput(),
 					"title @a title \u00A74\u00A7k* \u00A7r\u00A74\u00A7lHayalet Stephen Hawking \u00A7r\u00A74\u00A7k*");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands()
+					.performCommand(
+							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
+									_level.getServer(), null).withSuppressedOutput(),
+							"bossbar add wollech:ghoststephen \"\u00A74\u00A7lHayalet Stephen Hawking\"");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:ghoststephen color blue");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:ghoststephen players @a");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:ghoststephen style notched_20");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:ghoststephen visible true");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:ghoststephen max 150");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:ghoststephen value 150");
 		new Object() {
 			private int ticks = 0;
 			private float waitTicks;

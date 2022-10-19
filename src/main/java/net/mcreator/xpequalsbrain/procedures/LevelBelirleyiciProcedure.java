@@ -55,6 +55,8 @@ public class LevelBelirleyiciProcedure {
 		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) + 1 == 90) {
 			XpequalsbrainModVariables.PlayerLevel = entity instanceof Player _plr ? _plr.experienceLevel : 0;
 			AdvancedToLevelSixProcedure.execute(world, x, y, z, entity);
+		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) + 1 == 190) {
+			AdvancedToLevelSevenProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

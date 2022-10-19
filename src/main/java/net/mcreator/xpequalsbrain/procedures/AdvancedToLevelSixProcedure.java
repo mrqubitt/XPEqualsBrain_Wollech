@@ -96,5 +96,46 @@ public class AdvancedToLevelSixProcedure {
 				MinecraftForge.EVENT_BUS.unregister(this);
 			}
 		}.start(world, 40);
+		new Object() {
+			private int ticks = 0;
+			private float waitTicks;
+			private LevelAccessor world;
+
+			public void start(LevelAccessor world, int waitTicks) {
+				this.waitTicks = waitTicks;
+				MinecraftForge.EVENT_BUS.register(this);
+				this.world = world;
+			}
+
+			@SubscribeEvent
+			public void tick(TickEvent.ServerTickEvent event) {
+				if (event.phase == TickEvent.Phase.END) {
+					this.ticks += 1;
+					if (this.ticks >= this.waitTicks)
+						run();
+				}
+			}
+
+			private void run() {
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+								"\u00A7a[!]\u00A7e Yeni yetenek a\u00E7\u0131ld\u0131: \u00A76\u00A7lY\u0131ld\u0131z Y\u00FCr\u00FCy\u00FC\u015F\u00FC"),
+								ChatType.SYSTEM, Util.NIL_UUID);
+				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z),
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")), SoundSource.AMBIENT, 2,
+								(float) 1.5);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.experience_orb.pickup")),
+								SoundSource.AMBIENT, 2, (float) 1.5, false);
+					}
+				}
+				MinecraftForge.EVENT_BUS.unregister(this);
+			}
+		}.start(world, 60);
 	}
 }

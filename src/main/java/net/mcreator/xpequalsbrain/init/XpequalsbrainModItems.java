@@ -15,6 +15,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.mcreator.xpequalsbrain.item.TutamacliDurtmeCubuguItem;
 import net.mcreator.xpequalsbrain.item.SmallXpItem;
 import net.mcreator.xpequalsbrain.item.PolenItem;
+import net.mcreator.xpequalsbrain.item.HerobrineLaserItem;
 import net.mcreator.xpequalsbrain.item.DurtmeCubuguItem;
 import net.mcreator.xpequalsbrain.item.DurtenKazmaItem;
 import net.mcreator.xpequalsbrain.item.DehalarinIqsuItem;
@@ -42,4 +43,7 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> DEHALARIN_IQSU = REGISTRY.register("dehalarin_iqsu", () -> new DehalarinIqsuItem());
 	public static final RegistryObject<Item> ZOMBIE_BOSS_EPIC = REGISTRY.register("zombie_boss_epic_spawn_egg",
 			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.ZOMBIE_BOSS_EPIC, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> HEROBRINE = REGISTRY.register("herobrine_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.HEROBRINE, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> HEROBRINE_LASER = REGISTRY.register("herobrine_laser", () -> new HerobrineLaserItem());
 }

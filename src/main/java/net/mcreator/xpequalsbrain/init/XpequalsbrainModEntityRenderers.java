@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.xpequalsbrain.client.renderer.ZombieBossEpicRenderer;
 import net.mcreator.xpequalsbrain.client.renderer.StephenHawkingRenderer;
+import net.mcreator.xpequalsbrain.client.renderer.HerobrineRenderer;
 import net.mcreator.xpequalsbrain.client.renderer.FriendlybeeRenderer;
 import net.mcreator.xpequalsbrain.client.renderer.EinsteinRenderer;
 
@@ -22,5 +23,6 @@ public class XpequalsbrainModEntityRenderers {
 		event.registerEntityRenderer(XpequalsbrainModEntities.EINSTEIN.get(), EinsteinRenderer::new);
 		event.registerEntityRenderer(XpequalsbrainModEntities.STEPHEN_HAWKING.get(), StephenHawkingRenderer::new);
 		event.registerEntityRenderer(XpequalsbrainModEntities.ZOMBIE_BOSS_EPIC.get(), ZombieBossEpicRenderer::new);
+		event.registerEntityRenderer(XpequalsbrainModEntities.HEROBRINE.get(), HerobrineRenderer::new);
 	}
 }

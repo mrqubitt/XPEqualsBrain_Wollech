@@ -1,0 +1,12 @@
+{
+  "_fv": 33,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "C",
+    "keyBindingName": "Moon Walk Key",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "MoonWalk"
+    }
+  }
+}

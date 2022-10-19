@@ -11,7 +11,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -29,30 +28,26 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.particles.ParticleTypes;
 
-import net.mcreator.xpequalsbrain.procedures.StephenHawkingPlayerCollidesWithThisEntityProcedure;
-import net.mcreator.xpequalsbrain.procedures.StephenHawkingOnInitialEntitySpawnProcedure;
-import net.mcreator.xpequalsbrain.procedures.StephenHawkingEntityIsHurtProcedure;
-import net.mcreator.xpequalsbrain.procedures.StephenHawkingEntityDiesProcedure;
+import net.mcreator.xpequalsbrain.procedures.HerobrineOnInitialEntitySpawnProcedure;
+import net.mcreator.xpequalsbrain.procedures.HerobrineEntityIsHurtProcedure;
+import net.mcreator.xpequalsbrain.procedures.HerobrineEntityDiesProcedure;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModEntities;
 
 import javax.annotation.Nullable;
 
-public class StephenHawkingEntity extends Monster {
-	public StephenHawkingEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(XpequalsbrainModEntities.STEPHEN_HAWKING.get(), world);
+public class HerobrineEntity extends Monster {
+	public HerobrineEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(XpequalsbrainModEntities.HEROBRINE.get(), world);
 	}
 
-	public StephenHawkingEntity(EntityType<StephenHawkingEntity> type, Level world) {
+	public HerobrineEntity(EntityType<HerobrineEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
-		setCustomName(new TextComponent("§4§lHayalet Stephen Hawking"));
-		setCustomNameVisible(true);
 		setPersistenceRequired();
 	}
 
@@ -65,20 +60,19 @@ public class StephenHawkingEntity extends Monster {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 2, true) {
+		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return (double) (4.0 + entity.getBbWidth() * entity.getBbWidth());
 			}
 		});
-		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(4, new FloatGoal(this));
 	}
 
 	@Override
 	public MobType getMobType() {
-		return MobType.ILLAGER;
+		return MobType.UNDEAD;
 	}
 
 	@Override
@@ -88,45 +82,37 @@ public class StephenHawkingEntity extends Monster {
 
 	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
 		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
-		this.spawnAtLocation(new ItemStack(XpequalsbrainModItems.DEHALARIN_IQSU.get()));
+		this.spawnAtLocation(new ItemStack(XpequalsbrainModItems.HEROBRINE_LASER.get()));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.phantom.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.phantom.death"));
 	}
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		StephenHawkingEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
-		if (source == DamageSource.FALL)
-			return false;
+		HerobrineEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 		return super.hurt(source, amount);
 	}
 
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		StephenHawkingEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
+		HerobrineEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
 			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		StephenHawkingOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ());
+		HerobrineOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ());
 		return retval;
-	}
-
-	@Override
-	public void playerTouch(Player sourceentity) {
-		super.playerTouch(sourceentity);
-		StephenHawkingPlayerCollidesWithThisEntityProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	public void aiStep() {
@@ -136,14 +122,14 @@ public class StephenHawkingEntity extends Monster {
 		double z = this.getZ();
 		Entity entity = this;
 		Level world = this.level;
-		for (int l = 0; l < 4; ++l) {
+		for (int l = 0; l < 10; ++l) {
 			double x0 = x + random.nextFloat();
 			double y0 = y + random.nextFloat();
 			double z0 = z + random.nextFloat();
 			double dx = (random.nextFloat() - 0.5D) * 0.5D;
 			double dy = (random.nextFloat() - 0.5D) * 0.5D;
 			double dz = (random.nextFloat() - 0.5D) * 0.5D;
-			world.addParticle(ParticleTypes.SOUL, x0, y0, z0, dx, dy, dz);
+			world.addParticle(ParticleTypes.SOUL_FIRE_FLAME, x0, y0, z0, dx, dy, dz);
 		}
 	}
 
@@ -152,12 +138,13 @@ public class StephenHawkingEntity extends Monster {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.2);
-		builder = builder.add(Attributes.MAX_HEALTH, 150);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MAX_HEALTH, 200);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 1);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 1);
 		return builder;
 	}
 }

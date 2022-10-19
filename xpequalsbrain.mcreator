@@ -1070,6 +1070,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -1309,6 +1313,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -1339,9 +1347,281 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
+    },
+    {
+      "name": "MoonWalk",
+      "type": "procedure",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moon_walk",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MoonWalkKey",
+      "type": "keybind",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moon_walk_key"
+    },
+    {
+      "name": "XPFromPlayersProcedure",
+      "type": "procedure",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "xp_from_players_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GercekDeha",
+      "type": "achievement",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gercek_deha",
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "AdvancedToLevelSeven",
+      "type": "procedure",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advanced_to_level_seven",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "Herobrine",
+      "type": "livingentity",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "herobrine",
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "HerobrineLaserRightclicked",
+      "type": "procedure",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "herobrine_laser_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "HerobrineLaser",
+      "type": "item",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "herobrine_laser",
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "HerobrineEntityDies",
+      "type": "procedure",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "herobrine_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "HerobrineOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "herobrine_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "HerobrineEntityIsHurt",
+      "type": "procedure",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "herobrine_entity_is_hurt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
     }
   ],
   "variable_elements": [
@@ -1469,7 +1749,6 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "advancements.build_a_lab.descr": "Tuğlaları en bilimsel halleri ile taşı.",
       "item.xpequalsbrain.durtme_cubugu": "Durtme Cubugu",
       "advancements.insan.title": "Hooman!",
       "advancements.insan.descr": "Kedilerin efendisi...",
@@ -1478,39 +1757,46 @@
       "advancements.kopek_iq.title": "Afferim oğluma!",
       "item.xpequalsbrain.zombie_boss_epic_spawn_egg": "Zombie Boss Epic Spawn Egg",
       "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
-      "advancements.build_a_lab.title": "Laboratuvar inşaa et!",
       "item.xpequalsbrain.corap_helmet": "Corap Helmet",
-      "advancements.polen_mission.title": "Arıya Polen Gerek",
-      "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
       "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!",
-      "entity.xpequalsbrain.einstein": "Einstein",
+      "key.xpequalsbrain.moon_walk_key": "Moon Walk Key",
       "advancements.cow_misson_started.descr": "İneklere 5 adet tahıl getir.",
-      "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
       "advancements.polen_mission_completed.title": "Polenler teslim edildi!",
-      "item.xpequalsbrain.small_xp": "Xp Topu",
       "entity.xpequalsbrain.friendlybee": "Friendlybee",
       "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
       "advancements.kopek_iq.descr": "Havlayan köpek ısırmaz!",
-      "advancements.ari_kafa.title": "Arı Kafa",
       "item.xpequalsbrain.polen": "Polen",
+      "advancements.gercek_deha.title": "Koca beyin!",
       "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
-      "advancements.lab_completed.title": "Laboratuvar Faresi",
-      "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg",
       "item.xpequalsbrain.corap_chestplate": "Corap Body",
       "advancements.lab_completed.descr": "Seninle tanışmak güzeldi...",
-      "item.xpequalsbrain.auto_smelt_pickaxe": "☺§6Kazmafırın-3000",
       "item.xpequalsbrain.einstein_spawn_egg": "Einstein Spawn Egg",
-      "advancements.cow_brain.title": "MÖÖÖÖÖ",
       "item.xpequalsbrain.corap_leggings": "Corap Leggings",
-      "item.xpequalsbrain.dehalarin_iqsu": "Deha IQ",
-      "entity.xpequalsbrain.zombie_boss_epic": "Zombie Boss Epic",
-      "advancements.cow_misson_completed.title": "Tok inekler!",
+      "item.xpequalsbrain.herobrine_spawn_egg": "Herobrine Spawn Egg",
       "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
       "advancements.cow_misson_completed.descr": "İnek deneyimlerinin tadını çıkar.",
       "item.xpequalsbrain.corap_boots": "Corap Boots",
-      "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
       "item.xpequalsbrain.stephen_hawking_spawn_egg": "Stephen Hawking Spawn Egg",
       "item.xpequalsbrain.tutamacli_durtme_cubugu": "Tutamaçlı Dürtme Çubuğu",
+      "advancements.build_a_lab.descr": "Tuğlaları en bilimsel halleri ile taşı.",
+      "advancements.build_a_lab.title": "Laboratuvar inşaa et!",
+      "advancements.polen_mission.title": "Arıya Polen Gerek",
+      "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
+      "entity.xpequalsbrain.einstein": "Einstein",
+      "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
+      "item.xpequalsbrain.small_xp": "Xp Topu",
+      "advancements.gercek_deha.descr": "Çen zeki miçin çen!",
+      "advancements.ari_kafa.title": "Arı Kafa",
+      "advancements.lab_completed.title": "Laboratuvar Faresi",
+      "item.xpequalsbrain.friendlybee_spawn_egg": "Friendlybee Spawn Egg",
+      "item.xpequalsbrain.auto_smelt_pickaxe": "☺§6Kazmafırın-3000",
+      "entity.xpequalsbrain.herobrine": "Herobrine",
+      "entity.xpequalsbrain.zombie_boss_epic": "Zombie Boss Epic",
+      "item.xpequalsbrain.dehalarin_iqsu": "Deha IQ",
+      "advancements.cow_brain.title": "MÖÖÖÖÖ",
+      "item.xpequalsbrain.herobrine_laser": "Herobrine Laser",
+      "advancements.cow_misson_completed.title": "Tok inekler!",
+      "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
       "item.xpequalsbrain.durten_kazma": "Dürten Kazma"
     }
   },
@@ -1527,6 +1813,10 @@
       },
       {
         "name": "Cow",
+        "children": []
+      },
+      {
+        "name": "Herobrine",
         "children": []
       }
     ]

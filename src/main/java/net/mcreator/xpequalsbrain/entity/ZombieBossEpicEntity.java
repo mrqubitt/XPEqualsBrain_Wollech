@@ -81,7 +81,7 @@ public class ZombieBossEpicEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		ZombieBossEpicEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
+		ZombieBossEpicEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		if (source == DamageSource.DROWN)
 			return false;
 		return super.hurt(source, amount);
@@ -90,7 +90,7 @@ public class ZombieBossEpicEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		ZombieBossEpicEntityDiesProcedure.execute(this);
+		ZombieBossEpicEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public void aiStep() {

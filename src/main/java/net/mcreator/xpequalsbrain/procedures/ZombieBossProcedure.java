@@ -165,12 +165,12 @@ public class ZombieBossProcedure {
 					_level.getServer().getCommands()
 							.performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 									new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-									"bossbar set wollech:bosszombie max 2000");
+									"bossbar set wollech:bosszombie max 100");
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands()
 							.performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 									new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-									"bossbar set wollech:bosszombie value 2000");
+									"bossbar set wollech:bosszombie value 100");
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.FLAME, x, y, z, 50, 1, 1, 1, 0.2);
 				if (world instanceof Level _level) {
