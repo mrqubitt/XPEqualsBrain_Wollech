@@ -48,7 +48,7 @@ public class MonsterPotionItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		MonsterPotionPlayerFinishesUsingItemProcedure.execute(world, x, y, z);
+		MonsterPotionPlayerFinishesUsingItemProcedure.execute(world, x, y, z, entity);
 		return retval;
 	}
 }
