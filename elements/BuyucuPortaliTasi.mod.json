@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:BuyucuPortaliTasiItem"
+      "value": "CUSTOM:MagicianNether"
     },
     "name": "buyucu_portali_tasi",
     "namespace": "mod"
