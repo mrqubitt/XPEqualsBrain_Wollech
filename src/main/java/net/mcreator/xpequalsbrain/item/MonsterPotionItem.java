@@ -8,6 +8,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
@@ -18,12 +19,20 @@ import java.util.List;
 
 public class MonsterPotionItem extends Item {
 	public MonsterPotionItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(64).rarity(Rarity.RARE));
+		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(64).rarity(Rarity.RARE)
+				.food((new FoodProperties.Builder()).nutrition(0).saturationMod(0.3f)
+
+						.build()));
 	}
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
 		return UseAnim.DRINK;
+	}
+
+	@Override
+	public int getUseDuration(ItemStack itemstack) {
+		return 2;
 	}
 
 	@Override
@@ -39,7 +48,7 @@ public class MonsterPotionItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		MonsterPotionPlayerFinishesUsingItemProcedure.execute(world, x, y, z, entity);
+		MonsterPotionPlayerFinishesUsingItemProcedure.execute(world, x, y, z);
 		return retval;
 	}
 }

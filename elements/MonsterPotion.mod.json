@@ -12,7 +12,7 @@
     },
     "stackSize": 64,
     "enchantability": 0,
-    "useDuration": 0,
+    "useDuration": 2,
     "toolType": 1.0,
     "damageCount": 0,
     "recipeRemainder": {
@@ -34,7 +34,7 @@
     "onFinishUsingItem": {
       "name": "MonsterPotionPlayerFinishesUsingItem"
     },
-    "isFood": false,
+    "isFood": true,
     "nutritionalValue": 0,
     "saturation": 0.3,
     "eatResultItem": {

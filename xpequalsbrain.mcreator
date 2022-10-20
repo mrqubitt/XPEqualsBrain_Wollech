@@ -2009,10 +2009,6 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -2060,6 +2056,31 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cadi_konumu",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "MiracleGrowthItemRightclickedOnBlock",
+      "type": "procedure",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "miracle_growth_item_rightclicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
       "path": "~/Deha_Otesi"
     }
   ],
@@ -2217,8 +2238,8 @@
       "item.xpequalsbrain.monster_potion": "§e§lCanavar İksiri",
       "item.xpequalsbrain.corap_helmet": "Corap Helmet",
       "item.xpequalsbrain.herobrine_xp": "§lHerobrine Deneyimi",
-      "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!",
       "key.xpequalsbrain.moon_walk_key": "Moon Walk Key",
+      "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!",
       "advancements.cow_misson_started.descr": "İneklere 5 adet tahıl getir.",
       "advancements.deha_otesi.title": "MUCİT",
       "advancements.polen_mission_completed.title": "Polenler teslim edildi!",

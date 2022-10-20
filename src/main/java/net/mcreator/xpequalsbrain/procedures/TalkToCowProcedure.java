@@ -169,10 +169,22 @@ public class TalkToCowProcedure {
 				&& (sourceentity instanceof Player _plr ? _plr.experienceLevel : 0) < 25 && XpequalsbrainModVariables.CowMissonStarted
 				&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.HAY_BLOCK.asItem()
 				&& 5 <= ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).getCount()) {
-			if (entity instanceof Player _player) {
-				ItemStack _stktoremove = new ItemStack(Blocks.HAY_BLOCK);
-				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 5,
-						_player.inventoryMenu.getCraftSlots());
+			for (int index0 = 0; index0 < (int) (22); index0++) {
+				if (world instanceof Level _level && !_level.isClientSide()) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(XpequalsbrainModItems.SMALL_XP.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z),
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.cave_vines.pick_berries")), SoundSource.AMBIENT,
+								(float) 1.5, (float) Math.random());
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.cave_vines.pick_berries")),
+								SoundSource.AMBIENT, (float) 1.5, (float) Math.random(), false);
+					}
+				}
 			}
 			if (!world.isClientSide()) {
 				MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
@@ -192,7 +204,7 @@ public class TalkToCowProcedure {
 			}
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.HEART, x, y, z, 50, 1, 1, 1, 1);
-			if (entity instanceof ServerPlayer _player) {
+			if (sourceentity instanceof ServerPlayer _player) {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("xpequalsbrain:cow_misson_completed"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
@@ -201,22 +213,10 @@ public class TalkToCowProcedure {
 						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
-			for (int index0 = 0; index0 < (int) (22); index0++) {
-				if (world instanceof Level _level && !_level.isClientSide()) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(XpequalsbrainModItems.SMALL_XP.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos(x, y, z),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.cave_vines.pick_berries")), SoundSource.AMBIENT,
-								(float) 1.5, (float) Math.random());
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.cave_vines.pick_berries")),
-								SoundSource.AMBIENT, (float) 1.5, (float) Math.random(), false);
-					}
-				}
+			if (sourceentity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(Blocks.HAY_BLOCK);
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 5,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		} else if (entity instanceof Cow && (entity instanceof Player _plr ? _plr.experienceLevel : 0) > 2
 				&& (entity instanceof Player _plr ? _plr.experienceLevel : 0) < 25 && XpequalsbrainModVariables.CowMissonStarted
