@@ -21,7 +21,7 @@ public class DehalarinIqsuRightclickedProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Player _player)
-			_player.giveExperienceLevels(33);
+			_player.giveExperienceLevels(32);
 		XpequalsbrainModVariables.TalkedToVillager = 0;
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.END_ROD, x, y, z, 100, 1, 2, 1, 1);

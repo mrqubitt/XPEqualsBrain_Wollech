@@ -18,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.Holder;
 
 import net.mcreator.xpequalsbrain.world.features.LabFeature;
+import net.mcreator.xpequalsbrain.world.features.CloudPlatformFeature;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
 
 import java.util.function.Supplier;
@@ -31,6 +32,8 @@ public class XpequalsbrainModFeatures {
 	private static final List<FeatureRegistration> FEATURE_REGISTRATIONS = new ArrayList<>();
 	public static final RegistryObject<Feature<?>> LAB = register("lab", LabFeature::feature,
 			new FeatureRegistration(GenerationStep.Decoration.SURFACE_STRUCTURES, LabFeature.GENERATE_BIOMES, LabFeature::placedFeature));
+	public static final RegistryObject<Feature<?>> CLOUD_PLATFORM = register("cloud_platform", CloudPlatformFeature::feature, new FeatureRegistration(
+			GenerationStep.Decoration.SURFACE_STRUCTURES, CloudPlatformFeature.GENERATE_BIOMES, CloudPlatformFeature::placedFeature));
 
 	private static RegistryObject<Feature<?>> register(String registryname, Supplier<Feature<?>> feature, FeatureRegistration featureRegistration) {
 		FEATURE_REGISTRATIONS.add(featureRegistration);

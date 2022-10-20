@@ -6,6 +6,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
@@ -15,8 +16,11 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
 
@@ -66,6 +70,11 @@ public class HerobrineEntityDiesProcedure {
 			}
 
 			private void run() {
+				if (world instanceof ServerLevel _level)
+					_level.getServer().getCommands()
+							.performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+									new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+									"bossbar set wollech:herobrine visible false");
 				for (int index2 = 0; index2 < (int) (25); index2++) {
 					if (world instanceof Level _level && !_level.isClientSide()) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(XpequalsbrainModItems.SMALL_XP.get()));
@@ -75,11 +84,11 @@ public class HerobrineEntityDiesProcedure {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, new BlockPos(x, y, z),
-									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.item.pickup")), SoundSource.AMBIENT, 1,
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.item.pickup")), SoundSource.AMBIENT, 5,
 									(float) Math.random());
 						} else {
 							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.item.pickup")),
-									SoundSource.AMBIENT, 1, (float) Math.random(), false);
+									SoundSource.AMBIENT, 5, (float) Math.random(), false);
 						}
 					}
 				}

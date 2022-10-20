@@ -24,9 +24,9 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.core.particles.ParticleTypes;
 
+import net.mcreator.xpequalsbrain.procedures.ZombieBossEpicOnEntityTickUpdateProcedure;
 import net.mcreator.xpequalsbrain.procedures.ZombieBossEpicEntityIsHurtProcedure;
 import net.mcreator.xpequalsbrain.procedures.ZombieBossEpicEntityDiesProcedure;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModEntities;
@@ -40,8 +40,6 @@ public class ZombieBossEpicEntity extends Monster {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
-		setCustomName(new TextComponent("Boss Abi"));
-		setCustomNameVisible(true);
 	}
 
 	@Override
@@ -70,6 +68,11 @@ public class ZombieBossEpicEntity extends Monster {
 	}
 
 	@Override
+	public SoundEvent getAmbientSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.nether_wastes.loop"));
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
@@ -81,7 +84,7 @@ public class ZombieBossEpicEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		ZombieBossEpicEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		ZombieBossEpicEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (source == DamageSource.DROWN)
 			return false;
 		return super.hurt(source, amount);
@@ -91,6 +94,12 @@ public class ZombieBossEpicEntity extends Monster {
 	public void die(DamageSource source) {
 		super.die(source);
 		ZombieBossEpicEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		ZombieBossEpicOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public void aiStep() {

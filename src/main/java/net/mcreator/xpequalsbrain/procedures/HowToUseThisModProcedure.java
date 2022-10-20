@@ -69,6 +69,39 @@ public class HowToUseThisModProcedure {
 		if (!world.isClientSide()) {
 			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(new TextComponent("-Bulut spawn etmek i\u00E7in /spawncloud"), ChatType.SYSTEM,
+						Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(
+						new TextComponent("-E\u011Fer ilk orbu t\u00FCketince ar\u0131 IQ'suna ula\u015Famazsan, bug olursa /advancetolevelone"),
+						ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(new TextComponent("-190 level olduktan sonra seviye atlamazsan /advancetolevelseven"),
+						ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(
+						new TextComponent("-E\u011Fer seviyen kazayla fazla olduysa ve olay tetiklenmediyse /leveldusur ve /levelyukselt"),
+						ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(
+						new TextComponent("-Oyuncular ile 190 seviyeye gelene kadar elmas k\u0131l\u0131\u00E7 edindi\u011Finden emin ol."),
+						ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
 				_mcserv.getPlayerList().broadcastMessage(new TextComponent("-F3+D ile chati temizleyebilece\u011Fini unutma."), ChatType.SYSTEM,
 						Util.NIL_UUID);
 		}

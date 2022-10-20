@@ -30,7 +30,8 @@ public class HerobrineOnInitialEntitySpawnProcedure {
 					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "title @a title \u00A74\u00A7lHEROBRINE");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar add wollech:herobrine \u00A74\u00A7lHEROBRINE");
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+					"bossbar add wollech:herobrine \"\u00A74\u00A7lHEROBRINE\"");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:herobrine color red");

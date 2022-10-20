@@ -46,7 +46,7 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEAD",
-    "attackStrength": 0,
+    "attackStrength": 1,
     "attackKnockback": 1.0,
     "knockbackResistance": 1.0,
     "movementSpeed": 0.3,
@@ -81,7 +81,7 @@
       "value": "CUSTOM:HerobrineLaser"
     },
     "livingSound": {
-      "value": ""
+      "value": "ambient.basalt_deltas.loop"
     },
     "hurtSound": {
       "value": "entity.phantom.hurt"
@@ -104,6 +104,9 @@
     },
     "whenMobIsHurt": {
       "name": "HerobrineEntityIsHurt"
+    },
+    "onMobTickUpdate": {
+      "name": "HerobrineOnEntityTickUpdate"
     },
     "onInitialSpawn": {
       "name": "HerobrineOnInitialEntitySpawn"

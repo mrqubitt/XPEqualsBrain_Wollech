@@ -35,6 +35,7 @@ import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.xpequalsbrain.procedures.StephenHawkingPlayerCollidesWithThisEntityProcedure;
 import net.mcreator.xpequalsbrain.procedures.StephenHawkingOnInitialEntitySpawnProcedure;
+import net.mcreator.xpequalsbrain.procedures.StephenHawkingOnEntityTickUpdateProcedure;
 import net.mcreator.xpequalsbrain.procedures.StephenHawkingEntityIsHurtProcedure;
 import net.mcreator.xpequalsbrain.procedures.StephenHawkingEntityDiesProcedure;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
@@ -92,6 +93,11 @@ public class StephenHawkingEntity extends Monster {
 	}
 
 	@Override
+	public SoundEvent getAmbientSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.soul_sand_valley.loop"));
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.hurt"));
 	}
@@ -103,7 +109,7 @@ public class StephenHawkingEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		StephenHawkingEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		StephenHawkingEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (source == DamageSource.FALL)
 			return false;
 		return super.hurt(source, amount);
@@ -121,6 +127,12 @@ public class StephenHawkingEntity extends Monster {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		StephenHawkingOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ());
 		return retval;
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		StephenHawkingOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

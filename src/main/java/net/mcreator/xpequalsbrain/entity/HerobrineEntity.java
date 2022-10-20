@@ -32,6 +32,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.xpequalsbrain.procedures.HerobrineOnInitialEntitySpawnProcedure;
+import net.mcreator.xpequalsbrain.procedures.HerobrineOnEntityTickUpdateProcedure;
 import net.mcreator.xpequalsbrain.procedures.HerobrineEntityIsHurtProcedure;
 import net.mcreator.xpequalsbrain.procedures.HerobrineEntityDiesProcedure;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
@@ -86,6 +87,11 @@ public class HerobrineEntity extends Monster {
 	}
 
 	@Override
+	public SoundEvent getAmbientSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.basalt_deltas.loop"));
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.phantom.hurt"));
 	}
@@ -115,6 +121,12 @@ public class HerobrineEntity extends Monster {
 		return retval;
 	}
 
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		HerobrineOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+	}
+
 	public void aiStep() {
 		super.aiStep();
 		double x = this.getX();
@@ -141,7 +153,7 @@ public class HerobrineEntity extends Monster {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
 		builder = builder.add(Attributes.MAX_HEALTH, 200);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 1);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 1);

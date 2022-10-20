@@ -1070,10 +1070,6 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -1312,10 +1308,6 @@
       "registry_name": "zombie_boss_epic_entity_is_hurt",
       "metadata": {
         "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
           {
             "name": "x",
             "type": "number"
@@ -1622,6 +1614,244 @@
         ]
       },
       "path": "~/Herobrine"
+    },
+    {
+      "name": "CloudPlatformOnStructureInstanceGenerated",
+      "type": "procedure",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cloud_platform_on_structure_instance_generated",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "CloudPlatform",
+      "type": "structure",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cloud_platform",
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "SpawnCloudProcedure",
+      "type": "procedure",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawn_cloud_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "SpawnCloud",
+      "type": "command",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawn_cloud",
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "AdvanceToLevelSeven",
+      "type": "command",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advance_to_level_seven"
+    },
+    {
+      "name": "Advancetolevelone",
+      "type": "command",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advancetolevelone"
+    },
+    {
+      "name": "Leveldusur",
+      "type": "procedure",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "leveldusur",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Takealevel",
+      "type": "command",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "takealevel"
+    },
+    {
+      "name": "Levelyukselt",
+      "type": "procedure",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "levelyukselt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Levelyukseltcommand",
+      "type": "command",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "levelyukseltcommand"
+    },
+    {
+      "name": "ZombieBossEpicOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_boss_epic_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StephenHawkingOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stephen_hawking_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "HerobrineOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "herobrine_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
     }
   ],
   "variable_elements": [
@@ -1794,7 +2024,7 @@
       "entity.xpequalsbrain.zombie_boss_epic": "Zombie Boss Epic",
       "item.xpequalsbrain.dehalarin_iqsu": "Deha IQ",
       "advancements.cow_brain.title": "MÖÖÖÖÖ",
-      "item.xpequalsbrain.herobrine_laser": "Herobrine Laser",
+      "item.xpequalsbrain.herobrine_laser": "Herobrine\u0027ın Eriticisi",
       "advancements.cow_misson_completed.title": "Tok inekler!",
       "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
       "item.xpequalsbrain.durten_kazma": "Dürten Kazma"

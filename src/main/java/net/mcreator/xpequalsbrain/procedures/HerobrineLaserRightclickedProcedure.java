@@ -17,7 +17,7 @@ public class HerobrineLaserRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(15)),
+		if (entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(60)),
 				ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getType() == HitResult.Type.BLOCK) {
 			{
 				Entity _shootFrom = entity;
@@ -38,20 +38,20 @@ public class HerobrineLaserRightclickedProcedure {
 			if (world instanceof Level _level && !_level.isClientSide())
 				_level.explode(null,
 						(entity.level
-								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(15)),
+								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(60)),
 										ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
 								.getBlockPos().getX()),
 						(entity.level
-								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(15)),
+								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(60)),
 										ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
 								.getBlockPos().getY()),
 						(entity.level
-								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(15)),
+								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(60)),
 										ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
 								.getBlockPos().getZ()),
-						10, Explosion.BlockInteraction.BREAK);
+						5, Explosion.BlockInteraction.BREAK);
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.ENCHANTED_HIT, x, y, z, 50, 0.1, 0.1, 0.1, 1);
+				_level.sendParticles(ParticleTypes.SOUL, x, y, z, 50, 0.1, 0.1, 0.1, 1);
 		}
 	}
 }

@@ -81,7 +81,7 @@
       "value": "CUSTOM:DehalarinIqsu"
     },
     "livingSound": {
-      "value": ""
+      "value": "ambient.soul_sand_valley.loop"
     },
     "hurtSound": {
       "value": "entity.illusion_illager.hurt"
@@ -104,6 +104,9 @@
     },
     "whenMobIsHurt": {
       "name": "StephenHawkingEntityIsHurt"
+    },
+    "onMobTickUpdate": {
+      "name": "StephenHawkingOnEntityTickUpdate"
     },
     "onPlayerCollidesWith": {
       "name": "StephenHawkingPlayerCollidesWithThisEntity"

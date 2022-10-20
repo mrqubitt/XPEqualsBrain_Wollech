@@ -3,7 +3,7 @@
   "_type": "livingentity",
   "definition": {
     "mobName": "Zombie Boss Epic",
-    "mobLabel": "Boss Abi",
+    "mobLabel": "",
     "mobModelName": "Modelzombieboss",
     "mobModelTexture": "zombieasd.png",
     "mobModelGlowTexture": "",
@@ -81,7 +81,7 @@
       "value": ""
     },
     "livingSound": {
-      "value": ""
+      "value": "ambient.nether_wastes.loop"
     },
     "hurtSound": {
       "value": "entity.generic.hurt"
@@ -104,6 +104,9 @@
     },
     "whenMobIsHurt": {
       "name": "ZombieBossEpicEntityIsHurt"
+    },
+    "onMobTickUpdate": {
+      "name": "ZombieBossEpicOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",
