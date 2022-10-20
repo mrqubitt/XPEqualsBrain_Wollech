@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
+  "parent": "xpequalsbrain:custom/silah_seysi",
   "textures": {
-    "layer0": "xpequalsbrain:items/herobrine_laser"
+    "2": "xpequalsbrain:blocks/unknown",
+    "particle": "xpequalsbrain:items/herobrine_laser"
   }
 }

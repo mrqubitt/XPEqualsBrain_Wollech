@@ -2,9 +2,9 @@
   "_fv": 33,
   "_type": "item",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "herobrine_laser",
-    "customModelName": "Normal",
+    "customModelName": "silah_seysi:default",
     "name": "Herobrine'ın Eriticisi",
     "rarity": "EPIC",
     "creativeTab": {

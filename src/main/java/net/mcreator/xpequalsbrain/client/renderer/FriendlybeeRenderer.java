@@ -6,11 +6,11 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.xpequalsbrain.entity.FriendlybeeEntity;
-import net.mcreator.xpequalsbrain.client.model.Modelcustom_model;
+import net.mcreator.xpequalsbrain.client.model.Modelben_bir_ariyim;
 
-public class FriendlybeeRenderer extends MobRenderer<FriendlybeeEntity, Modelcustom_model<FriendlybeeEntity>> {
+public class FriendlybeeRenderer extends MobRenderer<FriendlybeeEntity, Modelben_bir_ariyim<FriendlybeeEntity>> {
 	public FriendlybeeRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelcustom_model(context.bakeLayer(Modelcustom_model.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelben_bir_ariyim(context.bakeLayer(Modelben_bir_ariyim.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
