@@ -15,11 +15,15 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.mcreator.xpequalsbrain.item.TutamacliDurtmeCubuguItem;
 import net.mcreator.xpequalsbrain.item.SmallXpItem;
 import net.mcreator.xpequalsbrain.item.PolenItem;
+import net.mcreator.xpequalsbrain.item.MonsterPotionItem;
+import net.mcreator.xpequalsbrain.item.MiracleGrowthItemItem;
+import net.mcreator.xpequalsbrain.item.HerobrineXpItem;
 import net.mcreator.xpequalsbrain.item.HerobrineLaserItem;
 import net.mcreator.xpequalsbrain.item.DurtmeCubuguItem;
 import net.mcreator.xpequalsbrain.item.DurtenKazmaItem;
 import net.mcreator.xpequalsbrain.item.DehalarinIqsuItem;
 import net.mcreator.xpequalsbrain.item.CorapItem;
+import net.mcreator.xpequalsbrain.item.CanavarOzuItem;
 import net.mcreator.xpequalsbrain.item.AutoSmeltPickaxeItem;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
 
@@ -46,4 +50,8 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> HEROBRINE = REGISTRY.register("herobrine_spawn_egg",
 			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.HEROBRINE, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> HEROBRINE_LASER = REGISTRY.register("herobrine_laser", () -> new HerobrineLaserItem());
+	public static final RegistryObject<Item> HEROBRINE_XP = REGISTRY.register("herobrine_xp", () -> new HerobrineXpItem());
+	public static final RegistryObject<Item> MIRACLE_GROWTH_ITEM = REGISTRY.register("miracle_growth_item", () -> new MiracleGrowthItemItem());
+	public static final RegistryObject<Item> CANAVAR_OZU = REGISTRY.register("canavar_ozu", () -> new CanavarOzuItem());
+	public static final RegistryObject<Item> MONSTER_POTION = REGISTRY.register("monster_potion", () -> new MonsterPotionItem());
 }

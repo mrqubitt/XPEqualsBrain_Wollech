@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "1": {
+      "item": "minecraft:dirt"
+    },
+    "2": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "3": {
+      "item": "minecraft:dirt"
+    },
+    "4": {
+      "tag": "minecraft:coals"
+    },
+    "5": {
+      "item": "minecraft:dirt"
+    },
+    "6": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "7": {
+      "item": "minecraft:dirt"
+    },
+    "8": {
+      "item": "minecraft:wheat_seeds"
+    }
+  },
+  "result": {
+    "item": "xpequalsbrain:miracle_growth_item",
+    "count": 1
+  }
+}
