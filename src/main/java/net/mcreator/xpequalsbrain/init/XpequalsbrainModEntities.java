@@ -45,7 +45,7 @@ public class XpequalsbrainModEntities {
 			EntityType.Builder.<ZombieBossEpicEntity>of(ZombieBossEpicEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ZombieBossEpicEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1.5f, 2.5f));
 	public static final RegistryObject<EntityType<HerobrineEntity>> HEROBRINE = register("herobrine",
 			EntityType.Builder.<HerobrineEntity>of(HerobrineEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HerobrineEntity::new)

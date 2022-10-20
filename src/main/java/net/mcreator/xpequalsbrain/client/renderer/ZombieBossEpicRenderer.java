@@ -10,7 +10,7 @@ import net.mcreator.xpequalsbrain.client.model.Modelzombieboss;
 
 public class ZombieBossEpicRenderer extends MobRenderer<ZombieBossEpicEntity, Modelzombieboss<ZombieBossEpicEntity>> {
 	public ZombieBossEpicRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelzombieboss(context.bakeLayer(Modelzombieboss.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelzombieboss(context.bakeLayer(Modelzombieboss.LAYER_LOCATION)), 1f);
 	}
 
 	@Override

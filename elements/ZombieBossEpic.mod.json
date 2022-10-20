@@ -7,9 +7,9 @@
     "mobModelName": "Modelzombieboss",
     "mobModelTexture": "zombieasd.png",
     "mobModelGlowTexture": "",
-    "modelWidth": 0.6,
-    "modelHeight": 1.8,
-    "modelShadowSize": 0.5,
+    "modelWidth": 1.5,
+    "modelHeight": 2.5,
+    "modelShadowSize": 1.0,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
