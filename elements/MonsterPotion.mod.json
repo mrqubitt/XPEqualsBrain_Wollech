@@ -32,7 +32,7 @@
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "onFinishUsingItem": {
-      "name": "MonsterPotionPlayerFinishesUsingItem"
+      "name": "ActivateCompass"
     },
     "isFood": true,
     "nutritionalValue": 0,
@@ -41,7 +41,7 @@
       "value": ""
     },
     "isMeat": false,
-    "isAlwaysEdible": false,
+    "isAlwaysEdible": true,
     "animation": "drink"
   }
 }

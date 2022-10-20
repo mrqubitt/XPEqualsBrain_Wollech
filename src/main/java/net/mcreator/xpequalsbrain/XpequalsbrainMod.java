@@ -29,6 +29,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModItems;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModFeatures;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModEntities;
+import net.mcreator.xpequalsbrain.init.XpequalsbrainModBlocks;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -46,7 +47,7 @@ public class XpequalsbrainMod {
 	public XpequalsbrainMod() {
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
+		XpequalsbrainModBlocks.REGISTRY.register(bus);
 		XpequalsbrainModItems.REGISTRY.register(bus);
 		XpequalsbrainModEntities.REGISTRY.register(bus);
 

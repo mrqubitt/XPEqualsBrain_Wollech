@@ -9,7 +9,7 @@
     "description": {
       "translate": "advancements.deha_otesi.descr"
     },
-    "frame": "task",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": false,
     "hidden": true

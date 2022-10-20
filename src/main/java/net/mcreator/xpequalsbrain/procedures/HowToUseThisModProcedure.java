@@ -110,6 +110,14 @@ public class HowToUseThisModProcedure {
 		if (!world.isClientSide()) {
 			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 			if (_mcserv != null)
+				_mcserv.getPlayerList()
+						.broadcastMessage(new TextComponent(
+								"-Yeni portal\u0131 a\u00E7t\u0131ktan sonra girip /spawncastle ile ayaklar\u0131n\u0131n ucuna kaleyi spawn et."),
+								ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
 				_mcserv.getPlayerList().broadcastMessage(
 						new TextComponent("-E\u011Fer ilk orbu t\u00FCketince ar\u0131 IQ'suna ula\u015Famazsan, bug olursa /advancetolevelone"),
 						ChatType.SYSTEM, Util.NIL_UUID);

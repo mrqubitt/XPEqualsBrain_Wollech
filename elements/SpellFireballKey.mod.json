@@ -1,0 +1,12 @@
+{
+  "_fv": 33,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "N",
+    "keyBindingName": "Spell Fireball Key",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "SpellFireball"
+    }
+  }
+}

@@ -10,31 +10,31 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "Items.IRON_INGOT"
+        "value": ""
       },
       {
         "value": "Items.IRON_INGOT"
       },
       {
-        "value": "Items.IRON_INGOT"
+        "value": ""
+      },
+      {
+        "value": ""
       },
       {
         "value": "CUSTOM:CanavarOzu"
       },
       {
-        "value": "CUSTOM:CanavarOzu"
+        "value": ""
       },
       {
-        "value": "CUSTOM:CanavarOzu"
-      },
-      {
-        "value": "CUSTOM:CanavarOzu"
+        "value": ""
       },
       {
         "value": "Items.WATER_BUCKET"
       },
       {
-        "value": "CUSTOM:CanavarOzu"
+        "value": ""
       }
     ],
     "recipeReturnStack": {

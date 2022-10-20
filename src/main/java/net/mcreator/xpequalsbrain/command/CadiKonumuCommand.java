@@ -29,7 +29,7 @@ public class CadiKonumuCommand {
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
 
-					CadiKonumuBelirleProcedure.execute(world, entity);
+					CadiKonumuBelirleProcedure.execute(world, x, y, z, entity);
 					return 0;
 				}));
 	}

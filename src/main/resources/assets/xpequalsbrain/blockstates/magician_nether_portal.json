@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "xpequalsbrain:block/magician_nether_portal_ew"
+    },
+    "axis=x": {
+      "model": "xpequalsbrain:block/magician_nether_portal_ns"
+    }
+  }
+}

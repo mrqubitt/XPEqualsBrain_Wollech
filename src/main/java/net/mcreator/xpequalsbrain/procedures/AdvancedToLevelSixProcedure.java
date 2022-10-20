@@ -124,6 +124,12 @@ public class AdvancedToLevelSixProcedure {
 								"\u00A7a[!]\u00A7e Yeni yetenek a\u00E7\u0131ld\u0131: \u00A76\u00A7lY\u0131ld\u0131z Y\u00FCr\u00FCy\u00FC\u015F\u00FC"),
 								ChatType.SYSTEM, Util.NIL_UUID);
 				}
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent("\u00A7a[!]\u00A7e Kullanmak i\u00E7in \"c\"ye bas!"),
+								ChatType.SYSTEM, Util.NIL_UUID);
+				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, new BlockPos(x, y, z),

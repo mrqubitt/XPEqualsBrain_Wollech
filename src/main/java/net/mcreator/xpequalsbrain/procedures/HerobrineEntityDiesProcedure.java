@@ -75,21 +75,19 @@ public class HerobrineEntityDiesProcedure {
 							.performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 									new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
 									"bossbar set wollech:herobrine visible false");
-				for (int index2 = 0; index2 < (int) (25); index2++) {
-					if (world instanceof Level _level && !_level.isClientSide()) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(XpequalsbrainModItems.SMALL_XP.get()));
-						entityToSpawn.setPickUpDelay(10);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, new BlockPos(x, y, z),
-									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.item.pickup")), SoundSource.AMBIENT, 5,
-									(float) Math.random());
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.item.pickup")),
-									SoundSource.AMBIENT, 5, (float) Math.random(), false);
-						}
+				if (world instanceof Level _level && !_level.isClientSide()) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(XpequalsbrainModItems.HEROBRINE_XP.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z),
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.item.pickup")), SoundSource.AMBIENT, 5,
+								(float) Math.random());
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.item.pickup")),
+								SoundSource.AMBIENT, 5, (float) Math.random(), false);
 					}
 				}
 				MinecraftForge.EVENT_BUS.unregister(this);

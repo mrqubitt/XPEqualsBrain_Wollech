@@ -1,37 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "0",
+    "1",
+    "2"
   ],
   "key": {
     "0": {
       "item": "minecraft:iron_ingot"
     },
     "1": {
-      "item": "minecraft:iron_ingot"
+      "item": "xpequalsbrain:canavar_ozu"
     },
     "2": {
-      "item": "minecraft:iron_ingot"
-    },
-    "3": {
-      "item": "xpequalsbrain:canavar_ozu"
-    },
-    "4": {
-      "item": "xpequalsbrain:canavar_ozu"
-    },
-    "5": {
-      "item": "xpequalsbrain:canavar_ozu"
-    },
-    "6": {
-      "item": "xpequalsbrain:canavar_ozu"
-    },
-    "7": {
       "item": "minecraft:water_bucket"
-    },
-    "8": {
-      "item": "xpequalsbrain:canavar_ozu"
     }
   },
   "result": {

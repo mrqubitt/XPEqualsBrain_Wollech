@@ -17,13 +17,17 @@ import net.mcreator.xpequalsbrain.item.SmallXpItem;
 import net.mcreator.xpequalsbrain.item.PolenItem;
 import net.mcreator.xpequalsbrain.item.MonsterPotionItem;
 import net.mcreator.xpequalsbrain.item.MiracleGrowthItemItem;
+import net.mcreator.xpequalsbrain.item.MagicianNetherItem;
 import net.mcreator.xpequalsbrain.item.HerobrineXpItem;
 import net.mcreator.xpequalsbrain.item.HerobrineLaserItem;
+import net.mcreator.xpequalsbrain.item.FireballItem;
 import net.mcreator.xpequalsbrain.item.DurtmeCubuguItem;
 import net.mcreator.xpequalsbrain.item.DurtenKazmaItem;
 import net.mcreator.xpequalsbrain.item.DehalarinIqsuItem;
 import net.mcreator.xpequalsbrain.item.CorapItem;
 import net.mcreator.xpequalsbrain.item.CanavarOzuItem;
+import net.mcreator.xpequalsbrain.item.BuyucuPortaliTasiItemItem;
+import net.mcreator.xpequalsbrain.item.BuyuKitabiItem;
 import net.mcreator.xpequalsbrain.item.AutoSmeltPickaxeItem;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
 
@@ -54,4 +58,17 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> MIRACLE_GROWTH_ITEM = REGISTRY.register("miracle_growth_item", () -> new MiracleGrowthItemItem());
 	public static final RegistryObject<Item> CANAVAR_OZU = REGISTRY.register("canavar_ozu", () -> new CanavarOzuItem());
 	public static final RegistryObject<Item> MONSTER_POTION = REGISTRY.register("monster_potion", () -> new MonsterPotionItem());
+	public static final RegistryObject<Item> BUYU_KITABI = REGISTRY.register("buyu_kitabi", () -> new BuyuKitabiItem());
+	public static final RegistryObject<Item> KOTU_BITKI = REGISTRY.register("kotu_bitki_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.KOTU_BITKI, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> BUYUCU_PORTALI_TASI_ITEM = REGISTRY.register("buyucu_portali_tasi_item",
+			() -> new BuyucuPortaliTasiItemItem());
+	public static final RegistryObject<Item> MAGICIAN_NETHER = REGISTRY.register("magician_nether", () -> new MagicianNetherItem());
+	public static final RegistryObject<Item> BUYUCU = REGISTRY.register("buyucu_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.BUYUCU, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> TARGET_ENTITY = REGISTRY.register("target_entity_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.TARGET_ENTITY, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> FIREBALL = REGISTRY.register("fireball", () -> new FireballItem());
+	public static final RegistryObject<Item> BAYRAK = REGISTRY.register("bayrak_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.BAYRAK, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }

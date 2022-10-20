@@ -17,10 +17,15 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.xpequalsbrain.entity.ZombieBossEpicEntity;
+import net.mcreator.xpequalsbrain.entity.TargetEntityEntity;
 import net.mcreator.xpequalsbrain.entity.StephenHawkingEntity;
+import net.mcreator.xpequalsbrain.entity.KotuBitkiEntity;
 import net.mcreator.xpequalsbrain.entity.HerobrineEntity;
 import net.mcreator.xpequalsbrain.entity.FriendlybeeEntity;
+import net.mcreator.xpequalsbrain.entity.FireballEntity;
 import net.mcreator.xpequalsbrain.entity.EinsteinEntity;
+import net.mcreator.xpequalsbrain.entity.BuyucuEntity;
+import net.mcreator.xpequalsbrain.entity.BayrakEntity;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -51,6 +56,29 @@ public class XpequalsbrainModEntities {
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HerobrineEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<KotuBitkiEntity>> KOTU_BITKI = register("kotu_bitki",
+			EntityType.Builder.<KotuBitkiEntity>of(KotuBitkiEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KotuBitkiEntity::new)
+
+					.sized(1f, 1f));
+	public static final RegistryObject<EntityType<BuyucuEntity>> BUYUCU = register("buyucu",
+			EntityType.Builder.<BuyucuEntity>of(BuyucuEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(3).setCustomClientFactory(BuyucuEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<TargetEntityEntity>> TARGET_ENTITY = register("target_entity",
+			EntityType.Builder.<TargetEntityEntity>of(TargetEntityEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TargetEntityEntity::new)
+
+					.sized(0.9f, 0.9f));
+	public static final RegistryObject<EntityType<FireballEntity>> FIREBALL = register("projectile_fireball",
+			EntityType.Builder.<FireballEntity>of(FireballEntity::new, MobCategory.MISC).setCustomClientFactory(FireballEntity::new)
+					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<BayrakEntity>> BAYRAK = register("bayrak",
+			EntityType.Builder.<BayrakEntity>of(BayrakEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(0)
+					.setUpdateInterval(3).setCustomClientFactory(BayrakEntity::new)
+
+					.sized(1f, 2f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -64,6 +92,10 @@ public class XpequalsbrainModEntities {
 			StephenHawkingEntity.init();
 			ZombieBossEpicEntity.init();
 			HerobrineEntity.init();
+			KotuBitkiEntity.init();
+			BuyucuEntity.init();
+			TargetEntityEntity.init();
+			BayrakEntity.init();
 		});
 	}
 
@@ -74,5 +106,9 @@ public class XpequalsbrainModEntities {
 		event.put(STEPHEN_HAWKING.get(), StephenHawkingEntity.createAttributes().build());
 		event.put(ZOMBIE_BOSS_EPIC.get(), ZombieBossEpicEntity.createAttributes().build());
 		event.put(HEROBRINE.get(), HerobrineEntity.createAttributes().build());
+		event.put(KOTU_BITKI.get(), KotuBitkiEntity.createAttributes().build());
+		event.put(BUYUCU.get(), BuyucuEntity.createAttributes().build());
+		event.put(TARGET_ENTITY.get(), TargetEntityEntity.createAttributes().build());
+		event.put(BAYRAK.get(), BayrakEntity.createAttributes().build());
 	}
 }

@@ -2013,18 +2013,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -2044,6 +2032,18 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           },
           {
             "name": "world",
@@ -2085,6 +2085,703 @@
           }
         ]
       },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "ActivateCompass",
+      "type": "procedure",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "activate_compass",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "WitchHut",
+      "type": "structure",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "witch_hut",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SpeakToWitch",
+      "type": "procedure",
+      "sortid": 103,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "speak_to_witch",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyuKitabiRightclicked",
+      "type": "procedure",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyu_kitabi_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyuKitabi",
+      "type": "item",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyu_kitabi",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "KotuBitki",
+      "type": "livingentity",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kotu_bitki",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "KotuBitkiEntityDies",
+      "type": "procedure",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kotu_bitki_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "KotuBitkiOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 106,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kotu_bitki_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuyucuPortaliTasiItem",
+      "type": "item",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_portali_tasi_item",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuPortaliTasi",
+      "type": "recipe",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_portali_tasi",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "MagicianNetherOnPortalTickUpdate",
+      "type": "procedure",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magician_nether_on_portal_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "IQBuyucu",
+      "type": "achievement",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iq_buyucu",
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "AdvancedToLevelNine",
+      "type": "procedure",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advanced_to_level_nine",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "MagicianNetherPlayerEntersDimension",
+      "type": "procedure",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magician_nether_player_enters_dimension",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "MagicianNether",
+      "type": "dimension",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magician_nether",
+      "metadata": {
+        "ep": true
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuTalk",
+      "type": "procedure",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_talk",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Buyucu",
+      "type": "livingentity",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SetTargets",
+      "type": "command",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_targets",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SetTargetPosition",
+      "type": "procedure",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_target_position",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "TargetHit",
+      "type": "procedure",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "target_hit",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "TargetEntity",
+      "type": "livingentity",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "target_entity",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "TargetEntityOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 113,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "target_entity_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Kale1",
+      "type": "structure",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kale_1",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Kale2",
+      "type": "structure",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kale_2",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Kale3",
+      "type": "structure",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kale_3",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Kale4",
+      "type": "structure",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kale_4",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SpawnCastleNether",
+      "type": "procedure",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawn_castle_nether",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SpawnCastle",
+      "type": "command",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawn_castle",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuHedefKonumBelirle",
+      "type": "procedure",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_hedef_konum_belirle",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuKonumuHedef",
+      "type": "command",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_konumu_hedef",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuKonumBuzProcedure",
+      "type": "procedure",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_konum_buz_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuKonumBossProcedure",
+      "type": "procedure",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_konum_boss_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuKonumBuzSet",
+      "type": "command",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_konum_buz_set",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuKonumBossSet",
+      "type": "command",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_konum_boss_set",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SpellFireball",
+      "type": "procedure",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spell_fireball",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Fireball",
+      "type": "rangeditem",
+      "sortid": 125,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fireball",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SpellFireballKey",
+      "type": "keybind",
+      "sortid": 126,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spell_fireball_key",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "ParkourProsedure",
+      "type": "procedure",
+      "sortid": 127,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "parkour_prosedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BayrakPlayerCollidesWithThisEntity",
+      "type": "procedure",
+      "sortid": 128,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bayrak_player_collides_with_this_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Bayrak",
+      "type": "livingentity",
+      "sortid": 128,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bayrak",
       "path": "~/Deha_Otesi"
     }
   ],
@@ -2226,16 +2923,288 @@
       "type": "number",
       "scope": "map",
       "value": "0"
+    },
+    {
+      "name": "WitchCompassActivate",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "WitchSpeak",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "KotuBitkiOluSayisi",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "KotuBitkiSayisi",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "KaleSpawnOlduMu",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "BuyucuTalkCounter",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetOneX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetTwoX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetThreeX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetFourX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetFiveX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetSixX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetSevenX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetEightX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetOneY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetOneZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetTwoY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetTwoZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetThreeY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetThreeZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetFourY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetFourZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetFiveY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetFiveZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetSixY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetSixZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetSevenY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetSevenZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetEightY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "TargetEightZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuTargetHitCount",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuHedefKonumX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuHedefKonumY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuHedefKonumZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "HedefGorevBasarili",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "BuyucuKonumBuzX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuKonumBossX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuKonumBuzY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuKonumBuzZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuKonumBossY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BuyucuKonumBossZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BayrakX",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BayrakY",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BayrakZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BayrakAlindi",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "entity.xpequalsbrain.target_entity": "Target Entity",
       "item.xpequalsbrain.durtme_cubugu": "Durtme Cubugu",
       "advancements.insan.title": "Hooman!",
       "advancements.insan.descr": "Kedilerin efendisi...",
       "entity.xpequalsbrain.stephen_hawking": "Stephen Hawking",
       "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
+      "item.xpequalsbrain.fireball": "Ateş Topu",
       "advancements.kopek_iq.title": "Afferim oğluma!",
       "item.xpequalsbrain.zombie_boss_epic_spawn_egg": "Zombie Boss Epic Spawn Egg",
       "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
@@ -2251,6 +3220,7 @@
       "entity.xpequalsbrain.friendlybee": "Friendlybee",
       "advancements.mini_mini_beyin.descr": "Omuzlarının üzerinden bir yük kalktı!",
       "advancements.kopek_iq.descr": "Havlayan köpek ısırmaz!",
+      "item.xpequalsbrain.buyu_kitabi": "§l§dKara Büyüye Giriş",
       "item.xpequalsbrain.polen": "Polen",
       "advancements.gercek_deha.title": "Koca beyin!",
       "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
@@ -2265,14 +3235,25 @@
       "item.xpequalsbrain.corap_boots": "Corap Boots",
       "item.xpequalsbrain.stephen_hawking_spawn_egg": "Stephen Hawking Spawn Egg",
       "item.xpequalsbrain.tutamacli_durtme_cubugu": "Tutamaçlı Dürtme Çubuğu",
+      "item.xpequalsbrain.magician_nether": "Büyücü Portalı Taşı",
       "advancements.build_a_lab.descr": "Tuğlaları en bilimsel halleri ile taşı.",
+      "item.xpequalsbrain.buyucu_spawn_egg": "Buyucu Spawn Egg",
+      "item.xpequalsbrain.target_entity_spawn_egg": "Target Entity Spawn Egg",
+      "entity.xpequalsbrain.buyucu": "Buyucu",
+      "advancements.iq_buyucu.title": "Metafizik!",
+      "key.xpequalsbrain.spell_fireball_key": "Spell Fireball Key",
       "advancements.build_a_lab.title": "Laboratuvar inşaa et!",
+      "advancements.iq_buyucu.descr": "Büyük kafa, büyük büyüleri beraberinde getirir.",
+      "item.xpequalsbrain.kotu_bitki_spawn_egg": "Kotu Bitki Spawn Egg",
       "advancements.polen_mission.title": "Arıya Polen Gerek",
       "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
       "entity.xpequalsbrain.einstein": "Einstein",
       "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
       "item.xpequalsbrain.small_xp": "Xp Topu",
+      "item.xpequalsbrain.bayrak_spawn_egg": "Bayrak Spawn Egg",
       "advancements.gercek_deha.descr": "Çen zeki miçin çen!",
+      "entity.xpequalsbrain.kotu_bitki": "Kotu Bitki",
+      "item.xpequalsbrain.buyucu_portali_tasi_item": "§dBüyücüPortalı Taşı",
       "advancements.ari_kafa.title": "Arı Kafa",
       "advancements.lab_completed.title": "Laboratuvar Faresi",
       "advancements.deha_otesi.descr": "Koca kafa demek koca üretim demek.",
@@ -2285,6 +3266,7 @@
       "item.xpequalsbrain.herobrine_laser": "Herobrine\u0027ın Eriticisi",
       "advancements.cow_misson_completed.title": "Tok inekler!",
       "advancements.mini_mini_beyin.title": "Mini Mini Beyin",
+      "entity.xpequalsbrain.bayrak": "Bayrak",
       "item.xpequalsbrain.durten_kazma": "Dürten Kazma"
     }
   },
