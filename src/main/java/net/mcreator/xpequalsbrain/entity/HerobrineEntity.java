@@ -104,6 +104,8 @@ public class HerobrineEntity extends Monster {
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		HerobrineEntityIsHurtProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
+		if (source == DamageSource.FALL)
+			return false;
 		return super.hurt(source, amount);
 	}
 

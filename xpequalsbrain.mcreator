@@ -1852,6 +1852,23 @@
         ]
       },
       "path": "~/Herobrine"
+    },
+    {
+      "name": "CorapFeatherFalling",
+      "type": "procedure",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "corap_feather_falling",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
     }
   ],
   "variable_elements": [

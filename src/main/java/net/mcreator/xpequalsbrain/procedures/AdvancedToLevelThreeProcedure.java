@@ -64,9 +64,8 @@ public class AdvancedToLevelThreeProcedure {
 				if (!world.isClientSide()) {
 					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 					if (_mcserv != null)
-						_mcserv.getPlayerList().broadcastMessage(
-								new TextComponent("\u00A7a[!]\u00A7e Yak\u0131nlarda bir silah\u00E7tar olmal\u0131."), ChatType.SYSTEM,
-								Util.NIL_UUID);
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent("\u00A7a[!]\u00A7e Yak\u0131nlarda bir silahtar olmal\u0131."),
+								ChatType.SYSTEM, Util.NIL_UUID);
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

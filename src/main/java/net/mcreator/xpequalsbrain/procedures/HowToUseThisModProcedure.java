@@ -47,6 +47,27 @@ public class HowToUseThisModProcedure {
 		if (!world.isClientSide()) {
 			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(new TextComponent("-Yak\u0131nlara bir yere ar\u0131 kovan\u0131 koy"), ChatType.SYSTEM,
+						Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(
+						new TextComponent("-K\u00F6y yak\u0131n\u0131na ufak bir \"ah\u0131r\" in\u015Fa et (\u00E7it i\u00E7inde inekler)"),
+						ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList()
+						.broadcastMessage(new TextComponent(
+								"-Ula\u015Fabilece\u011Fin bir yere, smithing table ile \u00F6zel kazma satan bir k\u00F6yl\u00FC haz\u0131rla"),
+								ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
 				_mcserv.getPlayerList().broadcastMessage(new TextComponent(
 						"-Ba\u015Flamadan \u00F6nce /zombi_konumu ile zombilerin do\u011Faca\u011F\u0131 ve boss sava\u015F\u0131n\u0131 yapaca\u011F\u0131n alan\u0131 belirle. (Tavan\u0131 10 bloktan y\u00FCksek bir ma\u011Fara olsun)"),
 						ChatType.SYSTEM, Util.NIL_UUID);
@@ -58,6 +79,20 @@ public class HowToUseThisModProcedure {
 						.broadcastMessage(new TextComponent(
 								"-Ma\u011Farada silahlar\u0131n\u0131 ve z\u0131rhlar\u0131n\u0131 haz\u0131rlad\u0131\u011F\u0131ndan emin ol."),
 								ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(
+						new TextComponent("-55 seviye olduktan sonra boss'un gelmesi i\u00E7in bir zombi kesmen gerekiyor, boss orada spawn oluyor"),
+						ChatType.SYSTEM, Util.NIL_UUID);
+		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+						"-Oyunun sana \u00FCret dedi\u011Fi \u015Feyleri \u00FCretip kullanmak isteyeceksin. Bunun haricinde \u00FCretebildi\u011Fin t\u00FCm z\u0131rhlar\u0131 vs \u00FCretmeyi de unutma."),
+						ChatType.SYSTEM, Util.NIL_UUID);
 		}
 		if (!world.isClientSide()) {
 			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
