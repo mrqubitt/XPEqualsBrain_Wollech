@@ -1337,7 +1337,7 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "entity",
+            "name": "sourceentity",
             "type": "entity"
           },
           {
@@ -2936,6 +2936,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -3088,6 +3092,272 @@
         "ec": false
       },
       "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuFight",
+      "type": "procedure",
+      "sortid": 141,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_fight",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "KotuBuyucu",
+      "type": "livingentity",
+      "sortid": 142,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kotu_buyucu",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "KotuBuyucuEntityDies",
+      "type": "procedure",
+      "sortid": 143,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kotu_buyucu_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "KotuBuyucuItIsStruckByLightning",
+      "type": "procedure",
+      "sortid": 144,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kotu_buyucu_it_is_struck_by_lightning",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "KotuBuyucuEntityIsHurt",
+      "type": "procedure",
+      "sortid": 145,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kotu_buyucu_entity_is_hurt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SpawnherobrineinFront",
+      "type": "procedure",
+      "sortid": 146,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawnherobrinein_front",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Herobrine"
+    },
+    {
+      "name": "BookOfSorcererRightclicked",
+      "type": "procedure",
+      "sortid": 147,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_of_sorcerer_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BilimInsani",
+      "type": "achievement",
+      "sortid": 148,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bilim_insani",
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "AdvancedToLevelTen",
+      "type": "procedure",
+      "sortid": 149,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "advanced_to_level_ten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "BookOfSorcerer",
+      "type": "item",
+      "sortid": 147,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_of_sorcerer"
+    },
+    {
+      "name": "MeteorShowerStartedf",
+      "type": "procedure",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "meteor_shower_startedf",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "MeteorShowerITself",
+      "type": "procedure",
+      "sortid": 151,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "meteor_shower_i_tself",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LevelAdvancement"
     }
   ],
   "variable_elements": [
@@ -3522,6 +3792,18 @@
       "type": "number",
       "scope": "map",
       "value": "0"
+    },
+    {
+      "name": "BuyucuFightStarted",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "meteorshower",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
     }
   ],
   "sound_elements": [],
@@ -3557,12 +3839,14 @@
       "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
       "key.xpequalsbrain.lightning_key": "Lightning Key",
       "item.xpequalsbrain.corap_chestplate": "Corap Body",
+      "advancements.bilim_insani.title": "Bilim İnsanı",
       "advancements.lab_completed.descr": "Seninle tanışmak güzeldi...",
       "item.xpequalsbrain.canavar_ozu": "Canavar Özü",
       "item.xpequalsbrain.einstein_spawn_egg": "Einstein Spawn Egg",
       "item.xpequalsbrain.corap_leggings": "Corap Leggings",
       "item.xpequalsbrain.herobrine_spawn_egg": "Herobrine Spawn Egg",
       "advancements.cow_brain.descr": "Siyah üzerine mi beyaz, beyaz üzerine mi siyah?",
+      "item.xpequalsbrain.kotu_buyucu_spawn_egg": "Kötü Büyücü Spawn Egg",
       "advancements.cow_misson_completed.descr": "İnek deneyimlerinin tadını çıkar.",
       "item.xpequalsbrain.corap_boots": "Corap Boots",
       "item.xpequalsbrain.stephen_hawking_spawn_egg": "Stephen Hawking Spawn Egg",
@@ -3576,17 +3860,20 @@
       "advancements.iq_buyucu.title": "Metafizik!",
       "item.xpequalsbrain.iceboots_leggings": "Iceboots Leggings",
       "key.xpequalsbrain.spell_fireball_key": "Spell Fireball Key",
+      "entity.xpequalsbrain.kotu_buyucu": "Kötü Büyücü",
       "advancements.build_a_lab.title": "Laboratuvar inşaa et!",
       "advancements.iq_buyucu.descr": "Büyük kafa, büyük büyüleri beraberinde getirir.",
-      "item.xpequalsbrain.kotu_bitki_spawn_egg": "Kotu Bitki Spawn Egg",
+      "item.xpequalsbrain.kotu_bitki_spawn_egg": "Yağmacı Bitki Spawn Egg",
       "advancements.polen_mission.title": "Arıya Polen Gerek",
       "advancements.polen_mission.descr": "Polen toplayıp arıya ver.",
       "entity.xpequalsbrain.einstein": "Einstein",
       "advancements.villager_brain.descr": "Ellerin birbirine yapışmış da olabilir belki?",
+      "item.xpequalsbrain.book_of_sorcerer": "§t§4Yüce Büyücü\u0027nün §r§fGünlüğü",
       "item.xpequalsbrain.small_xp": "Xp Topu",
       "item.xpequalsbrain.bayrak_spawn_egg": "Bayrak Spawn Egg",
+      "advancements.bilim_insani.descr": "Hocam hocam hocam!",
       "advancements.gercek_deha.descr": "Çen zeki miçin çen!",
-      "entity.xpequalsbrain.kotu_bitki": "Kotu Bitki",
+      "entity.xpequalsbrain.kotu_bitki": "Yağmacı Bitki",
       "item.xpequalsbrain.buyucu_portali_tasi_item": "§dBüyücüPortalı Taşı",
       "advancements.ari_kafa.title": "Arı Kafa",
       "advancements.lab_completed.title": "Laboratuvar Faresi",

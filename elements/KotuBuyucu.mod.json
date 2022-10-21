@@ -2,13 +2,13 @@
   "_fv": 33,
   "_type": "livingentity",
   "definition": {
-    "mobName": "Yağmacı Bitki",
-    "mobLabel": "",
-    "mobModelName": "Modelmustafa",
-    "mobModelTexture": "cicek.png",
+    "mobName": "Kötü Büyücü",
+    "mobLabel": "Şatonun Bekçisi",
+    "mobModelName": "Biped",
+    "mobModelTexture": "buyucu.png",
     "mobModelGlowTexture": "",
-    "modelWidth": 1.0,
-    "modelHeight": 1.0,
+    "modelWidth": 0.6,
+    "modelHeight": 1.8,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
@@ -47,13 +47,13 @@
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
     "attackStrength": 3,
-    "attackKnockback": 0.0,
-    "knockbackResistance": 0.0,
+    "attackKnockback": 2.0,
+    "knockbackResistance": 2.0,
     "movementSpeed": 0.3,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 10,
+    "health": 200,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
@@ -78,10 +78,10 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "CUSTOM:CanavarOzu"
+      "value": ""
     },
     "livingSound": {
-      "value": "entity.wither.ambient"
+      "value": ""
     },
     "hurtSound": {
       "value": "entity.generic.hurt"
@@ -94,20 +94,26 @@
     },
     "spawnParticles": true,
     "particleToSpawn": {
-      "value": "PORTAL"
+      "value": "SOUL"
     },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "particleSpawningShape": "Tube",
+    "particleSpawningRadious": 2.0,
+    "particleAmount": 50,
+    "onStruckByLightning": {
+      "name": "KotuBuyucuItIsStruckByLightning"
+    },
     "whenMobDies": {
-      "name": "KotuBitkiEntityDies"
+      "name": "KotuBuyucuEntityDies"
     },
-    "onInitialSpawn": {
-      "name": "KotuBitkiOnInitialEntitySpawn"
+    "whenMobIsHurt": {
+      "name": "KotuBuyucuEntityIsHurt"
+    },
+    "onMobTickUpdate": {
+      "name": "BuyucuOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">20</field><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">6</field><field name=\"condition\">null,null</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0.8</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": false,
     "tameable": false,
     "breedTriggerItems": [],

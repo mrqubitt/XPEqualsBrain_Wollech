@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.mcreator.xpequalsbrain.client.renderer.ZombieBossEpicRenderer;
 import net.mcreator.xpequalsbrain.client.renderer.TargetEntityRenderer;
 import net.mcreator.xpequalsbrain.client.renderer.StephenHawkingRenderer;
+import net.mcreator.xpequalsbrain.client.renderer.KotuBuyucuRenderer;
 import net.mcreator.xpequalsbrain.client.renderer.KotuBitkiRenderer;
 import net.mcreator.xpequalsbrain.client.renderer.HerobrineRenderer;
 import net.mcreator.xpequalsbrain.client.renderer.FriendlybeeRenderer;
@@ -34,5 +35,6 @@ public class XpequalsbrainModEntityRenderers {
 		event.registerEntityRenderer(XpequalsbrainModEntities.TARGET_ENTITY.get(), TargetEntityRenderer::new);
 		event.registerEntityRenderer(XpequalsbrainModEntities.FIREBALL.get(), FireballRenderer::new);
 		event.registerEntityRenderer(XpequalsbrainModEntities.BAYRAK.get(), BayrakRenderer::new);
+		event.registerEntityRenderer(XpequalsbrainModEntities.KOTU_BUYUCU.get(), KotuBuyucuRenderer::new);
 	}
 }

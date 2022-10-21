@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:repeater"
+    },
+    "title": {
+      "translate": "advancements.bilim_insani.title"
+    },
+    "description": {
+      "translate": "advancements.bilim_insani.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "bilim_insani": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "xpequalsbrain:mini_mini_beyin"
+}

@@ -16,7 +16,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -534,12 +537,8 @@ public class BuyucuTalkProcedure {
 											new Vec3((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ())), Vec2.ZERO, _level, 4, "",
 											new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
 									"kill @e[type=xpequalsbrain:target_entity]");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"bossbar remove wollech:hedef");
+						XpequalsbrainModVariables.MapVariables.get(world).globaltimer = 10;
+						XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands().performCommand(
 									new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
@@ -863,26 +862,12 @@ public class BuyucuTalkProcedure {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO,
 								_level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "summonBayrak");
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO,
-								_level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar remove timer");
 					{
 						Entity _ent = sourceentity;
 						if (!_ent.level.isClientSide() && _ent.getServer() != null)
 							_ent.getServer().getCommands().performCommand(_ent.createCommandSourceStack().withSuppressedOutput().withPermission(4),
 									"settimer 45");
 					}
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performCommand(
-								new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
-										_level.getServer(), null).withSuppressedOutput(),
-								"title @a subtitle \"Tekrar denemek i\u00E7in bek\u00E7i ile konu\u015F.");
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performCommand(
-										new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
-												_level.getServer(), null).withSuppressedOutput(),
-										"title @a title \"\u00A74\u00A7tBa\u015Faramad\u0131n!\"");
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, 90);
@@ -908,6 +893,16 @@ public class BuyucuTalkProcedure {
 
 				private void run() {
 					if (!XpequalsbrainModVariables.MapVariables.get(world).BayrakAlindi) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performCommand(
+									new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
+											_level.getServer(), null).withSuppressedOutput(),
+									"title @a subtitle \"Tekrar denemek i\u00E7in bek\u00E7i ile konu\u015F.");
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performCommand(
+									new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
+											_level.getServer(), null).withSuppressedOutput(),
+									"title @a title \"\u00A74\u00A7tBa\u015Faramad\u0131n!\"");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
 									.performCommand(
@@ -1011,7 +1006,7 @@ public class BuyucuTalkProcedure {
 									SoundSource.AMBIENT, (float) 0.7, (float) 0.4, false);
 						}
 					}
-					if (entity instanceof Player _player) {
+					if (sourceentity instanceof Player _player) {
 						ItemStack _setstack = new ItemStack(XpequalsbrainModItems.ICEBOOTS_BOOTS.get());
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
@@ -1026,6 +1021,8 @@ public class BuyucuTalkProcedure {
 									XpequalsbrainModVariables.MapVariables.get(world).BuyucuKonumBossY,
 									XpequalsbrainModVariables.MapVariables.get(world).BuyucuKonumBossZ, _ent.getYRot(), _ent.getXRot());
 					}
+					if (sourceentity instanceof Player _player)
+						_player.giveExperienceLevels(50);
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, 30);
@@ -1101,11 +1098,208 @@ public class BuyucuTalkProcedure {
 					}
 					if (world instanceof Level _level && !_level.isClientSide())
 						_level.explode(null, XpequalsbrainModVariables.MapVariables.get(world).zombiedoorx,
-								(XpequalsbrainModVariables.MapVariables.get(world).zombiedoory + 4),
-								XpequalsbrainModVariables.MapVariables.get(world).zombiedoorz, 6, Explosion.BlockInteraction.BREAK);
+								(XpequalsbrainModVariables.MapVariables.get(world).zombiedoory + 3),
+								XpequalsbrainModVariables.MapVariables.get(world).zombiedoorz, 4, Explosion.BlockInteraction.BREAK);
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, 40);
+		} else if (6 == XpequalsbrainModVariables.MapVariables.get(world).BuyucuTalkCounter) {
+			if (sourceentity instanceof Player _player)
+				_player.giveExperienceLevels(50);
+			if (sourceentity instanceof LivingEntity _entity)
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000, 2));
+			if (sourceentity instanceof LivingEntity _entity)
+				_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 60000, 5));
+			if (!world.isClientSide()) {
+				MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+				if (_mcserv != null)
+					_mcserv.getPlayerList().broadcastMessage(
+							new TextComponent("\u00A76\u015Eatonun Bek\u00E7isi:\u00A7f Her bir testi kusursuzca ge\u00E7tin, tebrik ederim."),
+							ChatType.SYSTEM, Util.NIL_UUID);
+			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos(x, y, z),
+							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.ambient")), SoundSource.AMBIENT, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.ambient")),
+							SoundSource.AMBIENT, 1, 1, false);
+				}
+			}
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (!world.isClientSide()) {
+						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (_mcserv != null)
+							_mcserv.getPlayerList()
+									.broadcastMessage(new TextComponent(
+											"\u00A76\u015Eatonun Bek\u00E7isi:\u00A7f Tek sorun \u015Fu ki, fazla iyi sonu\u00E7lar g\u00F6sterdin."),
+											ChatType.SYSTEM, Util.NIL_UUID);
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.ambient")), SoundSource.AMBIENT, 1,
+									(float) 0.7);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.ambient")),
+									SoundSource.AMBIENT, 1, (float) 0.7, false);
+						}
+					}
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 35);
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (!world.isClientSide()) {
+						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (_mcserv != null)
+							_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+									"\u00A76\u015Eatonun Bek\u00E7isi:\u00A7f \u00A74Y\u00FCce B\u00FCy\u00FCc\u00FC\u00A7f olarak ge\u00E7irdi\u011Fin y\u0131llarda sadece bir \u00E7ocuk bu kadar ba\u015Far\u0131l\u0131 olabilmi\u015Fti. Ama kendi h\u0131rs\u0131 \u00E7ok k\u00F6t\u00FC \u015Feylere yol a\u00E7m\u0131\u015Ft\u0131."),
+									ChatType.SYSTEM, Util.NIL_UUID);
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.ambient")), SoundSource.AMBIENT, 1,
+									1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.illusioner.ambient")),
+									SoundSource.AMBIENT, 1, 1, false);
+						}
+					}
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 50);
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (!world.isClientSide()) {
+						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (_mcserv != null)
+							_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+									"\u00A76\u015Eatonun Bek\u00E7isi:\u00A7f Herkesin iyili\u011Fi i\u00E7in kafan\u0131 bedeninden ay\u0131rmak zorunday\u0131m!"),
+									ChatType.SYSTEM, Util.NIL_UUID);
+					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ravager.ambient")), SoundSource.AMBIENT, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ravager.ambient")),
+									SoundSource.AMBIENT, 1, 1, false);
+						}
+					}
+					BuyucuFightProcedure.execute(world);
+					{
+						Entity _ent = entity;
+						_ent.teleportTo(x, (y - 100), z);
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(x, (y - 100), z, _ent.getYRot(), _ent.getXRot());
+					}
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 110);
+			new Object() {
+				private int ticks = 0;
+				private float waitTicks;
+				private LevelAccessor world;
+
+				public void start(LevelAccessor world, int waitTicks) {
+					this.waitTicks = waitTicks;
+					MinecraftForge.EVENT_BUS.register(this);
+					this.world = world;
+				}
+
+				@SubscribeEvent
+				public void tick(TickEvent.ServerTickEvent event) {
+					if (event.phase == TickEvent.Phase.END) {
+						this.ticks += 1;
+						if (this.ticks >= this.waitTicks)
+							run();
+					}
+				}
+
+				private void run() {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+										new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+										"title @a subtitle \"\u00A7eBol \u015Fans!\"");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performCommand(
+								new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
+										_level.getServer(), null).withSuppressedOutput(),
+								"title @a title \"\u00A74\u00A7lY\u00FCce B\u00FCy\u00FCc\u00FC!\"");
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.wither.spawn")), SoundSource.AMBIENT, 2,
+									(float) 0.7);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.wither.spawn")),
+									SoundSource.AMBIENT, 2, (float) 0.7, false);
+						}
+					}
+					MinecraftForge.EVENT_BUS.unregister(this);
+				}
+			}.start(world, 130);
 		}
 	}
 }

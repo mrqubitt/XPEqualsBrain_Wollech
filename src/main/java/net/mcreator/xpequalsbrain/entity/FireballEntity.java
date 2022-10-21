@@ -90,7 +90,7 @@ public class FireballEntity extends AbstractArrow implements ItemSupplier {
 		double dz = target.getZ() - entity.getZ();
 		entityarrow.shoot(dx, dy - entityarrow.getY() + Math.hypot(dx, dz) * 0.2F, dz, 12.799999999999999f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setBaseDamage(200);
+		entityarrow.setBaseDamage(10);
 		entityarrow.setKnockback(5);
 		entityarrow.setCritArrow(false);
 		entity.level.addFreshEntity(entityarrow);

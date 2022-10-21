@@ -19,6 +19,7 @@ import net.minecraft.world.entity.Entity;
 import net.mcreator.xpequalsbrain.entity.ZombieBossEpicEntity;
 import net.mcreator.xpequalsbrain.entity.TargetEntityEntity;
 import net.mcreator.xpequalsbrain.entity.StephenHawkingEntity;
+import net.mcreator.xpequalsbrain.entity.KotuBuyucuEntity;
 import net.mcreator.xpequalsbrain.entity.KotuBitkiEntity;
 import net.mcreator.xpequalsbrain.entity.HerobrineEntity;
 import net.mcreator.xpequalsbrain.entity.FriendlybeeEntity;
@@ -79,6 +80,11 @@ public class XpequalsbrainModEntities {
 					.setUpdateInterval(3).setCustomClientFactory(BayrakEntity::new)
 
 					.sized(1f, 2f));
+	public static final RegistryObject<EntityType<KotuBuyucuEntity>> KOTU_BUYUCU = register("kotu_buyucu",
+			EntityType.Builder.<KotuBuyucuEntity>of(KotuBuyucuEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KotuBuyucuEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -96,6 +102,7 @@ public class XpequalsbrainModEntities {
 			BuyucuEntity.init();
 			TargetEntityEntity.init();
 			BayrakEntity.init();
+			KotuBuyucuEntity.init();
 		});
 	}
 
@@ -110,5 +117,6 @@ public class XpequalsbrainModEntities {
 		event.put(BUYUCU.get(), BuyucuEntity.createAttributes().build());
 		event.put(TARGET_ENTITY.get(), TargetEntityEntity.createAttributes().build());
 		event.put(BAYRAK.get(), BayrakEntity.createAttributes().build());
+		event.put(KOTU_BUYUCU.get(), KotuBuyucuEntity.createAttributes().build());
 	}
 }

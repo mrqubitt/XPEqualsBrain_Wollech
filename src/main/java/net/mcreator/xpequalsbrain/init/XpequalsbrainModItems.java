@@ -29,6 +29,7 @@ import net.mcreator.xpequalsbrain.item.CorapItem;
 import net.mcreator.xpequalsbrain.item.CanavarOzuItem;
 import net.mcreator.xpequalsbrain.item.BuyucuPortaliTasiItemItem;
 import net.mcreator.xpequalsbrain.item.BuyuKitabiItem;
+import net.mcreator.xpequalsbrain.item.BookOfSorcererItem;
 import net.mcreator.xpequalsbrain.item.AutoSmeltPickaxeItem;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
 
@@ -73,4 +74,7 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> BAYRAK = REGISTRY.register("bayrak_spawn_egg",
 			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.BAYRAK, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> ICEBOOTS_BOOTS = REGISTRY.register("iceboots_boots", () -> new IcebootsItem.Boots());
+	public static final RegistryObject<Item> KOTU_BUYUCU = REGISTRY.register("kotu_buyucu_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.KOTU_BUYUCU, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> BOOK_OF_SORCERER = REGISTRY.register("book_of_sorcerer", () -> new BookOfSorcererItem());
 }

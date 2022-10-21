@@ -63,6 +63,8 @@ public class LevelBelirleyiciProcedure {
 			AdvancedToLevelEightProcedure.execute(world, x, y, z, entity);
 		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) + 1 == 300) {
 			AdvancedToLevelNineProcedure.execute(world, x, y, z, entity);
+		} else if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) + 1 == 500) {
+			AdvancedToLevelTenProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

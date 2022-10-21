@@ -9,9 +9,10 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -20,6 +21,7 @@ import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
@@ -27,7 +29,6 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.particles.ParticleTypes;
 
@@ -38,7 +39,7 @@ import net.mcreator.xpequalsbrain.init.XpequalsbrainModEntities;
 
 import javax.annotation.Nullable;
 
-public class KotuBitkiEntity extends Monster {
+public class KotuBitkiEntity extends Monster implements RangedAttackMob {
 	public KotuBitkiEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(XpequalsbrainModEntities.KOTU_BITKI.get(), world);
 	}
@@ -47,8 +48,6 @@ public class KotuBitkiEntity extends Monster {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
-		setCustomName(new TextComponent("KÖTÜ BİTKİ"));
-		setCustomNameVisible(true);
 		setPersistenceRequired();
 	}
 
@@ -62,8 +61,13 @@ public class KotuBitkiEntity extends Monster {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
 		this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, (float) 20));
-		this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(4, new FloatGoal(this));
+		this.goalSelector.addGoal(3, new FloatGoal(this));
+		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
+			@Override
+			public boolean canContinueToUse() {
+				return this.canUse();
+			}
+		});
 	}
 
 	@Override
@@ -117,6 +121,11 @@ public class KotuBitkiEntity extends Monster {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		KotuBitkiOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ());
 		return retval;
+	}
+
+	@Override
+	public void performRangedAttack(LivingEntity target, float flval) {
+		FireballEntity.shoot(this, target);
 	}
 
 	public void aiStep() {

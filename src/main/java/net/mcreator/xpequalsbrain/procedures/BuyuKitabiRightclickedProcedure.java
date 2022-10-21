@@ -35,6 +35,6 @@ public class BuyuKitabiRightclickedProcedure {
 			}
 		}
 		if (entity instanceof Player _player)
-			_player.giveExperienceLevels(37);
+			_player.giveExperienceLevels(45);
 	}
 }

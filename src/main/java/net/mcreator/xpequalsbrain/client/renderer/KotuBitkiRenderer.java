@@ -6,15 +6,15 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.xpequalsbrain.entity.KotuBitkiEntity;
-import net.mcreator.xpequalsbrain.client.model.Modelcustom_model;
+import net.mcreator.xpequalsbrain.client.model.Modelmustafa;
 
-public class KotuBitkiRenderer extends MobRenderer<KotuBitkiEntity, Modelcustom_model<KotuBitkiEntity>> {
+public class KotuBitkiRenderer extends MobRenderer<KotuBitkiEntity, Modelmustafa<KotuBitkiEntity>> {
 	public KotuBitkiRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelcustom_model(context.bakeLayer(Modelcustom_model.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelmustafa(context.bakeLayer(Modelmustafa.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(KotuBitkiEntity entity) {
-		return new ResourceLocation("xpequalsbrain:textures/entities/bee.png");
+		return new ResourceLocation("xpequalsbrain:textures/entities/cicek.png");
 	}
 }

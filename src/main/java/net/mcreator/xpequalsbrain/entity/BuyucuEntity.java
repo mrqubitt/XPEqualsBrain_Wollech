@@ -101,7 +101,7 @@ public class BuyucuEntity extends PathfinderMob {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		BuyucuOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
+		BuyucuOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public void aiStep() {

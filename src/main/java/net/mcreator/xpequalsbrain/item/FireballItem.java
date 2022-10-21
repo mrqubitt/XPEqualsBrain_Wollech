@@ -44,7 +44,7 @@ public class FireballItem extends Item {
 			double y = entity.getY();
 			double z = entity.getZ();
 			if (true) {
-				FireballEntity entityarrow = FireballEntity.shoot(world, entity, world.getRandom(), 12.799999999999999f, 200, 5);
+				FireballEntity entityarrow = FireballEntity.shoot(world, entity, world.getRandom(), 12.799999999999999f, 10, 5);
 				itemstack.hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(entity.getUsedItemHand()));
 				entityarrow.pickup = AbstractArrow.Pickup.DISALLOWED;
 			}
