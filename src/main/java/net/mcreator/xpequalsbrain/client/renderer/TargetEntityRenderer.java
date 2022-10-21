@@ -11,7 +11,7 @@ import net.mcreator.xpequalsbrain.entity.TargetEntityEntity;
 
 public class TargetEntityRenderer extends MobRenderer<TargetEntityEntity, PigModel<TargetEntityEntity>> {
 	public TargetEntityRenderer(EntityRendererProvider.Context context) {
-		super(context, new PigModel(context.bakeLayer(ModelLayers.PIG)), 0.5f);
+		super(context, new PigModel(context.bakeLayer(ModelLayers.PIG)), 1f);
 	}
 
 	@Override

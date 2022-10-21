@@ -9,12 +9,12 @@
     ],
     "worldGenType": "Nether like gen",
     "mainFillerBlock": {
-      "value": "Blocks.AIR"
+      "value": "Blocks.NETHERRACK"
     },
     "fluidBlock": {
       "value": "Blocks.FLOWING_LAVA"
     },
-    "canRespawnHere": false,
+    "canRespawnHere": true,
     "hasFog": true,
     "isDark": false,
     "doesWaterVaporize": false,

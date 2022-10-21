@@ -2408,7 +2408,32 @@
       "locked_code": false,
       "registry_name": "buyucu_talk",
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       },
       "path": "~/Deha_Otesi"
     },
@@ -2464,10 +2489,6 @@
       "registry_name": "target_hit",
       "metadata": {
         "dependencies": [
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
           {
             "name": "x",
             "type": "number"
@@ -2702,6 +2723,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -2783,6 +2820,274 @@
       "locked_code": false,
       "registry_name": "bayrak",
       "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SummonBayrak",
+      "type": "procedure",
+      "sortid": 129,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "summon_bayrak",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Summonbayrakcommand",
+      "type": "command",
+      "sortid": 130,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "summonbayrakcommand",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Timer",
+      "type": "procedure",
+      "sortid": 131,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "timer",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "SetTimer",
+      "type": "command",
+      "sortid": 132,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_timer",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "TimerProcedure",
+      "type": "procedure",
+      "sortid": 133,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "timer_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BuyucuOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 134,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buyucu_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BayrakKonumu",
+      "type": "procedure",
+      "sortid": 135,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bayrak_konumu",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "BayrakKonumuAyarla",
+      "type": "command",
+      "sortid": 136,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bayrak_konumu_ayarla",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "ZombieDoorPosition",
+      "type": "procedure",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_door_position",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "ZombieDoor",
+      "type": "command",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_door",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "LightningSpell",
+      "type": "procedure",
+      "sortid": 138,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_spell",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "LightningKey",
+      "type": "keybind",
+      "sortid": 139,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_key",
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "IcebootsBootsTickEvent",
+      "type": "procedure",
+      "sortid": 140,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iceboots_boots_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Deha_Otesi"
+    },
+    {
+      "name": "Iceboots",
+      "type": "armor",
+      "sortid": 140,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iceboots",
+      "metadata": {
+        "eh": false,
+        "el": false,
+        "eb": true,
+        "ec": false
+      },
+      "path": "~/Deha_Otesi"
     }
   ],
   "variable_elements": [
@@ -2837,7 +3142,7 @@
     {
       "name": "BlocksBroken",
       "type": "number",
-      "scope": "global",
+      "scope": "map",
       "value": "0"
     },
     {
@@ -3193,14 +3498,40 @@
       "type": "logic",
       "scope": "map",
       "value": "false"
+    },
+    {
+      "name": "globaltimer",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "zombiedoorx",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "zombiedoory",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "zombiedoorz",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
       "entity.xpequalsbrain.target_entity": "Target Entity",
+      "item.xpequalsbrain.iceboots_boots": "Iceboots Boots",
       "item.xpequalsbrain.durtme_cubugu": "Durtme Cubugu",
       "advancements.insan.title": "Hooman!",
+      "item.xpequalsbrain.iceboots_chestplate": "Iceboots Body",
       "advancements.insan.descr": "Kedilerin efendisi...",
       "entity.xpequalsbrain.stephen_hawking": "Stephen Hawking",
       "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
@@ -3224,6 +3555,7 @@
       "item.xpequalsbrain.polen": "Polen",
       "advancements.gercek_deha.title": "Koca beyin!",
       "advancements.villager_brain.title": "Koku yeteneğin değişti mi?",
+      "key.xpequalsbrain.lightning_key": "Lightning Key",
       "item.xpequalsbrain.corap_chestplate": "Corap Body",
       "advancements.lab_completed.descr": "Seninle tanışmak güzeldi...",
       "item.xpequalsbrain.canavar_ozu": "Canavar Özü",
@@ -3235,12 +3567,14 @@
       "item.xpequalsbrain.corap_boots": "Corap Boots",
       "item.xpequalsbrain.stephen_hawking_spawn_egg": "Stephen Hawking Spawn Egg",
       "item.xpequalsbrain.tutamacli_durtme_cubugu": "Tutamaçlı Dürtme Çubuğu",
+      "item.xpequalsbrain.iceboots_helmet": "Iceboots Helmet",
       "item.xpequalsbrain.magician_nether": "Büyücü Portalı Taşı",
       "advancements.build_a_lab.descr": "Tuğlaları en bilimsel halleri ile taşı.",
       "item.xpequalsbrain.buyucu_spawn_egg": "Buyucu Spawn Egg",
       "item.xpequalsbrain.target_entity_spawn_egg": "Target Entity Spawn Egg",
       "entity.xpequalsbrain.buyucu": "Buyucu",
       "advancements.iq_buyucu.title": "Metafizik!",
+      "item.xpequalsbrain.iceboots_leggings": "Iceboots Leggings",
       "key.xpequalsbrain.spell_fireball_key": "Spell Fireball Key",
       "advancements.build_a_lab.title": "Laboratuvar inşaa et!",
       "advancements.iq_buyucu.descr": "Büyük kafa, büyük büyüleri beraberinde getirir.",
@@ -3309,6 +3643,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.xpequalsbrain",
     "lockBaseModFiles": false
   },

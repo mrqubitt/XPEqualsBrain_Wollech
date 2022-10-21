@@ -18,6 +18,7 @@ import net.mcreator.xpequalsbrain.item.PolenItem;
 import net.mcreator.xpequalsbrain.item.MonsterPotionItem;
 import net.mcreator.xpequalsbrain.item.MiracleGrowthItemItem;
 import net.mcreator.xpequalsbrain.item.MagicianNetherItem;
+import net.mcreator.xpequalsbrain.item.IcebootsItem;
 import net.mcreator.xpequalsbrain.item.HerobrineXpItem;
 import net.mcreator.xpequalsbrain.item.HerobrineLaserItem;
 import net.mcreator.xpequalsbrain.item.FireballItem;
@@ -71,4 +72,5 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> FIREBALL = REGISTRY.register("fireball", () -> new FireballItem());
 	public static final RegistryObject<Item> BAYRAK = REGISTRY.register("bayrak_spawn_egg",
 			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.BAYRAK, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> ICEBOOTS_BOOTS = REGISTRY.register("iceboots_boots", () -> new IcebootsItem.Boots());
 }

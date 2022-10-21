@@ -52,7 +52,7 @@ public class SpellFireballKeyMessage {
 			return;
 		if (type == 0) {
 
-			SpellFireballProcedure.execute(entity);
+			SpellFireballProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

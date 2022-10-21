@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
 import net.mcreator.xpequalsbrain.entity.FireballEntity;
-import net.mcreator.xpequalsbrain.client.model.Modelfileproject;
+import net.mcreator.xpequalsbrain.client.model.Modelatesates;
 
 import com.mojang.math.Vector3f;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -17,11 +17,11 @@ import com.mojang.blaze3d.vertex.PoseStack;
 
 public class FireballRenderer extends EntityRenderer<FireballEntity> {
 	private static final ResourceLocation texture = new ResourceLocation("xpequalsbrain:textures/entities/atesgibi.png");
-	private final Modelfileproject model;
+	private final Modelatesates model;
 
 	public FireballRenderer(EntityRendererProvider.Context context) {
 		super(context);
-		model = new Modelfileproject(context.bakeLayer(Modelfileproject.LAYER_LOCATION));
+		model = new Modelatesates(context.bakeLayer(Modelatesates.LAYER_LOCATION));
 	}
 
 	@Override

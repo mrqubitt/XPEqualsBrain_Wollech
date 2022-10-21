@@ -29,7 +29,6 @@ public class XpequalsbrainModVariables {
 	public static double BeeMissonCounter = 0;
 	public static boolean IsLevelZero = false;
 	public static boolean CowMissonStarted = false;
-	public static double BlocksBroken = 0;
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
@@ -101,6 +100,7 @@ public class XpequalsbrainModVariables {
 	public static class MapVariables extends SavedData {
 		public static final String DATA_NAME = "xpequalsbrain_mapvars";
 		public String IQ_NAME = "\"\"";
+		public double BlocksBroken = 0;
 		public double EinsteinLocationX = 0;
 		public double EinsteinLocationY = 0;
 		public double EinsteinLocationZ = 0;
@@ -160,6 +160,10 @@ public class XpequalsbrainModVariables {
 		public double BayrakY = 0;
 		public double BayrakZ = 0;
 		public boolean BayrakAlindi = false;
+		public double globaltimer = 0;
+		public double zombiedoorx = 0;
+		public double zombiedoory = 0;
+		public double zombiedoorz = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -169,6 +173,7 @@ public class XpequalsbrainModVariables {
 
 		public void read(CompoundTag nbt) {
 			IQ_NAME = nbt.getString("IQ_NAME");
+			BlocksBroken = nbt.getDouble("BlocksBroken");
 			EinsteinLocationX = nbt.getDouble("EinsteinLocationX");
 			EinsteinLocationY = nbt.getDouble("EinsteinLocationY");
 			EinsteinLocationZ = nbt.getDouble("EinsteinLocationZ");
@@ -228,11 +233,16 @@ public class XpequalsbrainModVariables {
 			BayrakY = nbt.getDouble("BayrakY");
 			BayrakZ = nbt.getDouble("BayrakZ");
 			BayrakAlindi = nbt.getBoolean("BayrakAlindi");
+			globaltimer = nbt.getDouble("globaltimer");
+			zombiedoorx = nbt.getDouble("zombiedoorx");
+			zombiedoory = nbt.getDouble("zombiedoory");
+			zombiedoorz = nbt.getDouble("zombiedoorz");
 		}
 
 		@Override
 		public CompoundTag save(CompoundTag nbt) {
 			nbt.putString("IQ_NAME", IQ_NAME);
+			nbt.putDouble("BlocksBroken", BlocksBroken);
 			nbt.putDouble("EinsteinLocationX", EinsteinLocationX);
 			nbt.putDouble("EinsteinLocationY", EinsteinLocationY);
 			nbt.putDouble("EinsteinLocationZ", EinsteinLocationZ);
@@ -292,6 +302,10 @@ public class XpequalsbrainModVariables {
 			nbt.putDouble("BayrakY", BayrakY);
 			nbt.putDouble("BayrakZ", BayrakZ);
 			nbt.putBoolean("BayrakAlindi", BayrakAlindi);
+			nbt.putDouble("globaltimer", globaltimer);
+			nbt.putDouble("zombiedoorx", zombiedoorx);
+			nbt.putDouble("zombiedoory", zombiedoory);
+			nbt.putDouble("zombiedoorz", zombiedoorz);
 			return nbt;
 		}
 

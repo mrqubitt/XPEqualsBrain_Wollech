@@ -4,31 +4,21 @@ package net.mcreator.xpequalsbrain.entity;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 
-import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
@@ -36,15 +26,10 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.xpequalsbrain.procedures.BuyucuTalkProcedure;
+import net.mcreator.xpequalsbrain.procedures.BuyucuOnEntityTickUpdateProcedure;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModEntities;
 
-@Mod.EventBusSubscriber
 public class BuyucuEntity extends PathfinderMob {
-	@SubscribeEvent
-	public static void addLivingEntityToBiomes(BiomeLoadingEvent event) {
-		event.getSpawns().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(XpequalsbrainModEntities.BUYUCU.get(), 20, 4, 4));
-	}
-
 	public BuyucuEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(XpequalsbrainModEntities.BUYUCU.get(), world);
 	}
@@ -55,6 +40,7 @@ public class BuyucuEntity extends PathfinderMob {
 		setNoAi(false);
 		setCustomName(new TextComponent("Şatonun Bekçisi"));
 		setCustomNameVisible(true);
+		setPersistenceRequired();
 	}
 
 	@Override
@@ -66,12 +52,16 @@ public class BuyucuEntity extends PathfinderMob {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, (float) 6));
-		this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
 	}
 
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
 	}
 
 	@Override
@@ -104,8 +94,14 @@ public class BuyucuEntity extends PathfinderMob {
 		Entity entity = this;
 		Level world = this.level;
 
-		BuyucuTalkProcedure.execute();
+		BuyucuTalkProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		BuyucuOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	public void aiStep() {
@@ -124,9 +120,6 @@ public class BuyucuEntity extends PathfinderMob {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(XpequalsbrainModEntities.BUYUCU.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL
-						&& Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

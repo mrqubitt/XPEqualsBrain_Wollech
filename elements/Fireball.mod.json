@@ -3,7 +3,7 @@
   "_type": "rangeditem",
   "definition": {
     "renderType": 0,
-    "texture": "herobrine_xp",
+    "texture": "fireballitem",
     "customModelName": "Normal",
     "name": "Ateş Topu",
     "specialInfo": [],
@@ -17,21 +17,21 @@
     "shootConstantly": false,
     "usageCount": 100,
     "actionSound": {
-      "value": "entity.arrow.shoot"
+      "value": "item.firecharge.use"
     },
     "hasGlow": false,
     "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "bulletPower": 5.0,
-    "bulletDamage": 10.0,
+    "bulletPower": 12.799999999999999,
+    "bulletDamage": 200.0,
     "bulletKnockback": 5,
-    "bulletParticles": true,
-    "bulletIgnitesFire": true,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
     "bulletItemTexture": {
       "value": "CUSTOM:HerobrineXp"
     },
-    "bulletModel": "Modelfileproject",
+    "bulletModel": "Modelatesates",
     "customBulletModelTexture": "atesgibi.png"
   }
 }

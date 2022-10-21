@@ -13,10 +13,12 @@ import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.xpequalsbrain.procedures.BayrakPlayerCollidesWithThisEntityProcedure;
 import net.mcreator.xpequalsbrain.init.XpequalsbrainModEntities;
@@ -62,6 +64,24 @@ public class BayrakEntity extends PathfinderMob {
 	public void playerTouch(Player sourceentity) {
 		super.playerTouch(sourceentity);
 		BayrakPlayerCollidesWithThisEntityProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	public void aiStep() {
+		super.aiStep();
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level;
+		for (int l = 0; l < 4; ++l) {
+			double x0 = x + random.nextFloat();
+			double y0 = y + random.nextFloat();
+			double z0 = z + random.nextFloat();
+			double dx = (random.nextFloat() - 0.5D) * 0.5D;
+			double dy = (random.nextFloat() - 0.5D) * 0.5D;
+			double dz = (random.nextFloat() - 0.5D) * 0.5D;
+			world.addParticle(ParticleTypes.END_ROD, x0, y0, z0, dx, dy, dz);
+		}
 	}
 
 	public static void init() {

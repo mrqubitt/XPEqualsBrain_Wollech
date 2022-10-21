@@ -3,12 +3,12 @@
 // Paste this class into your mod and generate all required imports
 
 
-public class fileproject<T extends Entity> extends EntityModel<T> {
+public class atesates<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "fileproject"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "atesates"), "main");
 	private final ModelPart bone;
 
-	public fileproject(ModelPart root) {
+	public atesates(ModelPart root) {
 		this.bone = root.getChild("bone");
 	}
 
@@ -24,7 +24,7 @@ public class fileproject<T extends Entity> extends EntityModel<T> {
 		.texOffs(0, 0).addBox(-2.0F, -7.25F, -1.0F, 5.0F, 5.0F, 2.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 0).addBox(-2.0F, -7.75F, 1.0F, 5.0F, 6.0F, 4.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 0).addBox(-2.0F, -7.25F, 5.0F, 5.0F, 5.0F, 2.0F, new CubeDeformation(0.0F))
-		.texOffs(0, 0).addBox(-2.0F, -6.25F, 7.0F, 5.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+		.texOffs(0, 0).addBox(-2.0F, -6.25F, 7.0F, 5.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 12.0F, -5.0F, -1.5708F, 0.0F, 3.1416F));
 
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}

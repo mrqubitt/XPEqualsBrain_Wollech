@@ -63,7 +63,11 @@ public class BeginningProcedure {
 		XpequalsbrainModVariables.TalkedToVillager = 0;
 		XpequalsbrainModVariables.MapVariables.get(world).EinsteinSpeakCounter = 0;
 		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
-		XpequalsbrainModVariables.BlocksBroken = 0;
+		XpequalsbrainModVariables.MapVariables.get(world).BlocksBroken = 0;
+		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
+		XpequalsbrainModVariables.MapVariables.get(world).globaltimer = 0;
+		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
+		entity.getPersistentData().putDouble("Timer", 0);
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=xpequalsbrain:friendlybee]");

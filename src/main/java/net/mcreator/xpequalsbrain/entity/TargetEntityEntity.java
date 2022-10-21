@@ -81,7 +81,7 @@ public class TargetEntityEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		TargetHitProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), source.getEntity());
+		TargetHitProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
@@ -99,7 +99,7 @@ public class TargetEntityEntity extends Monster {
 		double z = this.getZ();
 		Entity entity = this;
 		Level world = this.level;
-		for (int l = 0; l < 20; ++l) {
+		for (int l = 0; l < 10; ++l) {
 			double x0 = x + random.nextFloat();
 			double y0 = y + random.nextFloat();
 			double z0 = z + random.nextFloat();
@@ -116,7 +116,7 @@ public class TargetEntityEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
+		builder = builder.add(Attributes.MAX_HEALTH, 1);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);

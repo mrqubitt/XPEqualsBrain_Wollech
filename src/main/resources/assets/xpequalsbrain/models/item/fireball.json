@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "xpequalsbrain:items/herobrine_xp"
+    "layer0": "xpequalsbrain:items/fireballitem"
   },
   "display": {
     "thirdperson_righthand": {

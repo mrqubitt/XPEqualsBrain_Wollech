@@ -70,7 +70,7 @@ public class XpequalsbrainModEntities {
 			EntityType.Builder.<TargetEntityEntity>of(TargetEntityEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TargetEntityEntity::new)
 
-					.sized(0.9f, 0.9f));
+					.sized(1f, 1f));
 	public static final RegistryObject<EntityType<FireballEntity>> FIREBALL = register("projectile_fireball",
 			EntityType.Builder.<FireballEntity>of(FireballEntity::new, MobCategory.MISC).setCustomClientFactory(FireballEntity::new)
 					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));

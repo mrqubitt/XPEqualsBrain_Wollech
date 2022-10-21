@@ -163,5 +163,12 @@ public class HowToUseThisModProcedure {
 								"-Kontrol d\u0131\u015F\u0131 veya hileyle seviye atlamamaya dikkat et, saya\u00E7ta sorun olu\u015Fturabiliyor."),
 								ChatType.SYSTEM, Util.NIL_UUID);
 		}
+		if (!world.isClientSide()) {
+			MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (_mcserv != null)
+				_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+						"-\u00D6zel diyara \u00F6nceden gidip kalenin sol \u00F6n taraf\u0131n\u0131n olmas\u0131n\u0131 isetdi\u011Fin yere gel, bir blok a\u015Fa\u011F\u0131 in ve kaleyi olu\u015Ftur. Sonra kap\u0131s\u0131na b\u00FCy\u00FCc\u00FCy\u00FC spawn et, i\u00E7erideki hedeflerde duvarda olanlar\u0131 k\u0131r\u0131p yere koy, sonra hedeflere teker teker bakarak /hedefsec 1 \u015Feklinde 8'e kadar hedef belirle, sonra o b\u00F6lge i\u00E7in buyucuhedefkonumu belirle, sonra b\u00FCy\u00FCc\u00FC buz konumu belirle, sonra bayrak konumu belirle, sonra b\u00FCy\u00FCc\u00FC boss konumu belirle, sonra da zombiekap\u0131s\u0131 konumunu zombie kap\u0131s\u0131n\u0131n \u00F6n\u00FCne dibine ge\u00E7ip belirle. Sonra da kap\u0131n\u0131n i\u00E7ine zombie boss'lar do\u011Fur"),
+						ChatType.SYSTEM, Util.NIL_UUID);
+		}
 	}
 }

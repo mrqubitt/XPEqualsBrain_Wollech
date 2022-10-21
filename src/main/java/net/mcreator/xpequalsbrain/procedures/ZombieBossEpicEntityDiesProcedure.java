@@ -29,7 +29,6 @@ public class ZombieBossEpicEntityDiesProcedure {
 			}
 		}
 		SmallXpRightclickedProcedure.execute(world, x, y, z, entity);
-		SmallXpRightclickedProcedure.execute(world, x, y, z, entity);
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
 					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "bossbar set wollech:bosszombie visible false");
