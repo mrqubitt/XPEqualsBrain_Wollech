@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Bayrak",
     "mobLabel": "",
-    "mobModelName": "Modelcustom_model",
-    "mobModelTexture": "bayrak.png",
+    "mobModelName": "Modelbayraks",
+    "mobModelTexture": "bayraktexturenew.png",
     "mobModelGlowTexture": "",
     "modelWidth": 1.0,
     "modelHeight": 2.0,

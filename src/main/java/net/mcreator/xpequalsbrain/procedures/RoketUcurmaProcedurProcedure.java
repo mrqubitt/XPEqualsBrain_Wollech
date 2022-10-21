@@ -11,6 +11,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 
+import net.mcreator.xpequalsbrain.network.XpequalsbrainModVariables;
 import net.mcreator.xpequalsbrain.entity.RoketEntity;
 
 import javax.annotation.Nullable;
@@ -31,7 +32,7 @@ public class RoketUcurmaProcedurProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getVehicle()) instanceof RoketEntity) {
+		if (XpequalsbrainModVariables.BeeMissionStarted == (entity.getVehicle()) instanceof RoketEntity) {
 			(entity.getVehicle()).setDeltaMovement(new Vec3(0, 0.6, 0));
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.LARGE_SMOKE, ((entity.getVehicle()).getX()), ((entity.getVehicle()).getY()),

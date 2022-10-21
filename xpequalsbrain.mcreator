@@ -3453,6 +3453,34 @@
       "locked_code": false,
       "registry_name": "rocket_craft",
       "path": "~/Roket"
+    },
+    {
+      "name": "RoketRightClickedOnEntity",
+      "type": "procedure",
+      "sortid": 157,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roket_right_clicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

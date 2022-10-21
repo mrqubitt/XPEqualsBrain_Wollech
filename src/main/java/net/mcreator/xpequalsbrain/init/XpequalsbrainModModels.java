@@ -15,6 +15,7 @@ import net.mcreator.xpequalsbrain.client.model.Modelmustafa;
 import net.mcreator.xpequalsbrain.client.model.Modelfileproject;
 import net.mcreator.xpequalsbrain.client.model.Modelcustom_model;
 import net.mcreator.xpequalsbrain.client.model.Modelben_bir_ariyim;
+import net.mcreator.xpequalsbrain.client.model.Modelbayraks;
 import net.mcreator.xpequalsbrain.client.model.Modelatesates;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
@@ -27,6 +28,7 @@ public class XpequalsbrainModModels {
 		event.registerLayerDefinition(Modelcustom_model.LAYER_LOCATION, Modelcustom_model::createBodyLayer);
 		event.registerLayerDefinition(Modelfileproject.LAYER_LOCATION, Modelfileproject::createBodyLayer);
 		event.registerLayerDefinition(Modelzombieboss.LAYER_LOCATION, Modelzombieboss::createBodyLayer);
+		event.registerLayerDefinition(Modelbayraks.LAYER_LOCATION, Modelbayraks::createBodyLayer);
 		event.registerLayerDefinition(Modelatesates.LAYER_LOCATION, Modelatesates::createBodyLayer);
 	}
 }
