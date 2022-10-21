@@ -14,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTab;
 
 import net.mcreator.xpequalsbrain.item.TutamacliDurtmeCubuguItem;
 import net.mcreator.xpequalsbrain.item.SmallXpItem;
+import net.mcreator.xpequalsbrain.item.RocketItem;
 import net.mcreator.xpequalsbrain.item.PolenItem;
 import net.mcreator.xpequalsbrain.item.MonsterPotionItem;
 import net.mcreator.xpequalsbrain.item.MiracleGrowthItemItem;
@@ -77,4 +78,7 @@ public class XpequalsbrainModItems {
 	public static final RegistryObject<Item> KOTU_BUYUCU = REGISTRY.register("kotu_buyucu_spawn_egg",
 			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.KOTU_BUYUCU, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> BOOK_OF_SORCERER = REGISTRY.register("book_of_sorcerer", () -> new BookOfSorcererItem());
+	public static final RegistryObject<Item> ROKET = REGISTRY.register("roket_spawn_egg",
+			() -> new ForgeSpawnEggItem(XpequalsbrainModEntities.ROKET, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> ROCKET = REGISTRY.register("rocket", () -> new RocketItem());
 }

@@ -52,6 +52,8 @@ public class BeginningProcedure {
 		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
 		XpequalsbrainModVariables.MapVariables.get(world).meteorshower = false;
 		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
+		XpequalsbrainModVariables.MapVariables.get(world).RoketIsFlying = false;
+		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);
 		XpequalsbrainModVariables.BeeMissonCounter = 0;
 		XpequalsbrainModVariables.MapVariables.get(world).BuyucuTargetHitCount = 0;
 		XpequalsbrainModVariables.MapVariables.get(world).syncData(world);

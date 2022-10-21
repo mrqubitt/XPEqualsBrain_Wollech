@@ -3358,6 +3358,101 @@
         ]
       },
       "path": "~/LevelAdvancement"
+    },
+    {
+      "name": "Roket",
+      "type": "livingentity",
+      "sortid": 152,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roket",
+      "path": "~/Roket"
+    },
+    {
+      "name": "RoketUcurmaProcedur",
+      "type": "procedure",
+      "sortid": 153,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roket_ucurma_procedur",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Roket"
+    },
+    {
+      "name": "RoketCommand",
+      "type": "procedure",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roket_command",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Roket"
+    },
+    {
+      "name": "Roketkomut",
+      "type": "keybind",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roketkomut",
+      "path": "~/Roket"
+    },
+    {
+      "name": "RocketRightclicked",
+      "type": "procedure",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rocket_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Roket"
+    },
+    {
+      "name": "Rocket",
+      "type": "item",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rocket",
+      "path": "~/Roket"
+    },
+    {
+      "name": "RocketCraft",
+      "type": "recipe",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rocket_craft",
+      "path": "~/Roket"
     }
   ],
   "variable_elements": [
@@ -3804,6 +3899,12 @@
       "type": "logic",
       "scope": "map",
       "value": "false"
+    },
+    {
+      "name": "RoketIsFlying",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
     }
   ],
   "sound_elements": [],
@@ -3815,6 +3916,7 @@
       "advancements.insan.title": "Hooman!",
       "item.xpequalsbrain.iceboots_chestplate": "Iceboots Body",
       "advancements.insan.descr": "Kedilerin efendisi...",
+      "entity.xpequalsbrain.roket": "Roket",
       "entity.xpequalsbrain.stephen_hawking": "Stephen Hawking",
       "advancements.ari_kafa.descr": "Bzzz bzzz bzzzzzz!",
       "item.xpequalsbrain.fireball": "Ateş Topu",
@@ -3823,11 +3925,14 @@
       "advancements.cow_misson_started.title": "İneklere Tahıl Gerek!",
       "item.xpequalsbrain.monster_potion": "§e§lCanavar İksiri",
       "item.xpequalsbrain.corap_helmet": "Corap Helmet",
+      "item.xpequalsbrain.roket_spawn_egg": "Roket Spawn Egg",
+      "key.xpequalsbrain.roketkomut": "Roketkomut",
       "item.xpequalsbrain.herobrine_xp": "§lHerobrine Deneyimi",
       "key.xpequalsbrain.moon_walk_key": "Moon Walk Key",
       "advancements.polen_mission_completed.descr": "Ama benim polene... ha hA HAPŞUU!",
       "advancements.cow_misson_started.descr": "İneklere 5 adet tahıl getir.",
       "advancements.deha_otesi.title": "MUCİT",
+      "item.xpequalsbrain.rocket": "§5Rocket",
       "advancements.polen_mission_completed.title": "Polenler teslim edildi!",
       "item.xpequalsbrain.miracle_growth_item": "§6§lMucizevi Yetiştirici",
       "entity.xpequalsbrain.friendlybee": "Friendlybee",
@@ -3912,6 +4017,10 @@
       },
       {
         "name": "Deha_Otesi",
+        "children": []
+      },
+      {
+        "name": "Roket",
         "children": []
       }
     ]

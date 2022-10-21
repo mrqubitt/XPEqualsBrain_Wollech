@@ -166,6 +166,7 @@ public class XpequalsbrainModVariables {
 		public double zombiedoorz = 0;
 		public boolean BuyucuFightStarted = false;
 		public boolean meteorshower = false;
+		public boolean RoketIsFlying = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -241,6 +242,7 @@ public class XpequalsbrainModVariables {
 			zombiedoorz = nbt.getDouble("zombiedoorz");
 			BuyucuFightStarted = nbt.getBoolean("BuyucuFightStarted");
 			meteorshower = nbt.getBoolean("meteorshower");
+			RoketIsFlying = nbt.getBoolean("RoketIsFlying");
 		}
 
 		@Override
@@ -312,6 +314,7 @@ public class XpequalsbrainModVariables {
 			nbt.putDouble("zombiedoorz", zombiedoorz);
 			nbt.putBoolean("BuyucuFightStarted", BuyucuFightStarted);
 			nbt.putBoolean("meteorshower", meteorshower);
+			nbt.putBoolean("RoketIsFlying", RoketIsFlying);
 			return nbt;
 		}
 

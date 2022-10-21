@@ -17,6 +17,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
 import net.mcreator.xpequalsbrain.network.SpellFireballKeyMessage;
+import net.mcreator.xpequalsbrain.network.RoketkomutMessage;
 import net.mcreator.xpequalsbrain.network.MoonWalkKeyMessage;
 import net.mcreator.xpequalsbrain.network.LightningKeyMessage;
 import net.mcreator.xpequalsbrain.XpequalsbrainMod;
@@ -27,12 +28,14 @@ public class XpequalsbrainModKeyMappings {
 	public static final KeyMapping SPELL_FIREBALL_KEY = new KeyMapping("key.xpequalsbrain.spell_fireball_key", GLFW.GLFW_KEY_N,
 			"key.categories.misc");
 	public static final KeyMapping LIGHTNING_KEY = new KeyMapping("key.xpequalsbrain.lightning_key", GLFW.GLFW_KEY_M, "key.categories.misc");
+	public static final KeyMapping ROKETKOMUT = new KeyMapping("key.xpequalsbrain.roketkomut", GLFW.GLFW_KEY_HOME, "key.categories.misc");
 
 	@SubscribeEvent
 	public static void registerKeyBindings(FMLClientSetupEvent event) {
 		ClientRegistry.registerKeyBinding(MOON_WALK_KEY);
 		ClientRegistry.registerKeyBinding(SPELL_FIREBALL_KEY);
 		ClientRegistry.registerKeyBinding(LIGHTNING_KEY);
+		ClientRegistry.registerKeyBinding(ROKETKOMUT);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -56,6 +59,12 @@ public class XpequalsbrainModKeyMappings {
 					if (event.getAction() == GLFW.GLFW_PRESS) {
 						XpequalsbrainMod.PACKET_HANDLER.sendToServer(new LightningKeyMessage(0, 0));
 						LightningKeyMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+					}
+				}
+				if (event.getKey() == ROKETKOMUT.getKey().getValue()) {
+					if (event.getAction() == GLFW.GLFW_PRESS) {
+						XpequalsbrainMod.PACKET_HANDLER.sendToServer(new RoketkomutMessage(0, 0));
+						RoketkomutMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 					}
 				}
 			}
