@@ -8,6 +8,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 
@@ -32,11 +33,14 @@ public class RoketUcurmaProcedurProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (XpequalsbrainModVariables.BeeMissionStarted == (entity.getVehicle()) instanceof RoketEntity) {
-			(entity.getVehicle()).setDeltaMovement(new Vec3(0, 0.6, 0));
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.LARGE_SMOKE, ((entity.getVehicle()).getX()), ((entity.getVehicle()).getY()),
-						((entity.getVehicle()).getZ()), 50, 0.5, 1, 0.5, 1.5);
+		Entity MyEntity = null;
+		if (entity instanceof ServerPlayer) {
+			if (XpequalsbrainModVariables.BeeMissionStarted && (entity.getVehicle()) instanceof RoketEntity) {
+				(entity.getVehicle()).setDeltaMovement(new Vec3(0, 0.6, 0));
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.LARGE_SMOKE, ((entity.getVehicle()).getX()), ((entity.getVehicle()).getY()),
+							((entity.getVehicle()).getZ()), 50, 0.5, 1, 0.5, 1.5);
+			}
 		}
 	}
 }
